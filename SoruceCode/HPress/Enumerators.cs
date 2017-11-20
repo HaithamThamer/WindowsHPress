@@ -19,7 +19,8 @@ namespace HPress
             facebook,
             phone,
             email,
-            color
+            color,
+            logoPrint
         }
         public enum clientType
         {

@@ -403,3 +403,4 @@ D:\_CurrentProjects\WindowsHPress\HPress\obj\Debug\HPress.csproj.GenerateResourc
 D:\_CurrentProjects\WindowsHPress\HPress\obj\Debug\HPress.exe.licenses
 D:\_CurrentProjects\WindowsHPress\HPress\obj\Debug\HPress.exe
 D:\_CurrentProjects\WindowsHPress\HPress\obj\Debug\HPress.pdb
+D:\_CurrentProjects\WindowsHPress\HPress\obj\Debug\HPress.csprojResolveAssemblyReference.cache

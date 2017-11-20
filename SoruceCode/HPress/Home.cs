@@ -32,7 +32,7 @@ namespace HPress
             Properties.Settings.Default.phone = product.getValue((int)Enumerators.Settings.phone);
             Properties.Settings.Default.email = product.getValue((int)Enumerators.Settings.email);
             Properties.Settings.Default.color = product.getValue((int)Enumerators.Settings.color);
-
+            Properties.Settings.Default.imageLogoPrint = product.getValue((int)Enumerators.Settings.logoPrint);
             if (new Login(databaseConnection).ShowDialog() == DialogResult.No)
             {
                 Environment.Exit(0);

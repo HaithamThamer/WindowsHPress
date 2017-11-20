@@ -161,7 +161,8 @@ namespace HPress
 
             lblTotalText.Text = getNumberInText(total.ToString()) + " " + (isDollar ? "Dollar" : "Dinar");
             lblSubTotalSign.Text = isDollar ? "$" : "IQD";
-            picMain.Image = Image.FromFile(Properties.Settings.Default.imageLogo1);
+            picMain.Image = Image.FromFile(Properties.Settings.Default.imageLogoPrint);
+            lblBillInfo.BackColor = lblClientInfo.BackColor = lblConditions.BackColor = lblAccount.BackColor = lblFirstTotalTitle.BackColor = lblSaleTotal.BackColor = lblFinalTotalTitle.BackColor = lblReceiveTtile.BackColor = lblRemainingTitle.BackColor = System.Drawing.ColorTranslator.FromHtml(Properties.Settings.Default.color);
         }
         XRTable table(System.Windows.Forms.DataGridView products)
         {
@@ -181,7 +182,7 @@ namespace HPress
             note.Text = "Note";
             amount.Text = "Amount";
             description.Font = price.Font = quantity.Font = note.Font = amount.Font = new Font("Calibri", 16);
-            description.BackColor = price.BackColor = quantity.BackColor = note.BackColor = amount.BackColor = Color.FromArgb(208, 158, 0);
+            description.BackColor = price.BackColor = quantity.BackColor = note.BackColor = amount.BackColor = System.Drawing.ColorTranslator.FromHtml(Properties.Settings.Default.color);
             description.Borders = DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Bottom;
             amount.Borders = DevExpress.XtraPrinting.BorderSide.Bottom | DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Left;
             price.Borders = quantity.Borders = note.Borders = DevExpress.XtraPrinting.BorderSide.Right | DevExpress.XtraPrinting.BorderSide.Top | DevExpress.XtraPrinting.BorderSide.Bottom;

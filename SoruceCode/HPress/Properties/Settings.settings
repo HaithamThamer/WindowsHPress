@@ -26,5 +26,8 @@
     <Setting Name="color" Type="System.String" Scope="User">
       <Value Profile="(Default)">#FF00FF</Value>
     </Setting>
+    <Setting Name="imageLogoPrint" Type="System.String" Scope="User">
+      <Value Profile="(Default)">logoPrint.png</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -36,7 +36,7 @@
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.lblClientAddress = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel35 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel27 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblClientInfo = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel28 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblClientName = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel30 = new DevExpress.XtraReports.UI.XRLabel();
@@ -49,7 +49,7 @@
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.lblDateFrom = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblBillInfo = new DevExpress.XtraReports.UI.XRLabel();
             this.lblEmail = new DevExpress.XtraReports.UI.XRLabel();
             this.lblPhone = new DevExpress.XtraReports.UI.XRLabel();
             this.lblFacebook = new DevExpress.XtraReports.UI.XRLabel();
@@ -63,18 +63,18 @@
             this.lblTotalText = new DevExpress.XtraReports.UI.XRLabel();
             this.lblSubTotalSign = new DevExpress.XtraReports.UI.XRLabel();
             this.txtAccount = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblAccount = new DevExpress.XtraReports.UI.XRLabel();
             this.txtNote = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel25 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblFirstTotalTitle = new DevExpress.XtraReports.UI.XRLabel();
             this.lblFirstTotal = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel23 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblSaleTotal = new DevExpress.XtraReports.UI.XRLabel();
             this.lblDiscount = new DevExpress.XtraReports.UI.XRLabel();
             this.lblTotal = new DevExpress.XtraReports.UI.XRLabel();
-            this.lblTotalTitle = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblFinalTotalTitle = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel18 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblConditions = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -95,7 +95,7 @@
             this.xrLine2,
             this.lblClientAddress,
             this.xrLabel35,
-            this.xrLabel27,
+            this.lblClientInfo,
             this.xrLabel28,
             this.lblClientName,
             this.xrLabel30,
@@ -108,7 +108,7 @@
             this.xrLabel10,
             this.lblDateFrom,
             this.xrLabel7,
-            this.xrLabel6,
+            this.lblBillInfo,
             this.lblEmail,
             this.lblPhone,
             this.lblFacebook,
@@ -206,25 +206,25 @@
             this.xrLabel35.Text = "Address";
             this.xrLabel35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel27
+            // lblClientInfo
             // 
-            this.xrLabel27.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
-            this.xrLabel27.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
-            this.xrLabel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
-            this.xrLabel27.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.lblClientInfo.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
+            this.lblClientInfo.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
+            this.lblClientInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
+            this.lblClientInfo.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel27.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(418.1249F, 152F);
-            this.xrLabel27.Name = "xrLabel27";
-            this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel27.SizeF = new System.Drawing.SizeF(306.1667F, 23F);
-            this.xrLabel27.StylePriority.UseBackColor = false;
-            this.xrLabel27.StylePriority.UseBorders = false;
-            this.xrLabel27.StylePriority.UseFont = false;
-            this.xrLabel27.StylePriority.UseTextAlignment = false;
-            this.xrLabel27.Text = "CLIENT INFORMATION";
-            this.xrLabel27.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblClientInfo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblClientInfo.LocationFloat = new DevExpress.Utils.PointFloat(418.1249F, 152F);
+            this.lblClientInfo.Name = "lblClientInfo";
+            this.lblClientInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblClientInfo.SizeF = new System.Drawing.SizeF(306.1667F, 23F);
+            this.lblClientInfo.StylePriority.UseBackColor = false;
+            this.lblClientInfo.StylePriority.UseBorders = false;
+            this.lblClientInfo.StylePriority.UseFont = false;
+            this.lblClientInfo.StylePriority.UseTextAlignment = false;
+            this.lblClientInfo.Text = "CLIENT INFORMATION";
+            this.lblClientInfo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel28
             // 
@@ -464,25 +464,25 @@
             this.xrLabel7.Text = "DATE";
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel6
+            // lblBillInfo
             // 
-            this.xrLabel6.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
-            this.xrLabel6.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
-            this.xrLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
-            this.xrLabel6.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.lblBillInfo.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
+            this.lblBillInfo.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
+            this.lblBillInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
+            this.lblBillInfo.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(418.1249F, 35.00007F);
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(306.1667F, 23F);
-            this.xrLabel6.StylePriority.UseBackColor = false;
-            this.xrLabel6.StylePriority.UseBorders = false;
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "BILL INFORMATION";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblBillInfo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblBillInfo.LocationFloat = new DevExpress.Utils.PointFloat(418.1249F, 35.00007F);
+            this.lblBillInfo.Name = "lblBillInfo";
+            this.lblBillInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblBillInfo.SizeF = new System.Drawing.SizeF(306.1667F, 23F);
+            this.lblBillInfo.StylePriority.UseBackColor = false;
+            this.lblBillInfo.StylePriority.UseBorders = false;
+            this.lblBillInfo.StylePriority.UseFont = false;
+            this.lblBillInfo.StylePriority.UseTextAlignment = false;
+            this.lblBillInfo.Text = "BILL INFORMATION";
+            this.lblBillInfo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // lblEmail
             // 
@@ -542,18 +542,18 @@
             this.lblTotalText,
             this.lblSubTotalSign,
             this.txtAccount,
-            this.xrLabel12,
+            this.lblAccount,
             this.txtNote,
             this.xrLine1,
-            this.xrLabel25,
+            this.lblFirstTotalTitle,
             this.lblFirstTotal,
-            this.xrLabel23,
+            this.lblSaleTotal,
             this.lblDiscount,
             this.lblTotal,
-            this.lblTotalTitle,
+            this.lblFinalTotalTitle,
             this.xrLabel18,
             this.xrLabel17,
-            this.xrLabel16,
+            this.lblConditions,
             this.xrLabel15,
             this.xrLabel13});
             this.BottomMargin.HeightF = 249.875F;
@@ -691,25 +691,25 @@
             this.txtAccount.Text = "Cash";
             this.txtAccount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel12
+            // lblAccount
             // 
-            this.xrLabel12.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
-            this.xrLabel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
-            this.xrLabel12.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.lblAccount.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
+            this.lblAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
+            this.lblAccount.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel12.CanGrow = false;
-            this.xrLabel12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(507.6249F, 23.00002F);
-            this.xrLabel12.Name = "xrLabel12";
-            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel12.SizeF = new System.Drawing.SizeF(74.99991F, 23F);
-            this.xrLabel12.StylePriority.UseBackColor = false;
-            this.xrLabel12.StylePriority.UseBorders = false;
-            this.xrLabel12.StylePriority.UseFont = false;
-            this.xrLabel12.StylePriority.UseTextAlignment = false;
-            this.xrLabel12.Text = "Account";
-            this.xrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblAccount.CanGrow = false;
+            this.lblAccount.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblAccount.LocationFloat = new DevExpress.Utils.PointFloat(507.6249F, 23.00002F);
+            this.lblAccount.Name = "lblAccount";
+            this.lblAccount.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblAccount.SizeF = new System.Drawing.SizeF(74.99991F, 23F);
+            this.lblAccount.StylePriority.UseBackColor = false;
+            this.lblAccount.StylePriority.UseBorders = false;
+            this.lblAccount.StylePriority.UseFont = false;
+            this.lblAccount.StylePriority.UseTextAlignment = false;
+            this.lblAccount.Text = "Account";
+            this.lblAccount.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // txtNote
             // 
@@ -729,25 +729,25 @@
             this.xrLine1.Name = "xrLine1";
             this.xrLine1.SizeF = new System.Drawing.SizeF(724.2915F, 23F);
             // 
-            // xrLabel25
+            // lblFirstTotalTitle
             // 
-            this.xrLabel25.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
-            this.xrLabel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
-            this.xrLabel25.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.lblFirstTotalTitle.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
+            this.lblFirstTotalTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
+            this.lblFirstTotalTitle.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel25.CanGrow = false;
-            this.xrLabel25.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(507.6249F, 46.0001F);
-            this.xrLabel25.Name = "xrLabel25";
-            this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel25.SizeF = new System.Drawing.SizeF(74.99991F, 23F);
-            this.xrLabel25.StylePriority.UseBackColor = false;
-            this.xrLabel25.StylePriority.UseBorders = false;
-            this.xrLabel25.StylePriority.UseFont = false;
-            this.xrLabel25.StylePriority.UseTextAlignment = false;
-            this.xrLabel25.Text = "First Total";
-            this.xrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblFirstTotalTitle.CanGrow = false;
+            this.lblFirstTotalTitle.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblFirstTotalTitle.LocationFloat = new DevExpress.Utils.PointFloat(507.6249F, 46.0001F);
+            this.lblFirstTotalTitle.Name = "lblFirstTotalTitle";
+            this.lblFirstTotalTitle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblFirstTotalTitle.SizeF = new System.Drawing.SizeF(74.99991F, 23F);
+            this.lblFirstTotalTitle.StylePriority.UseBackColor = false;
+            this.lblFirstTotalTitle.StylePriority.UseBorders = false;
+            this.lblFirstTotalTitle.StylePriority.UseFont = false;
+            this.lblFirstTotalTitle.StylePriority.UseTextAlignment = false;
+            this.lblFirstTotalTitle.Text = "First Total";
+            this.lblFirstTotalTitle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // lblFirstTotal
             // 
@@ -767,25 +767,25 @@
             this.lblFirstTotal.Text = "10000";
             this.lblFirstTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // xrLabel23
+            // lblSaleTotal
             // 
-            this.xrLabel23.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
-            this.xrLabel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
-            this.xrLabel23.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.lblSaleTotal.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
+            this.lblSaleTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
+            this.lblSaleTotal.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel23.CanGrow = false;
-            this.xrLabel23.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(507.6249F, 69.00005F);
-            this.xrLabel23.Name = "xrLabel23";
-            this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel23.SizeF = new System.Drawing.SizeF(74.99991F, 23F);
-            this.xrLabel23.StylePriority.UseBackColor = false;
-            this.xrLabel23.StylePriority.UseBorders = false;
-            this.xrLabel23.StylePriority.UseFont = false;
-            this.xrLabel23.StylePriority.UseTextAlignment = false;
-            this.xrLabel23.Text = "Sale";
-            this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblSaleTotal.CanGrow = false;
+            this.lblSaleTotal.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblSaleTotal.LocationFloat = new DevExpress.Utils.PointFloat(507.6249F, 69.00005F);
+            this.lblSaleTotal.Name = "lblSaleTotal";
+            this.lblSaleTotal.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblSaleTotal.SizeF = new System.Drawing.SizeF(74.99991F, 23F);
+            this.lblSaleTotal.StylePriority.UseBackColor = false;
+            this.lblSaleTotal.StylePriority.UseBorders = false;
+            this.lblSaleTotal.StylePriority.UseFont = false;
+            this.lblSaleTotal.StylePriority.UseTextAlignment = false;
+            this.lblSaleTotal.Text = "Sale";
+            this.lblSaleTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // lblDiscount
             // 
@@ -823,25 +823,25 @@
             this.lblTotal.Text = "10000";
             this.lblTotal.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
-            // lblTotalTitle
+            // lblFinalTotalTitle
             // 
-            this.lblTotalTitle.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
-            this.lblTotalTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
-            this.lblTotalTitle.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.lblFinalTotalTitle.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
+            this.lblFinalTotalTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
+            this.lblFinalTotalTitle.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lblTotalTitle.CanGrow = false;
-            this.lblTotalTitle.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblTotalTitle.LocationFloat = new DevExpress.Utils.PointFloat(507.6248F, 92.00007F);
-            this.lblTotalTitle.Name = "lblTotalTitle";
-            this.lblTotalTitle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblTotalTitle.SizeF = new System.Drawing.SizeF(74.99997F, 23F);
-            this.lblTotalTitle.StylePriority.UseBackColor = false;
-            this.lblTotalTitle.StylePriority.UseBorders = false;
-            this.lblTotalTitle.StylePriority.UseFont = false;
-            this.lblTotalTitle.StylePriority.UseTextAlignment = false;
-            this.lblTotalTitle.Text = "Final Total";
-            this.lblTotalTitle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblFinalTotalTitle.CanGrow = false;
+            this.lblFinalTotalTitle.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblFinalTotalTitle.LocationFloat = new DevExpress.Utils.PointFloat(507.6248F, 92.00007F);
+            this.lblFinalTotalTitle.Name = "lblFinalTotalTitle";
+            this.lblFinalTotalTitle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblFinalTotalTitle.SizeF = new System.Drawing.SizeF(74.99997F, 23F);
+            this.lblFinalTotalTitle.StylePriority.UseBackColor = false;
+            this.lblFinalTotalTitle.StylePriority.UseBorders = false;
+            this.lblFinalTotalTitle.StylePriority.UseFont = false;
+            this.lblFinalTotalTitle.StylePriority.UseTextAlignment = false;
+            this.lblFinalTotalTitle.Text = "Final Total";
+            this.lblFinalTotalTitle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel18
             // 
@@ -861,23 +861,23 @@
             this.xrLabel17.StylePriority.UseFont = false;
             this.xrLabel17.Text = "Customer Acceptance (sign below):";
             // 
-            // xrLabel16
+            // lblConditions
             // 
-            this.xrLabel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
-            this.xrLabel16.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            this.lblConditions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
+            this.lblConditions.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrLabel16.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(2.384186E-05F, 23.00002F);
-            this.xrLabel16.Name = "xrLabel16";
-            this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel16.SizeF = new System.Drawing.SizeF(264.1667F, 23F);
-            this.xrLabel16.StylePriority.UseBackColor = false;
-            this.xrLabel16.StylePriority.UseBorders = false;
-            this.xrLabel16.StylePriority.UseFont = false;
-            this.xrLabel16.StylePriority.UseTextAlignment = false;
-            this.xrLabel16.Text = "TERMS AND CONDITIONS";
-            this.xrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblConditions.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblConditions.LocationFloat = new DevExpress.Utils.PointFloat(2.384186E-05F, 23.00002F);
+            this.lblConditions.Name = "lblConditions";
+            this.lblConditions.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblConditions.SizeF = new System.Drawing.SizeF(264.1667F, 23F);
+            this.lblConditions.StylePriority.UseBackColor = false;
+            this.lblConditions.StylePriority.UseBorders = false;
+            this.lblConditions.StylePriority.UseFont = false;
+            this.lblConditions.StylePriority.UseTextAlignment = false;
+            this.lblConditions.Text = "TERMS AND CONDITIONS";
+            this.lblConditions.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel15
             // 
@@ -917,7 +917,7 @@
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
-            this.Version = "15.1";
+            this.Version = "17.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -928,7 +928,7 @@
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.XRPictureBox picMain;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        private DevExpress.XtraReports.UI.XRLabel lblBillInfo;
         private DevExpress.XtraReports.UI.XRLabel lblEmail;
         private DevExpress.XtraReports.UI.XRLabel lblPhone;
         private DevExpress.XtraReports.UI.XRLabel lblFacebook;
@@ -941,19 +941,19 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRLabel xrLabel13;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel25;
+        private DevExpress.XtraReports.UI.XRLabel lblFirstTotalTitle;
         private DevExpress.XtraReports.UI.XRLabel lblFirstTotal;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel23;
+        private DevExpress.XtraReports.UI.XRLabel lblSaleTotal;
         private DevExpress.XtraReports.UI.XRLabel lblDiscount;
         private DevExpress.XtraReports.UI.XRLabel lblTotal;
-        private DevExpress.XtraReports.UI.XRLabel lblTotalTitle;
+        private DevExpress.XtraReports.UI.XRLabel lblFinalTotalTitle;
         private DevExpress.XtraReports.UI.XRLabel xrLabel18;
         private DevExpress.XtraReports.UI.XRLabel xrLabel17;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel16;
+        private DevExpress.XtraReports.UI.XRLabel lblConditions;
         private DevExpress.XtraReports.UI.XRLine xrLine2;
         private DevExpress.XtraReports.UI.XRLabel lblClientAddress;
         private DevExpress.XtraReports.UI.XRLabel xrLabel35;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel27;
+        private DevExpress.XtraReports.UI.XRLabel lblClientInfo;
         private DevExpress.XtraReports.UI.XRLabel xrLabel28;
         private DevExpress.XtraReports.UI.XRLabel lblClientName;
         private DevExpress.XtraReports.UI.XRLabel xrLabel30;
@@ -965,7 +965,7 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
         private DevExpress.XtraReports.UI.XRLabel txtNote;
         private DevExpress.XtraReports.UI.XRLabel txtAccount;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel12;
+        private DevExpress.XtraReports.UI.XRLabel lblAccount;
         private DevExpress.XtraReports.UI.XRLabel lblSubTotalSign;
         private DevExpress.XtraReports.UI.XRLabel lblTotalText;
         private DevExpress.XtraReports.UI.XRLabel lblReceive;
