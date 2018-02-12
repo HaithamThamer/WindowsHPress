@@ -98,6 +98,7 @@ namespace HCashier.Report
                 case Enumerators.ReportsName.Employee:
                     break;
                 case Enumerators.ReportsName.Delegates:
+                    Landscape = true;
                     break;
                 case Enumerators.ReportsName.Delegate:
                     break;
@@ -136,16 +137,23 @@ namespace HCashier.Report
                 case Enumerators.ReportsName.DebitsSell:
                     for (int i = 0; i < t.Rows.Count; i++)
                     {
-                        t.Rows[i].Cells["note"].WidthF += 200;
-                        t.Rows[i].Cells["remaining_dollar"].WidthF = 100;
-                        t.Rows[i].Cells["remaining_dinar"].WidthF = 100;
-                        t.Rows[i].Cells["remaining_dinar"].TextAlignment = t.Rows[i].Cells["remaining_dollar"].TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-                        t.Rows[i].Cells["delegate_name"].WidthF = 100;
-                        t.Rows[i].Cells["phone"].WidthF = 100;
-                        t.Rows[i].Cells["datetime"].WidthF = 80;
-                        t.Rows[i].Cells["name"].WidthF = 130;
-                        t.Rows[i].Cells["id"].WidthF = 70;
-
+                        //t.Rows[i].Cells["note"].WidthF += 170;
+                        //t.Rows[i].Cells["id"].WidthF = 70;
+                        //t.Rows[i].Cells["remaining_dollar"].WidthF = 100;
+                        //t.Rows[i].Cells["remaining_dinar"].WidthF = 100;
+                        t.Rows[i].Cells["remaining_dinar"].TextAlignment = t.Rows[i].Cells["remaining_dollar"].TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+                        //t.Rows[i].Cells["delegate_name"].WidthF = 100;
+                        //t.Rows[i].Cells["phone"].WidthF = 100;
+                        //t.Rows[i].Cells["datetime"].WidthF = 80;
+                        //t.Rows[i].Cells["name"].WidthF = 130;
+                        t.Rows[i].Cells["id"].Borders =
+                            t.Rows[i].Cells["note"].Borders =
+                            t.Rows[i].Cells["remaining_dollar"].Borders =
+                            t.Rows[i].Cells["remaining_dinar"].Borders =
+                            t.Rows[i].Cells["delegate_name"].Borders =
+                            t.Rows[i].Cells["phone"].Borders =
+                            t.Rows[i].Cells["datetime"].Borders =
+                            t.Rows[i].Cells["name"].Borders = DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom;
 
                     }
                     break;
@@ -555,11 +563,50 @@ namespace HCashier.Report
                     row.Cells[index].Name = result.Columns[j].Name;
                     row.Cells[index].Font = new Font("Calibri", 12);
                     row.Cells[index].Borders = DevExpress.XtraPrinting.BorderSide.Bottom;
+                    switch (reportName)
+                    {
+                        case Enumerators.ReportsName.none:
+                            break;
+                        case Enumerators.ReportsName.Daily:
+                            break;
+                        case Enumerators.ReportsName.BillsProducts:
+                            break;
+                        case Enumerators.ReportsName.BillReport:
+                            break;
+                        case Enumerators.ReportsName.DebitsClients:
+                            break;
+                        case Enumerators.ReportsName.CaseValue:
+                            break;
+                        case Enumerators.ReportsName.DebitsSell:
+                            break;
+                        case Enumerators.ReportsName.EmployeeDebits:
+                            break;
+                        case Enumerators.ReportsName.Client:
+                            break;
+                        case Enumerators.ReportsName.Employee:
+                            break;
+                        case Enumerators.ReportsName.Delegates:
+                            row.Cells[index].TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+                            break;
+                        case Enumerators.ReportsName.Delegate:
+                            break;
+                        case Enumerators.ReportsName.ReportDate:
+                            break;
+                        case Enumerators.ReportsName.Bills:
+                            break;
+                        case Enumerators.ReportsName.Products:
+                            break;
+                        case Enumerators.ReportsName.ClientPay:
+                            break;
+                        default:
+                            break;
+                    }
                     if (result.Rows[i].Cells[j].Value.ToString().Contains("$"))
                     {
                         for (int k = 0; k < row.Cells.Count; k++)
                         {
                             row.Cells[k].Font = new Font("Calibri", 12, FontStyle.Bold);
+                            
                         }
                     }
                     index++;

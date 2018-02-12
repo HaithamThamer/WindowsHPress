@@ -19,28 +19,22 @@ namespace HPress
         {
             InitializeComponent();
             this.databaseConnection = databaseConnection;
-            cmbClients_DropDown(null, null);
-            if (cmbClients.Items.Count > 0)
-                cmbClients.Text = cmbClients.Items[0].ToString();
-            dateFrom.Value = dateTo.Value = DateTime.Now;
-            cmbClients.SelectedIndex = 0;
+            grpClientType_SelectedIndexChanged(null, null);
+            //cmbClients_DropDown(null, null);
+            //if (cmbClients.Items.Count > 0)
+            //    cmbClients.Text = cmbClients.Items[0].ToString();
+            //dateFrom.Value = dateTo.Value = DateTime.Now;
+            //cmbClients.SelectedIndex = 0;
         }
 
         private void cmbClients_DropDown(object sender, EventArgs e)
         {
-            cmbClients.Items.Clear();
-            cmbClients.Items.Add("الكل");
-            System.Data.DataTable dt = databaseConnection.query(string.Format("select name from tbl_clients where type = '{0}'", 0));
-            if (dt.Rows.Count > 0)
-            {
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    cmbClients.Items.Add(dt.Rows[i][0].ToString());
-                }
-            }
-            cmbClients.Text = cmbClients.Items[0].ToString();
+            //setClients();
         }
-
+        void setClients(Enumerators.clientType clientType = Enumerators.clientType.Client)
+        {
+            
+        }
         private void txtBalanceValue_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != 46;
@@ -71,7 +65,7 @@ namespace HPress
         {
             if (txtBalanceValue.Text != string.Empty && cmbClients.Text != string.Empty && cmbClients.Text != "الكل")
             {
-                DataTable dt = databaseConnection.query(string.Format("select getDollar(tbl_bills.datetime) as `dollarValue`,tbl_bills.is_dollar,tbl_bills.id,ifnull(((((select sum(tbl_products.count * tbl_products.price) from tbl_products where tbl_products.bill_id = tbl_bills.id) -(tbl_bills.discount))) -  ifnull(( select sum(tbl_balance.value)  from tbl_balance where tbl_balance.bill_id = tbl_bills.id),0)) ,0) as `remaining` from tbl_bills, tbl_clients where tbl_bills.id > 0 and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1 and tbl_clients.id > 1 and tbl_clients.id = tbl_bills.client_id and tbl_clients.name = '{0}' and ifnull(((((select sum(tbl_products.count * tbl_products.price) from tbl_products where tbl_products.bill_id = tbl_bills.id) -(tbl_bills.discount))) -  ifnull(( select sum(tbl_balance.value)  from tbl_balance where tbl_balance.bill_id = tbl_bills.id),0)) ,0)  > 0 order by tbl_bills.datetime", cmbClients.Text));
+                DataTable dt = databaseConnection.query(string.Format("select getDollar(tbl_bills.datetime) as `dollarValue`,tbl_bills.is_dollar,tbl_bills.id,ifnull(((((select sum(tbl_products.count * tbl_products.price) from tbl_products where tbl_products.bill_id = tbl_bills.id) -(tbl_bills.discount))) -  ifnull(( select sum(tbl_balance.value)  from tbl_balance where tbl_balance.bill_id = tbl_bills.id),0)) ,0) as `remaining` from tbl_bills, tbl_clients where tbl_bills.id > 0 and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{1}' and tbl_clients.id > 1 and tbl_clients.id = tbl_bills.client_id and tbl_clients.name = '{0}' and ifnull(((((select sum(tbl_products.count * tbl_products.price) from tbl_products where tbl_products.bill_id = tbl_bills.id) -(tbl_bills.discount))) -  ifnull(( select sum(tbl_balance.value)  from tbl_balance where tbl_balance.bill_id = tbl_bills.id),0)) ,0)  > 0 order by tbl_bills.datetime", cmbClients.Text,(int)grpClientType.EditValue == 0 ? 1 : 0));
                 double pay = double.Parse(txtBalanceValue.Text.Replace(",", ""));
                 //double payDollar = double.Parse(txtBalanceValue.Text.Replace(",", "")) / (isDollar.IsOn ? Properties.Settings.Default.dollarValue : 1);
                 double billSum = 0;
@@ -112,9 +106,10 @@ namespace HPress
                         isSamePay = true;
                         //pay = isDollarFromDatabase || isDollar.IsOn ? pay / dollarValueFromDatabase : pay;
                     }
-                    databaseConnection.queryNonReader(string.Format("insert into tbl_balance (client_id,value,is_dollar,is_import,bill_id,creation,note,balance_pay_id) values ((select id from tbl_clients where name = '{0}'),'{1}','{2}','1','{6}','{4}','{5}','{7}');", cmbClients.Text, value, isDollar.IsOn ? "1" : "0", "0", date.Value.ToString("yyyy-MM-dd 00:00:00"), txtNote.Text, billId, balancePayId));
+                    databaseConnection.queryNonReader(string.Format("insert into tbl_balance (client_id,value,is_dollar,is_import,bill_id,creation,note,balance_pay_id) values ((select id from tbl_clients where name = '{0}' and type = '{8}'),'{1}','{2}','1','{6}','{4}','{5}','{7}');", cmbClients.Text, value, isDollar.IsOn ? "1" : "0", "0", date.Value.ToString("yyyy-MM-dd 00:00:00"), txtNote.Text, billId, balancePayId, (int)grpClientType.EditValue));
                 }
                 reloadData();
+                cmbClients_SelectedIndexChanged(null, null);
             }
         }
         private void dgvResults_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -157,7 +152,7 @@ namespace HPress
 
             btnAdd.Enabled = cmbClients.SelectedIndex != 0;
             //System.Data.DataTable dt = databaseConnection.query(string.Format("select sum(ifnull( ( ifnull( ( select  SUM(tbl_balance.value * IF(tbl_balance.is_dollar = 1 ,getDollar(null),1))  from tbl_balance, tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = 1 and tbl_balance.is_import = 1 ) ,0) - ifnull( ( select sum((tbl_products.price  * tbl_products.count) * if(tbl_bills.is_dollar = 1,getDollar(null),1)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1 ) ,0) + ifnull( ( select sum(tbl_bills.discount * if(tbl_bills.is_dollar = 1,getDollar(null),1)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1 ) ,0) ) ,0)) as `remaining`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 1 ) ,0) - ( /*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 ) ,0) - /*Discounts*/ ifnull( ( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 ) ,0) ) ) ,0))) as `remaining_dollar`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 0 	) ,0) - ( 	/*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 ),0)-/*Discounts*/ifnull(( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 ) ,0) ) ) ,0))) as `remaining_dinar` from  tbl_clients where tbl_clients.type = 0 {0}", cmbClients.Text == "الكل" ? "" : " and tbl_clients.name = '" + "فندق دلشاد بلص" + "' "));
-            System.Data.DataTable dt = databaseConnection.query(string.Format("select sum(ifnull( ( ifnull( ( select  SUM(tbl_balance.value * IF(tbl_balance.is_dollar = 1 ,getDollar(null),1))  from tbl_balance, tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = 1 and tbl_balance.is_import = 1 ) ,0) - ifnull( ( select sum((tbl_products.price  * tbl_products.count) * if(tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0,getDollar(null),1)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1 ) ,0) + ifnull( ( select sum(tbl_bills.discount * if(tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0,getDollar(null),1)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1 ) ,0) ) ,0)) as `remaining`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 1 ) ,0) - ( /*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0 ) ,0) - /*Discounts*/ ifnull( ( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0 ) ,0) ) ) ,0))) as `remaining_dollar`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 0 	) ,0) - ( 	/*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 and tbl_bills.is_cash = 0 and tbl_bills.is_cash = 0),0)-/*Discounts*/ifnull(( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 and tbl_bills.is_cash = 0 ) ,0) ) ) ,0))) as `remaining_dinar` from  tbl_clients where tbl_clients.type = 0 {0}", cmbClients.Text == "الكل" ? "" : " and tbl_clients.name = '" + cmbClients.Text + "' "));
+            System.Data.DataTable dt = databaseConnection.query(string.Format("select sum(ifnull( ( ifnull( ( select  SUM(tbl_balance.value * IF(tbl_balance.is_dollar = 1 ,getDollar(null),1))  from tbl_balance, tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = '{2}' and tbl_balance.is_import = 1 ) ,0) - ifnull( ( select sum((tbl_products.price  * tbl_products.count) * if(tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0,getDollar(null),1)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{2}' ) ,0) + ifnull( ( select sum(tbl_bills.discount * if(tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0,getDollar(null),1)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{2}' ) ,0) ) ,0)) as `remaining`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 1 ) ,0) - ( /*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0 ) ,0) - /*Discounts*/ ifnull( ( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0 ) ,0) ) ) ,0))) as `remaining_dollar`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 0 	) ,0) - ( 	/*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 and tbl_bills.is_cash = 0 and tbl_bills.is_cash = 0),0)-/*Discounts*/ifnull(( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 and tbl_bills.is_cash = 0 ) ,0) ) ) ,0))) as `remaining_dinar` from  tbl_clients where tbl_clients.type = '{1}' {0}", cmbClients.Text == "الكل" ? "" : " and tbl_clients.name = '" + cmbClients.Text + "' ",(int)grpClientType.EditValue, (int)grpClientType.EditValue == 0 ? 1 : 0));
             Clipboard.SetText(string.Format("select sum(ifnull( ( ifnull( ( select  SUM(tbl_balance.value * IF(tbl_balance.is_dollar = 1 ,getDollar(null),1))  from tbl_balance, tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = 1 and tbl_balance.is_import = 1 ) ,0) - ifnull( ( select sum((tbl_products.price  * tbl_products.count) * if(tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0,getDollar(null),1)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1 ) ,0) + ifnull( ( select sum(tbl_bills.discount * if(tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0,getDollar(null),1)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1 ) ,0) ) ,0)) as `remaining`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 1 ) ,0) - ( /*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0 ) ,0) - /*Discounts*/ ifnull( ( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 1 and tbl_bills.is_cash = 0 ) ,0) ) ) ,0))) as `remaining_dollar`, abs(sum(ifnull( ( /*Balances*/ ifnull( ( select sum(tbl_balance.value) from tbl_balance where tbl_balance.client_id = tbl_clients.id and tbl_balance.is_dollar = 0 	) ,0) - ( 	/*Bills*/ ifnull( ( select sum( ( select sum(tbl_products.price * tbl_products.count) from tbl_products where tbl_products.bill_id = tbl_bills.id ) ) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 and tbl_bills.is_cash = 0 and tbl_bills.is_cash = 0),0)-/*Discounts*/ifnull(( select sum(tbl_bills.discount) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_dollar = 0 and tbl_bills.is_cash = 0 ) ,0) ) ) ,0))) as `remaining_dinar` from  tbl_clients where tbl_clients.type = 0 {0}", cmbClients.Text == "الكل" ? "" : " and tbl_clients.name = '" + cmbClients.Text + "' "));
             grpClients.Text = string.Format("({1} $ : {0} IQD)", double.Parse(dt.Rows[0][0].ToString()).ToString("#,###"), (double.Parse(dt.Rows[0][0].ToString()) / Properties.Settings.Default.dollarValue).ToString("#.##"));
             txtTotalDollarDebits.Text = string.Format("{0}", double.Parse(dt.Rows[0][1].ToString()).ToString("#.##"));
@@ -214,6 +209,23 @@ namespace HPress
 
             DevExpress.XtraReports.UI.ReportPrintTool rpt = new DevExpress.XtraReports.UI.ReportPrintTool(new HCashier.Report.ArrivedCatch(id, cmbClients.Text, double.Parse(txtBalanceValue.Text), dateFrom.Value, row.Cells["is_dollar"].Value.ToString().Contains("$") ? double.Parse(dt.Rows[0][1].ToString()) : double.Parse(dt.Rows[0][2].ToString()), !row.Cells["is_dollar"].Value.ToString().Contains("$"), txtNote.Text));
             rpt.PrintDialog();
+        }
+
+        private void grpClientType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbClients.Items.Clear();
+            cmbClients.Items.Add("الكل");
+            System.Data.DataTable dt = databaseConnection.query(string.Format("select name from tbl_clients {0}", (int)grpClientType.EditValue == 100 ? "" : $" where type = '{(int)grpClientType.EditValue}'"));
+            if (dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cmbClients.Items.Add(dt.Rows[i][0].ToString());
+                }
+            }
+            cmbClients.Text = cmbClients.Items[0].ToString();
+
+            cmbClients_SelectedIndexChanged(null, null);
         }
     }
 }

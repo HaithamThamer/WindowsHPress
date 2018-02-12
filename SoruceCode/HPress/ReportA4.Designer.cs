@@ -77,6 +77,7 @@
             this.lblConditions = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
+            this.billType = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -113,7 +114,8 @@
             this.lblPhone,
             this.lblFacebook,
             this.lblAddress,
-            this.picMain});
+            this.picMain,
+            this.billType});
             this.TopMargin.HeightF = 290F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -907,6 +909,23 @@
             this.xrLabel13.Text = "If you have any questions about this price quote, please contact";
             this.xrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
+            // billType
+            // 
+            this.billType.BorderColor = System.Drawing.Color.Black;
+            this.billType.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billType.ForeColor = System.Drawing.Color.Maroon;
+            this.billType.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 221F);
+            this.billType.Name = "billType";
+            this.billType.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.billType.SizeF = new System.Drawing.SizeF(254.1667F, 46F);
+            this.billType.StylePriority.UseBorderColor = false;
+            this.billType.StylePriority.UseFont = false;
+            this.billType.StylePriority.UseForeColor = false;
+            this.billType.StylePriority.UseTextAlignment = false;
+            this.billType.Text = "Expenses";
+            this.billType.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.billType.Visible = false;
+            // 
             // ReportA4
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -917,7 +936,7 @@
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
-            this.Version = "17.1";
+            this.Version = "17.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -972,5 +991,6 @@
         private DevExpress.XtraReports.UI.XRLabel lblReceiveTtile;
         private DevExpress.XtraReports.UI.XRLabel lblRemainingTitle;
         private DevExpress.XtraReports.UI.XRLabel lblRemaining;
+        private DevExpress.XtraReports.UI.XRLabel billType;
     }
 }

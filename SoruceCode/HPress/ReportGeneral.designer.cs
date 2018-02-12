@@ -74,7 +74,7 @@
             this.xrLabel6.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
             this.xrLabel6.BackColor = System.Drawing.Color.DarkGray;
             this.xrLabel6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(258.3333F, 45.08904F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(248.3333F, 48.5833F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel6.SizeF = new System.Drawing.SizeF(83.33334F, 32.95834F);
@@ -89,7 +89,7 @@
             this.xrLabel7.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
             this.xrLabel7.BackColor = System.Drawing.Color.DarkGray;
             this.xrLabel7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(258.3333F, 10.00001F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(248.3333F, 10.00001F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel7.SizeF = new System.Drawing.SizeF(83.33334F, 32.95834F);
@@ -105,7 +105,7 @@
             this.lblDatetimeFrom.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
             this.lblDatetimeFrom.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblDatetimeFrom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDatetimeFrom.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00002F);
+            this.lblDatetimeFrom.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.00002F);
             this.lblDatetimeFrom.Name = "lblDatetimeFrom";
             this.lblDatetimeFrom.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblDatetimeFrom.SizeF = new System.Drawing.SizeF(248.3333F, 32.95833F);
@@ -120,7 +120,7 @@
             this.lblDatetimeTo.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
             this.lblDatetimeTo.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblDatetimeTo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDatetimeTo.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 45.08905F);
+            this.lblDatetimeTo.LocationFloat = new DevExpress.Utils.PointFloat(0F, 45.08905F);
             this.lblDatetimeTo.Name = "lblDatetimeTo";
             this.lblDatetimeTo.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblDatetimeTo.SizeF = new System.Drawing.SizeF(248.3333F, 32.95833F);
@@ -135,7 +135,7 @@
             this.lblDollar.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
             this.lblDollar.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblDollar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDollar.LocationFloat = new DevExpress.Utils.PointFloat(504.7917F, 45.08904F);
+            this.lblDollar.LocationFloat = new DevExpress.Utils.PointFloat(481.7917F, 45.08904F);
             this.lblDollar.Name = "lblDollar";
             this.lblDollar.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblDollar.SizeF = new System.Drawing.SizeF(215.2083F, 32.95833F);
@@ -149,7 +149,7 @@
             this.xrLabel3.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
             this.xrLabel3.BackColor = System.Drawing.Color.DarkGray;
             this.xrLabel3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(720F, 45.08904F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(697F, 45.08904F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 32.95834F);
@@ -165,7 +165,7 @@
             this.lblReportName.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
             this.lblReportName.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.lblReportName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.lblReportName.LocationFloat = new DevExpress.Utils.PointFloat(504.7917F, 10.00001F);
+            this.lblReportName.LocationFloat = new DevExpress.Utils.PointFloat(481.7917F, 10.00001F);
             this.lblReportName.Name = "lblReportName";
             this.lblReportName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblReportName.SizeF = new System.Drawing.SizeF(215.2084F, 32.95835F);
@@ -180,7 +180,7 @@
             this.xrLabel2.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
             this.xrLabel2.BackColor = System.Drawing.Color.DarkGray;
             this.xrLabel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(720F, 10.00001F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(697F, 10.00001F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(100F, 32.95835F);
@@ -196,7 +196,7 @@
             this.xrLine2.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
             this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 81.54164F);
             this.xrLine2.Name = "xrLine2";
-            this.xrLine2.SizeF = new System.Drawing.SizeF(830F, 9.458333F);
+            this.xrLine2.SizeF = new System.Drawing.SizeF(807F, 9.458333F);
             // 
             // BottomMargin
             // 
@@ -213,14 +213,14 @@
             // 
             this.xrPageInfo2.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right;
             this.xrPageInfo2.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom;
-            this.xrPageInfo2.Format = "{0:yyyy-MM-dd}";
-            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(695.6249F, 23.54185F);
+            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(672.6249F, 23.54185F);
             this.xrPageInfo2.Name = "xrPageInfo2";
             this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo2.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
             this.xrPageInfo2.SizeF = new System.Drawing.SizeF(134.3751F, 22.99999F);
             this.xrPageInfo2.StylePriority.UseTextAlignment = false;
             this.xrPageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrPageInfo2.TextFormatString = "{0:yyyy-MM-dd}";
             // 
             // xrPageInfo1
             // 
@@ -239,7 +239,7 @@
             this.xrLine1.AnchorVertical = DevExpress.XtraReports.UI.VerticalAnchorStyles.Top;
             this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLine1.Name = "xrLine1";
-            this.xrLine1.SizeF = new System.Drawing.SizeF(830F, 9.458333F);
+            this.xrLine1.SizeF = new System.Drawing.SizeF(807F, 9.458333F);
             // 
             // ReportGeneral
             // 
@@ -248,10 +248,13 @@
             this.TopMargin,
             this.BottomMargin});
             this.Margins = new System.Drawing.Printing.Margins(10, 10, 101, 57);
+            this.PageHeight = 1169;
+            this.PageWidth = 827;
+            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
             this.RequestParameters = false;
             this.ShowPreviewMarginLines = false;
             this.ShowPrintMarginsWarning = false;
-            this.Version = "15.1";
+            this.Version = "17.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

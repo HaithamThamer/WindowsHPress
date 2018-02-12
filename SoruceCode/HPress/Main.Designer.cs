@@ -36,9 +36,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.grpDate = new DevExpress.XtraEditors.GroupControl();
             this.dateFrom = new System.Windows.Forms.DateTimePicker();
+            this.isAccount = new DevExpress.XtraEditors.ToggleSwitch();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.grpDelegates = new DevExpress.XtraEditors.GroupControl();
             this.txtDelegatePercent = new System.Windows.Forms.TextBox();
@@ -63,9 +67,6 @@
             this.isDollar = new DevExpress.XtraEditors.ToggleSwitch();
             this.isCash = new DevExpress.XtraEditors.ToggleSwitch();
             this.isSell = new DevExpress.XtraEditors.ToggleSwitch();
-            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
-            this.txtNote = new System.Windows.Forms.TextBox();
-            this.isAccount = new DevExpress.XtraEditors.ToggleSwitch();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.grpTotal = new DevExpress.XtraEditors.GroupControl();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -88,6 +89,9 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpDate)).BeginInit();
             this.grpDate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.isAccount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpDelegates)).BeginInit();
             this.grpDelegates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInfo)).BeginInit();
@@ -101,9 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.isDollar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.isCash.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.isSell.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
-            this.groupControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.isAccount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpTotal)).BeginInit();
             this.grpTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -118,6 +119,8 @@
             // 
             this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
             this.groupControl1.Controls.Add(this.grpDate);
+            this.groupControl1.Controls.Add(this.isAccount);
+            this.groupControl1.Controls.Add(this.groupControl8);
             this.groupControl1.Controls.Add(this.btnAdd);
             this.groupControl1.Controls.Add(this.grpDelegates);
             this.groupControl1.Controls.Add(this.grpInfo);
@@ -126,8 +129,6 @@
             this.groupControl1.Controls.Add(this.isDollar);
             this.groupControl1.Controls.Add(this.isCash);
             this.groupControl1.Controls.Add(this.isSell);
-            this.groupControl1.Controls.Add(this.groupControl8);
-            this.groupControl1.Controls.Add(this.isAccount);
             this.groupControl1.Controls.Add(this.btnClear);
             this.groupControl1.Controls.Add(this.grpTotal);
             this.groupControl1.Controls.Add(this.groupControl5);
@@ -137,7 +138,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1020, 599);
+            this.groupControl1.Size = new System.Drawing.Size(1073, 599);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "المعلومات";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
@@ -149,9 +150,9 @@
             this.grpDate.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("تاريخ القائمة", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, null, -1)});
             this.grpDate.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.grpDate.Location = new System.Drawing.Point(522, 36);
+            this.grpDate.Location = new System.Drawing.Point(541, 45);
             this.grpDate.Name = "grpDate";
-            this.grpDate.Size = new System.Drawing.Size(143, 55);
+            this.grpDate.Size = new System.Drawing.Size(174, 55);
             this.grpDate.TabIndex = 39;
             this.grpDate.Text = "تاريخ";
             // 
@@ -164,9 +165,45 @@
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateFrom.Location = new System.Drawing.Point(2, 26);
             this.dateFrom.Name = "dateFrom";
-            this.dateFrom.Size = new System.Drawing.Size(139, 27);
+            this.dateFrom.Size = new System.Drawing.Size(170, 27);
             this.dateFrom.TabIndex = 37;
             this.dateFrom.Value = new System.DateTime(2017, 4, 20, 14, 5, 11, 0);
+            // 
+            // isAccount
+            // 
+            this.isAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.isAccount.Location = new System.Drawing.Point(404, 64);
+            this.isAccount.Name = "isAccount";
+            this.isAccount.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isAccount.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(0)))));
+            this.isAccount.Properties.Appearance.Options.UseFont = true;
+            this.isAccount.Properties.Appearance.Options.UseForeColor = true;
+            this.isAccount.Properties.OffText = "عرض";
+            this.isAccount.Properties.OnText = "حساب";
+            this.isAccount.Size = new System.Drawing.Size(131, 30);
+            this.isAccount.TabIndex = 0;
+            this.isAccount.Toggled += new System.EventHandler(this.isAccount_EditValueChanged);
+            // 
+            // groupControl8
+            // 
+            this.groupControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl8.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl8.CaptionImageOptions.Image")));
+            this.groupControl8.Controls.Add(this.txtNote);
+            this.groupControl8.Location = new System.Drawing.Point(726, 326);
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.Size = new System.Drawing.Size(335, 136);
+            this.groupControl8.TabIndex = 26;
+            this.groupControl8.Text = "ملاحظة";
+            // 
+            // txtNote
+            // 
+            this.txtNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNote.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNote.Location = new System.Drawing.Point(2, 23);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(331, 111);
+            this.txtNote.TabIndex = 0;
             // 
             // btnAdd
             // 
@@ -174,9 +211,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(421, 543);
+            this.btnAdd.Location = new System.Drawing.Point(376, 545);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(246, 44);
+            this.btnAdd.Size = new System.Drawing.Size(339, 42);
             this.btnAdd.TabIndex = 36;
             this.btnAdd.Text = "أدخال";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -187,9 +224,9 @@
             this.grpDelegates.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpDelegates.CaptionImageOptions.Image")));
             this.grpDelegates.Controls.Add(this.txtDelegatePercent);
             this.grpDelegates.Controls.Add(this.cmbDelegates);
-            this.grpDelegates.Location = new System.Drawing.Point(675, 267);
+            this.grpDelegates.Location = new System.Drawing.Point(726, 270);
             this.grpDelegates.Name = "grpDelegates";
-            this.grpDelegates.Size = new System.Drawing.Size(331, 50);
+            this.grpDelegates.Size = new System.Drawing.Size(335, 50);
             this.grpDelegates.TabIndex = 35;
             this.grpDelegates.Text = "المندوب";
             // 
@@ -209,7 +246,7 @@
             this.cmbDelegates.FormattingEnabled = true;
             this.cmbDelegates.Location = new System.Drawing.Point(43, 23);
             this.cmbDelegates.Name = "cmbDelegates";
-            this.cmbDelegates.Size = new System.Drawing.Size(286, 27);
+            this.cmbDelegates.Size = new System.Drawing.Size(290, 27);
             this.cmbDelegates.TabIndex = 0;
             this.cmbDelegates.DropDown += new System.EventHandler(this.cmbDelegates_DropDown);
             this.cmbDelegates.SelectedIndexChanged += new System.EventHandler(this.cmbDelegates_SelectedIndexChanged);
@@ -228,7 +265,7 @@
             this.grpInfo.Controls.Add(this.txtClientMobile);
             this.grpInfo.Controls.Add(this.txtClientLocation);
             this.grpInfo.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.grpInfo.Location = new System.Drawing.Point(673, 99);
+            this.grpInfo.Location = new System.Drawing.Point(726, 102);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(333, 162);
             this.grpInfo.TabIndex = 29;
@@ -240,7 +277,7 @@
             this.btnAddClient.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnAddClient.Location = new System.Drawing.Point(5, 24);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(69, 27);
+            this.btnAddClient.Size = new System.Drawing.Size(69, 126);
             this.btnAddClient.TabIndex = 37;
             this.btnAddClient.Text = "جديد";
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
@@ -251,17 +288,24 @@
             this.dgvClientsNames.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvClientsNames.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvClientsNames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvClientsNames.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientsNames.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientsNames.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientsNames.Location = new System.Drawing.Point(5, 57);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientsNames.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClientsNames.Location = new System.Drawing.Point(80, 57);
             this.dgvClientsNames.Name = "dgvClientsNames";
             this.dgvClientsNames.ReadOnly = true;
             this.dgvClientsNames.RowHeadersVisible = false;
             this.dgvClientsNames.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvClientsNames.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientsNames.Size = new System.Drawing.Size(279, 93);
+            this.dgvClientsNames.Size = new System.Drawing.Size(206, 93);
             this.dgvClientsNames.TabIndex = 30;
             this.dgvClientsNames.Visible = false;
             this.dgvClientsNames.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientsNames_CellClick);
@@ -283,7 +327,7 @@
             this.txtClientName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClientName.Location = new System.Drawing.Point(80, 24);
             this.txtClientName.Name = "txtClientName";
-            this.txtClientName.Size = new System.Drawing.Size(204, 27);
+            this.txtClientName.Size = new System.Drawing.Size(206, 27);
             this.txtClientName.TabIndex = 20;
             this.txtClientName.TextChanged += new System.EventHandler(this.txtClientName_TextChanged);
             this.txtClientName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClientName_KeyPress);
@@ -294,9 +338,9 @@
             this.txtClientEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtClientEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientEmail.Location = new System.Drawing.Point(5, 123);
+            this.txtClientEmail.Location = new System.Drawing.Point(80, 123);
             this.txtClientEmail.Name = "txtClientEmail";
-            this.txtClientEmail.Size = new System.Drawing.Size(279, 27);
+            this.txtClientEmail.Size = new System.Drawing.Size(206, 27);
             this.txtClientEmail.TabIndex = 23;
             // 
             // label7
@@ -323,7 +367,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(290, 64);
+            this.label6.Location = new System.Drawing.Point(290, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 25;
@@ -334,9 +378,9 @@
             this.txtClientMobile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtClientMobile.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientMobile.Location = new System.Drawing.Point(5, 90);
+            this.txtClientMobile.Location = new System.Drawing.Point(80, 90);
             this.txtClientMobile.Name = "txtClientMobile";
-            this.txtClientMobile.Size = new System.Drawing.Size(279, 27);
+            this.txtClientMobile.Size = new System.Drawing.Size(206, 27);
             this.txtClientMobile.TabIndex = 22;
             // 
             // txtClientLocation
@@ -344,20 +388,20 @@
             this.txtClientLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtClientLocation.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientLocation.Location = new System.Drawing.Point(5, 57);
+            this.txtClientLocation.Location = new System.Drawing.Point(80, 57);
             this.txtClientLocation.Name = "txtClientLocation";
-            this.txtClientLocation.Size = new System.Drawing.Size(279, 27);
+            this.txtClientLocation.Size = new System.Drawing.Size(206, 27);
             this.txtClientLocation.TabIndex = 21;
             // 
             // grpPaid
             // 
-            this.grpPaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpPaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpPaid.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpPaid.CaptionImageOptions.Image")));
             this.grpPaid.Controls.Add(this.txtPaid);
             this.grpPaid.Enabled = false;
-            this.grpPaid.Location = new System.Drawing.Point(421, 465);
+            this.grpPaid.Location = new System.Drawing.Point(150, 481);
             this.grpPaid.Name = "grpPaid";
-            this.grpPaid.Size = new System.Drawing.Size(246, 58);
+            this.grpPaid.Size = new System.Drawing.Size(220, 58);
             this.grpPaid.TabIndex = 34;
             this.grpPaid.Text = "المدفوع";
             // 
@@ -367,7 +411,7 @@
             this.txtPaid.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaid.Location = new System.Drawing.Point(2, 23);
             this.txtPaid.Name = "txtPaid";
-            this.txtPaid.Size = new System.Drawing.Size(242, 30);
+            this.txtPaid.Size = new System.Drawing.Size(216, 30);
             this.txtPaid.TabIndex = 0;
             this.txtPaid.Text = "0";
             this.txtPaid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -381,9 +425,9 @@
             this.groupControl9.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl9.CaptionImageOptions.Image")));
             this.groupControl9.ContextMenuStrip = this.contextMenuStripBills;
             this.groupControl9.Controls.Add(this.cmbBills);
-            this.groupControl9.Location = new System.Drawing.Point(673, 43);
+            this.groupControl9.Location = new System.Drawing.Point(726, 45);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(79, 49);
+            this.groupControl9.Size = new System.Drawing.Size(79, 51);
             this.groupControl9.TabIndex = 27;
             this.groupControl9.Text = "القائمة";
             // 
@@ -417,7 +461,7 @@
             // isDollar
             // 
             this.isDollar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.isDollar.Location = new System.Drawing.Point(128, 49);
+            this.isDollar.Location = new System.Drawing.Point(140, 63);
             this.isDollar.Name = "isDollar";
             this.isDollar.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isDollar.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(0)))));
@@ -425,7 +469,7 @@
             this.isDollar.Properties.Appearance.Options.UseForeColor = true;
             this.isDollar.Properties.OffText = "IQD";
             this.isDollar.Properties.OnText = "$";
-            this.isDollar.Size = new System.Drawing.Size(123, 30);
+            this.isDollar.Size = new System.Drawing.Size(121, 30);
             this.isDollar.TabIndex = 19;
             this.isDollar.Toggled += new System.EventHandler(this.isDollar_Toggled);
             // 
@@ -433,7 +477,7 @@
             // 
             this.isCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.isCash.EditValue = true;
-            this.isCash.Location = new System.Drawing.Point(5, 49);
+            this.isCash.Location = new System.Drawing.Point(12, 63);
             this.isCash.Name = "isCash";
             this.isCash.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isCash.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(0)))));
@@ -449,7 +493,7 @@
             // 
             this.isSell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.isSell.EditValue = true;
-            this.isSell.Location = new System.Drawing.Point(246, 49);
+            this.isSell.Location = new System.Drawing.Point(267, 64);
             this.isSell.Name = "isSell";
             this.isSell.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isSell.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(0)))));
@@ -461,43 +505,6 @@
             this.isSell.TabIndex = 28;
             this.isSell.Toggled += new System.EventHandler(this.isSell_Toggled);
             // 
-            // groupControl8
-            // 
-            this.groupControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl8.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl8.CaptionImageOptions.Image")));
-            this.groupControl8.Controls.Add(this.txtNote);
-            this.groupControl8.Location = new System.Drawing.Point(673, 323);
-            this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(335, 136);
-            this.groupControl8.TabIndex = 26;
-            this.groupControl8.Text = "ملاحظة";
-            // 
-            // txtNote
-            // 
-            this.txtNote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNote.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(2, 23);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(331, 111);
-            this.txtNote.TabIndex = 0;
-            // 
-            // isAccount
-            // 
-            this.isAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.isAccount.EditValue = true;
-            this.isAccount.Location = new System.Drawing.Point(385, 49);
-            this.isAccount.Name = "isAccount";
-            this.isAccount.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isAccount.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(0)))));
-            this.isAccount.Properties.Appearance.Options.UseFont = true;
-            this.isAccount.Properties.Appearance.Options.UseForeColor = true;
-            this.isAccount.Properties.OffText = "عرض";
-            this.isAccount.Properties.OnText = "حساب";
-            this.isAccount.Size = new System.Drawing.Size(131, 30);
-            this.isAccount.TabIndex = 0;
-            this.isAccount.Toggled += new System.EventHandler(this.isAccount_EditValueChanged);
-            // 
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -505,7 +512,7 @@
             this.btnClear.Appearance.Options.UseFont = true;
             this.btnClear.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.ImageOptions.Image")));
             this.btnClear.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnClear.Location = new System.Drawing.Point(12, 543);
+            this.btnClear.Location = new System.Drawing.Point(14, 545);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(130, 42);
             this.btnClear.TabIndex = 9;
@@ -518,9 +525,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpTotal.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpTotal.CaptionImageOptions.Image")));
             this.grpTotal.Controls.Add(this.txtTotal);
-            this.grpTotal.Location = new System.Drawing.Point(146, 465);
+            this.grpTotal.Location = new System.Drawing.Point(376, 481);
             this.grpTotal.Name = "grpTotal";
-            this.grpTotal.Size = new System.Drawing.Size(269, 58);
+            this.grpTotal.Size = new System.Drawing.Size(339, 58);
             this.grpTotal.TabIndex = 7;
             this.grpTotal.Text = "المجموع الكلي";
             // 
@@ -531,7 +538,7 @@
             this.txtTotal.Location = new System.Drawing.Point(2, 23);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(265, 30);
+            this.txtTotal.Size = new System.Drawing.Size(335, 30);
             this.txtTotal.TabIndex = 0;
             this.txtTotal.Text = "0";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -541,7 +548,7 @@
             this.groupControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl5.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl5.CaptionImageOptions.Image")));
             this.groupControl5.Controls.Add(this.txtDiscount);
-            this.groupControl5.Location = new System.Drawing.Point(12, 465);
+            this.groupControl5.Location = new System.Drawing.Point(14, 481);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(130, 58);
             this.groupControl5.TabIndex = 5;
@@ -564,11 +571,11 @@
             // dgvProducts
             // 
             this.dgvProducts.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(100)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -581,31 +588,31 @@
             this.total,
             this.note});
             this.dgvProducts.ContextMenuStrip = this.dgvProductMenu;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(100)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProducts.Location = new System.Drawing.Point(12, 99);
-            this.dgvProducts.Name = "dgvProducts";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvProducts.RowHeadersVisible = false;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(100)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProducts.Location = new System.Drawing.Point(14, 100);
+            this.dgvProducts.Name = "dgvProducts";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProducts.RowHeadersVisible = false;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProducts.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvProducts.RowTemplate.Height = 30;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(655, 360);
+            this.dgvProducts.Size = new System.Drawing.Size(701, 375);
             this.dgvProducts.TabIndex = 3;
             this.dgvProducts.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellEndEdit);
             this.dgvProducts.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellValueChanged);
@@ -685,9 +692,9 @@
             this.btnSell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSell.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSell.ImageOptions.Image")));
             this.btnSell.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnSell.Location = new System.Drawing.Point(148, 543);
+            this.btnSell.Location = new System.Drawing.Point(150, 545);
             this.btnSell.Name = "btnSell";
-            this.btnSell.Size = new System.Drawing.Size(267, 44);
+            this.btnSell.Size = new System.Drawing.Size(220, 42);
             this.btnSell.TabIndex = 2;
             this.btnSell.Text = "ادخال و طباعة قائمة";
             this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
@@ -697,9 +704,9 @@
             this.grpClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpClients.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpClients.CaptionImageOptions.Image")));
             this.grpClients.Controls.Add(this.cmbClients);
-            this.grpClients.Location = new System.Drawing.Point(758, 43);
+            this.grpClients.Location = new System.Drawing.Point(811, 45);
             this.grpClients.Name = "grpClients";
-            this.grpClients.Size = new System.Drawing.Size(250, 50);
+            this.grpClients.Size = new System.Drawing.Size(250, 51);
             this.grpClients.TabIndex = 1;
             this.grpClients.Text = "(0 IQD : 0 $)";
             // 
@@ -719,7 +726,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 599);
+            this.ClientSize = new System.Drawing.Size(1073, 599);
             this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -733,6 +740,10 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpDate)).EndInit();
             this.grpDate.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.isAccount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
+            this.groupControl8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpDelegates)).EndInit();
             this.grpDelegates.ResumeLayout(false);
             this.grpDelegates.PerformLayout();
@@ -749,10 +760,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.isDollar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.isCash.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.isSell.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
-            this.groupControl8.ResumeLayout(false);
-            this.groupControl8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.isAccount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpTotal)).EndInit();
             this.grpTotal.ResumeLayout(false);
             this.grpTotal.PerformLayout();

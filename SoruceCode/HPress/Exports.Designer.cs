@@ -116,8 +116,8 @@
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
             this.btnPrint.Enabled = false;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
+            this.btnPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnPrint.Location = new System.Drawing.Point(12, 36);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(44, 57);
@@ -126,8 +126,8 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
+            this.btnSearch.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnSearch.Location = new System.Drawing.Point(62, 36);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(44, 57);
@@ -138,7 +138,7 @@
             // 
             this.groupControl5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl5.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl5.CaptionImage")));
+            this.groupControl5.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl5.CaptionImageOptions.Image")));
             this.groupControl5.Controls.Add(this.txtTotal);
             this.groupControl5.Location = new System.Drawing.Point(10, 456);
             this.groupControl5.Name = "groupControl5";
@@ -160,7 +160,7 @@
             // groupControl4
             // 
             this.groupControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl4.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl4.CaptionImage")));
+            this.groupControl4.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl4.CaptionImageOptions.Image")));
             this.groupControl4.Controls.Add(this.txtBalanceValue);
             this.groupControl4.Location = new System.Drawing.Point(511, 131);
             this.groupControl4.Name = "groupControl4";
@@ -184,8 +184,8 @@
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.Appearance.Options.UseFont = true;
-            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
-            this.btnRemove.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnRemove.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.ImageOptions.Image")));
+            this.btnRemove.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnRemove.Location = new System.Drawing.Point(411, 413);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(82, 37);
@@ -198,8 +198,8 @@
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
+            this.btnUpdate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnUpdate.Location = new System.Drawing.Point(608, 413);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 37);
@@ -212,8 +212,8 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnAdd.Location = new System.Drawing.Point(411, 370);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(279, 37);
@@ -224,7 +224,7 @@
             // grpTypeName
             // 
             this.grpTypeName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpTypeName.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpTypeName.CaptionImage")));
+            this.grpTypeName.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpTypeName.CaptionImageOptions.Image")));
             this.grpTypeName.Controls.Add(this.cmbClients);
             this.grpTypeName.Location = new System.Drawing.Point(409, 76);
             this.grpTypeName.Name = "grpTypeName";
@@ -255,7 +255,7 @@
             this.isDollar.Properties.Appearance.Options.UseForeColor = true;
             this.isDollar.Properties.OffText = "";
             this.isDollar.Properties.OnText = "";
-            this.isDollar.Size = new System.Drawing.Size(88, 30);
+            this.isDollar.Size = new System.Drawing.Size(88, 32);
             this.isDollar.TabIndex = 20;
             this.isDollar.Toggled += new System.EventHandler(this.isDollar_Toggled);
             // 
@@ -277,7 +277,7 @@
             // 
             this.grpNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpNote.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpNote.CaptionImage")));
+            this.grpNote.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpNote.CaptionImageOptions.Image")));
             this.grpNote.Controls.Add(this.txtNote);
             this.grpNote.Location = new System.Drawing.Point(409, 262);
             this.grpNote.Name = "grpNote";
@@ -383,7 +383,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
             this.groupControl1.Controls.Add(this.btnPrint);
             this.groupControl1.Controls.Add(this.groupBox4);
             this.groupControl1.Controls.Add(this.grpTypeName);

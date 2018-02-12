@@ -109,7 +109,7 @@
             this.cmbClients.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbClients.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClients.FormattingEnabled = true;
-            this.cmbClients.Location = new System.Drawing.Point(3, 71);
+            this.cmbClients.Location = new System.Drawing.Point(3, 70);
             this.cmbClients.Name = "cmbClients";
             this.cmbClients.Size = new System.Drawing.Size(376, 27);
             this.cmbClients.TabIndex = 3;
@@ -123,7 +123,7 @@
             this.dateTo.Dock = System.Windows.Forms.DockStyle.Top;
             this.dateTo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTo.Location = new System.Drawing.Point(3, 44);
+            this.dateTo.Location = new System.Drawing.Point(3, 43);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(376, 27);
             this.dateTo.TabIndex = 1;
@@ -136,7 +136,7 @@
             this.dateFrom.Dock = System.Windows.Forms.DockStyle.Top;
             this.dateFrom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFrom.Location = new System.Drawing.Point(3, 17);
+            this.dateFrom.Location = new System.Drawing.Point(3, 16);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(376, 27);
             this.dateFrom.TabIndex = 0;
@@ -148,7 +148,7 @@
             this.cmbDelegates.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbDelegates.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDelegates.FormattingEnabled = true;
-            this.cmbDelegates.Location = new System.Drawing.Point(3, 218);
+            this.cmbDelegates.Location = new System.Drawing.Point(3, 217);
             this.cmbDelegates.Name = "cmbDelegates";
             this.cmbDelegates.Size = new System.Drawing.Size(376, 27);
             this.cmbDelegates.TabIndex = 10;
@@ -202,7 +202,7 @@
             // 
             this.grpPayMethod.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpPayMethod.EditValue = 0;
-            this.grpPayMethod.Location = new System.Drawing.Point(3, 188);
+            this.grpPayMethod.Location = new System.Drawing.Point(3, 187);
             this.grpPayMethod.Name = "grpPayMethod";
             this.grpPayMethod.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "قوائم"),
@@ -215,7 +215,7 @@
             // 
             this.grpCurrency.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpCurrency.EditValue = 2;
-            this.grpCurrency.Location = new System.Drawing.Point(3, 158);
+            this.grpCurrency.Location = new System.Drawing.Point(3, 157);
             this.grpCurrency.Name = "grpCurrency";
             this.grpCurrency.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "دولار"),
@@ -229,7 +229,7 @@
             // 
             this.grpCash.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpCash.EditValue = 2;
-            this.grpCash.Location = new System.Drawing.Point(3, 128);
+            this.grpCash.Location = new System.Drawing.Point(3, 127);
             this.grpCash.Name = "grpCash";
             this.grpCash.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "نقد"),
@@ -243,7 +243,7 @@
             // 
             this.grpImport.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpImport.EditValue = 2;
-            this.grpImport.Location = new System.Drawing.Point(3, 98);
+            this.grpImport.Location = new System.Drawing.Point(3, 97);
             this.grpImport.Name = "grpImport";
             this.grpImport.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "صادر"),
@@ -252,6 +252,7 @@
             this.grpImport.Size = new System.Drawing.Size(376, 30);
             this.grpImport.TabIndex = 6;
             this.grpImport.Visible = false;
+            this.grpImport.SelectedIndexChanged += new System.EventHandler(this.grpImport_SelectedIndexChanged);
             // 
             // groupControl5
             // 
@@ -268,7 +269,7 @@
             this.txtNotCash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNotCash.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtNotCash.Location = new System.Drawing.Point(2, 21);
+            this.txtNotCash.Location = new System.Drawing.Point(2, 20);
             this.txtNotCash.Name = "txtNotCash";
             this.txtNotCash.ReadOnly = true;
             this.txtNotCash.Size = new System.Drawing.Size(196, 30);
@@ -314,7 +315,7 @@
             this.txtRemaining.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtRemaining.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRemaining.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtRemaining.Location = new System.Drawing.Point(2, 21);
+            this.txtRemaining.Location = new System.Drawing.Point(2, 20);
             this.txtRemaining.Name = "txtRemaining";
             this.txtRemaining.ReadOnly = true;
             this.txtRemaining.Size = new System.Drawing.Size(196, 30);
@@ -337,7 +338,7 @@
             this.txtDebit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDebit.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDebit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtDebit.Location = new System.Drawing.Point(2, 21);
+            this.txtDebit.Location = new System.Drawing.Point(2, 20);
             this.txtDebit.Name = "txtDebit";
             this.txtDebit.ReadOnly = true;
             this.txtDebit.Size = new System.Drawing.Size(196, 30);
@@ -360,7 +361,7 @@
             this.txtCash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCash.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtCash.Location = new System.Drawing.Point(2, 21);
+            this.txtCash.Location = new System.Drawing.Point(2, 20);
             this.txtCash.Name = "txtCash";
             this.txtCash.ReadOnly = true;
             this.txtCash.Size = new System.Drawing.Size(196, 30);
@@ -383,7 +384,7 @@
             this.txtBalance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBalance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtBalance.Location = new System.Drawing.Point(2, 21);
+            this.txtBalance.Location = new System.Drawing.Point(2, 20);
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.ReadOnly = true;
             this.txtBalance.Size = new System.Drawing.Size(196, 30);
@@ -406,7 +407,7 @@
             this.txtTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotal.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtTotal.Location = new System.Drawing.Point(2, 21);
+            this.txtTotal.Location = new System.Drawing.Point(2, 20);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(196, 30);
@@ -429,7 +430,7 @@
             this.txtPay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPay.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtPay.Location = new System.Drawing.Point(2, 21);
+            this.txtPay.Location = new System.Drawing.Point(2, 20);
             this.txtPay.Name = "txtPay";
             this.txtPay.ReadOnly = true;
             this.txtPay.Size = new System.Drawing.Size(196, 30);

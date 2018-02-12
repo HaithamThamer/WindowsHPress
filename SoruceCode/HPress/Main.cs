@@ -132,6 +132,8 @@ namespace HPress
         }
         private void isSell_Toggled(object sender, EventArgs e)
         {
+            if (isEditBill)
+                return;
             if (isSell.IsOn)
             {
                 txtClientName.Text = "وارد";
@@ -171,7 +173,7 @@ namespace HPress
             if (txtPaid.Text.Length == 0)
                 txtPaid.Text = "0";
         }
-        
+        bool isEditBill = false;
         private void cmbBills_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -181,6 +183,7 @@ namespace HPress
                 cmbBills.Text = id.ToString();
                 if (cmbBills.Text != string.Empty && bool.Parse(databaseConnection.query(string.Format("select if((count(id) > 0) = '1','true','false') from tbl_bills where id = '{0}';", cmbBills.Text, isSell.IsOn ? "1" : "0")).Rows[0][0].ToString()))
                 {
+                    isEditBill = true;
                     //Info
                     System.Data.DataTable info = databaseConnection.query(string.Format("select tbl_bills.is_account,tbl_clients.name,tbl_bills.is_dollar,tbl_bills.is_cash,tbl_bills.note,tbl_bills.datetime,tbl_bills.discount,tbl_bills.name,tbl_bills.location,tbl_bills.phone,tbl_bills.email,tbl_bills.is_sell,(select name from tbl_clients where tbl_clients.id = tbl_bills.delegate_id),tbl_bills.delegate_percent from tbl_bills,tbl_clients where tbl_bills.client_id = tbl_clients.id and tbl_bills.id = '{0}'", cmbBills.Text));
                     isAccount.IsOn = bool.Parse(info.Rows[0][0].ToString());
@@ -198,7 +201,7 @@ namespace HPress
                     isSell.IsOn = bool.Parse(info.Rows[0][11].ToString());
                     cmbDelegates.Text = info.Rows[0][12].ToString();
                     txtDelegatePercent.Text = info.Rows[0][13].ToString(); ;
-
+                    
                     System.Data.DataTable dt = databaseConnection.query(string.Format(" select description,count,price,(price * count) as `total`,note from tbl_products where bill_id = '{0}';", cmbBills.Text));
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
@@ -218,6 +221,7 @@ namespace HPress
                     isDollar.Enabled = isCash.Enabled = Properties.Settings.Default.userType == (int)Enumerators.UserType.Admin;
                     txtTotal.Text = sum().ToString().Contains(".") ? (sum() - double.Parse(txtDiscount.Text)).ToString() : (sum() - double.Parse(txtDiscount.Text)).ToString("#,###");
                     txtPaid.Text = txtPaid.Text.Length == 0 ? "0" : txtPaid.Text;
+                    isEditBill = false;
                 }
             }
             e.Handled = !char.IsNumber(e.KeyChar) && !char.IsControl(e.KeyChar);
@@ -390,7 +394,7 @@ namespace HPress
                     dgvProducts,
                     isAccount.IsOn,
                     isDollar.IsOn,
-                    dateFrom.Value,
+                    cmbBills.Enabled ? dateFrom.Value : DateTime.Parse(grpDate.Text),
                     DateTime.Now,
                     id,
                     clientId,
@@ -401,6 +405,7 @@ namespace HPress
                     double.Parse(txtDiscount.Text),
                     double.Parse(txtTotal.Text),
                     isCash.IsOn,
+                    isSell.IsOn,
                     txtNote.Text,
                     isDollar.IsOn ? remaining / Properties.Settings.Default.dollarValue : remaining,
                     //paid,
@@ -446,7 +451,7 @@ namespace HPress
 
         private void cmbClients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            System.Data.DataTable dt = databaseConnection.query(string.Format("select id,name,location, mobile, email,ifnull((ifnull((select SUM(IF(tbl_balance.is_dollar = 1 ,tbl_balance.value * getDollar(tbl_balance.creation),tbl_balance.value)) from tbl_balance,tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = 1 and tbl_balance.is_import = 1),0) - ifnull((select sum(if(tbl_bills.is_dollar = 0,tbl_products.price  * tbl_products.count,tbl_products.price*getDollar(tbl_bills.datetime)  * tbl_products.count)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1),0) + (select sum(ifnull(if(tbl_bills.is_dollar = 1,tbl_bills.discount * getDollar(tbl_bills.`datetime`),tbl_bills.discount),0)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = 1)),0) as `remaining`from tbl_clients where name = '{0}'", cmbClients.Text));
+            System.Data.DataTable dt = databaseConnection.query(string.Format("select id,name,location, mobile, email,ifnull((ifnull((select SUM(IF(tbl_balance.is_dollar = 1 ,tbl_balance.value * getDollar(tbl_balance.creation),tbl_balance.value)) from tbl_balance,tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = '{1}' and tbl_balance.is_import = 1),0) - ifnull((select sum(if(tbl_bills.is_dollar = 0,tbl_products.price  * tbl_products.count,tbl_products.price*getDollar(tbl_bills.datetime)  * tbl_products.count)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{1}'),0) + (select sum(ifnull(if(tbl_bills.is_dollar = 1,tbl_bills.discount * getDollar(tbl_bills.`datetime`),tbl_bills.discount),0)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{1}')),0) as `remaining`from tbl_clients where name = '{0}'", cmbClients.Text,isSell.IsOn ? "1" : "0"));
             clientId = int.Parse(dt.Rows[0][0].ToString());
             txtClientName.Text = dt.Rows[0][1].ToString();
             txtClientLocation.Text = dt.Rows[0][2].ToString();

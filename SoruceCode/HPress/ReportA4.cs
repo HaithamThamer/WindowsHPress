@@ -123,7 +123,7 @@ namespace HPress
             return "";
         }
         bool isDollar = false;
-        public ReportA4(System.Windows.Forms.DataGridView dgvProducts,bool isAccount, bool isDollar,DateTime dateFrom,DateTime dateTo,int billId,int clientId,string clientName,string clientMobile,string clientEmail,string clientAddress,double discount,double total,bool isCash,string note,/*double receive,*/double paid,double remaining)
+        public ReportA4(System.Windows.Forms.DataGridView dgvProducts,bool isAccount, bool isDollar,DateTime dateFrom,DateTime dateTo,int billId,int clientId,string clientName,string clientMobile,string clientEmail,string clientAddress,double discount,double total,bool isCash,bool isSell,string note,/*double receive,*/double paid,double remaining)
         {
             this.dgvProducts = dgvProducts;
             InitializeComponent();
@@ -163,6 +163,8 @@ namespace HPress
             lblSubTotalSign.Text = isDollar ? "$" : "IQD";
             picMain.Image = Image.FromFile(Properties.Settings.Default.imageLogoPrint);
             lblBillInfo.BackColor = lblClientInfo.BackColor = lblConditions.BackColor = lblAccount.BackColor = lblFirstTotalTitle.BackColor = lblSaleTotal.BackColor = lblFinalTotalTitle.BackColor = lblReceiveTtile.BackColor = lblRemainingTitle.BackColor = System.Drawing.ColorTranslator.FromHtml(Properties.Settings.Default.color);
+
+            billType.Visible = isSell ? false : true;
         }
         XRTable table(System.Windows.Forms.DataGridView products)
         {
@@ -211,7 +213,7 @@ namespace HPress
                 if (i % 2 == 0)
                     d.BackColor = p.BackColor = q.BackColor = n.BackColor = a.BackColor = Color.FromArgb(255, 255, 255);
                 else
-                    d.BackColor = p.BackColor = q.BackColor = n.BackColor = a.BackColor = Color.FromArgb(204, 204, 204);
+                    d.BackColor = p.BackColor = q.BackColor = n.BackColor = a.BackColor = Color.FromArgb(234, 234, 234);
                 if (i < products.Rows.Count - 1)
                 {
                     d.Text = products.Rows[i].Cells["description"].Value == null ? " ":products.Rows[i].Cells["description"].Value.ToString();

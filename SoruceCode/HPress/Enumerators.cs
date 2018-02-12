@@ -27,7 +27,8 @@ namespace HPress
             Client,
             Supplier,
             Delegate,
-            Employer
+            Employer,
+            ClientSupplier
         }
         public enum UserType
         {

@@ -67,6 +67,7 @@
             this.grpTotalDinarDebits = new DevExpress.XtraEditors.GroupControl();
             this.txtTotalDinarDebits = new System.Windows.Forms.TextBox();
             this.btnReportClient = new DevExpress.XtraEditors.SimpleButton();
+            this.grpClientType = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -92,6 +93,7 @@
             this.grpTotalDollarDebits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpTotalDinarDebits)).BeginInit();
             this.grpTotalDinarDebits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpClientType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResults
@@ -149,8 +151,8 @@
             // 
             this.btnPrint.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Appearance.Options.UseFont = true;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.ImageOptions.Image")));
+            this.btnPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnPrint.Location = new System.Drawing.Point(12, 36);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(44, 57);
@@ -159,8 +161,8 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
+            this.btnSearch.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnSearch.Location = new System.Drawing.Point(62, 36);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(44, 57);
@@ -170,9 +172,9 @@
             // groupControl4
             // 
             this.groupControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl4.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl4.CaptionImage")));
+            this.groupControl4.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl4.CaptionImageOptions.Image")));
             this.groupControl4.Controls.Add(this.txtBalanceValue);
-            this.groupControl4.Location = new System.Drawing.Point(501, 226);
+            this.groupControl4.Location = new System.Drawing.Point(501, 245);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(275, 57);
             this.groupControl4.TabIndex = 25;
@@ -182,7 +184,7 @@
             // 
             this.txtBalanceValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBalanceValue.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBalanceValue.Location = new System.Drawing.Point(2, 23);
+            this.txtBalanceValue.Location = new System.Drawing.Point(2, 21);
             this.txtBalanceValue.Name = "txtBalanceValue";
             this.txtBalanceValue.Size = new System.Drawing.Size(271, 36);
             this.txtBalanceValue.TabIndex = 0;
@@ -195,8 +197,8 @@
             this.btnRemove.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.Appearance.Options.UseFont = true;
             this.btnRemove.Enabled = false;
-            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
-            this.btnRemove.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnRemove.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.ImageOptions.Image")));
+            this.btnRemove.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnRemove.Location = new System.Drawing.Point(399, 577);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(82, 37);
@@ -210,8 +212,8 @@
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
             this.btnUpdate.Enabled = false;
-            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
+            this.btnUpdate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnUpdate.Location = new System.Drawing.Point(694, 577);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 37);
@@ -224,8 +226,8 @@
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
+            this.btnAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnAdd.Location = new System.Drawing.Point(399, 534);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(377, 37);
@@ -236,22 +238,24 @@
             // grpClients
             // 
             this.grpClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpClients.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpClients.CaptionImage")));
+            this.grpClients.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpClients.CaptionImageOptions.Image")));
+            this.grpClients.Controls.Add(this.grpClientType);
             this.grpClients.Controls.Add(this.cmbClients);
             this.grpClients.Location = new System.Drawing.Point(399, 171);
             this.grpClients.Name = "grpClients";
-            this.grpClients.Size = new System.Drawing.Size(377, 46);
+            this.grpClients.Size = new System.Drawing.Size(377, 56);
             this.grpClients.TabIndex = 21;
             this.grpClients.Text = "العملاء";
             // 
             // cmbClients
             // 
-            this.cmbClients.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbClients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbClients.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClients.FormattingEnabled = true;
-            this.cmbClients.Location = new System.Drawing.Point(2, 23);
+            this.cmbClients.Location = new System.Drawing.Point(5, 24);
             this.cmbClients.Name = "cmbClients";
-            this.cmbClients.Size = new System.Drawing.Size(373, 27);
+            this.cmbClients.Size = new System.Drawing.Size(230, 27);
             this.cmbClients.TabIndex = 0;
             this.cmbClients.DropDown += new System.EventHandler(this.cmbClients_DropDown);
             this.cmbClients.SelectedIndexChanged += new System.EventHandler(this.cmbClients_SelectedIndexChanged);
@@ -267,18 +271,18 @@
             this.isDollar.Properties.Appearance.Options.UseForeColor = true;
             this.isDollar.Properties.OffText = "";
             this.isDollar.Properties.OnText = "";
-            this.isDollar.Size = new System.Drawing.Size(88, 30);
+            this.isDollar.Size = new System.Drawing.Size(88, 32);
             this.isDollar.TabIndex = 20;
             this.isDollar.Toggled += new System.EventHandler(this.isDollar_Toggled);
             // 
             // grpNote
             // 
             this.grpNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpNote.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpNote.CaptionImage")));
+            this.grpNote.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpNote.CaptionImageOptions.Image")));
             this.grpNote.Controls.Add(this.txtNote);
-            this.grpNote.Location = new System.Drawing.Point(399, 353);
+            this.grpNote.Location = new System.Drawing.Point(399, 372);
             this.grpNote.Name = "grpNote";
-            this.grpNote.Size = new System.Drawing.Size(377, 175);
+            this.grpNote.Size = new System.Drawing.Size(377, 156);
             this.grpNote.TabIndex = 32;
             this.grpNote.Text = "ملاحظة";
             // 
@@ -286,10 +290,10 @@
             // 
             this.txtNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNote.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(2, 23);
+            this.txtNote.Location = new System.Drawing.Point(2, 21);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(373, 150);
+            this.txtNote.Size = new System.Drawing.Size(373, 133);
             this.txtNote.TabIndex = 0;
             // 
             // grpDollar
@@ -298,7 +302,7 @@
             this.grpDollar.Controls.Add(this.isDollar);
             this.grpDollar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDollar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(0)))));
-            this.grpDollar.Location = new System.Drawing.Point(401, 226);
+            this.grpDollar.Location = new System.Drawing.Point(401, 244);
             this.grpDollar.Name = "grpDollar";
             this.grpDollar.Size = new System.Drawing.Size(94, 58);
             this.grpDollar.TabIndex = 34;
@@ -323,7 +327,7 @@
             this.groupBox2.Controls.Add(this.date);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(0)))));
-            this.groupBox2.Location = new System.Drawing.Point(399, 289);
+            this.groupBox2.Location = new System.Drawing.Point(399, 308);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(377, 58);
             this.groupBox2.TabIndex = 36;
@@ -380,7 +384,7 @@
             // 
             // grpMain
             // 
-            this.grpMain.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpMain.CaptionImage")));
+            this.grpMain.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpMain.CaptionImageOptions.Image")));
             this.grpMain.Controls.Add(this.grpDollarDebits);
             this.grpMain.Controls.Add(this.grpDinarDebits);
             this.grpMain.Controls.Add(this.grpPayMethod);
@@ -412,7 +416,7 @@
             // grpDollarDebits
             // 
             this.grpDollarDebits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.grpDollarDebits.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpDollarDebits.CaptionImage")));
+            this.grpDollarDebits.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpDollarDebits.CaptionImageOptions.Image")));
             this.grpDollarDebits.Controls.Add(this.txtDollarDebits);
             this.grpDollarDebits.Location = new System.Drawing.Point(12, 642);
             this.grpDollarDebits.Name = "grpDollarDebits";
@@ -425,7 +429,7 @@
             this.txtDollarDebits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtDollarDebits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDollarDebits.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDollarDebits.Location = new System.Drawing.Point(2, 23);
+            this.txtDollarDebits.Location = new System.Drawing.Point(2, 21);
             this.txtDollarDebits.Name = "txtDollarDebits";
             this.txtDollarDebits.ReadOnly = true;
             this.txtDollarDebits.Size = new System.Drawing.Size(160, 30);
@@ -437,7 +441,7 @@
             this.grpDinarDebits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.grpDinarDebits.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDinarDebits.Appearance.Options.UseFont = true;
-            this.grpDinarDebits.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpDinarDebits.CaptionImage")));
+            this.grpDinarDebits.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpDinarDebits.CaptionImageOptions.Image")));
             this.grpDinarDebits.Controls.Add(this.txtDinarDebits);
             this.grpDinarDebits.Location = new System.Drawing.Point(189, 642);
             this.grpDinarDebits.Name = "grpDinarDebits";
@@ -450,7 +454,7 @@
             this.txtDinarDebits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtDinarDebits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDinarDebits.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDinarDebits.Location = new System.Drawing.Point(2, 23);
+            this.txtDinarDebits.Location = new System.Drawing.Point(2, 21);
             this.txtDinarDebits.Name = "txtDinarDebits";
             this.txtDinarDebits.ReadOnly = true;
             this.txtDinarDebits.Size = new System.Drawing.Size(200, 30);
@@ -483,7 +487,7 @@
             // grpTotalDollarDebits
             // 
             this.grpTotalDollarDebits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpTotalDollarDebits.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpTotalDollarDebits.CaptionImage")));
+            this.grpTotalDollarDebits.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpTotalDollarDebits.CaptionImageOptions.Image")));
             this.grpTotalDollarDebits.Controls.Add(this.txtTotalDollarDebits);
             this.grpTotalDollarDebits.Location = new System.Drawing.Point(404, 106);
             this.grpTotalDollarDebits.Name = "grpTotalDollarDebits";
@@ -496,7 +500,7 @@
             this.txtTotalDollarDebits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtTotalDollarDebits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotalDollarDebits.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalDollarDebits.Location = new System.Drawing.Point(2, 23);
+            this.txtTotalDollarDebits.Location = new System.Drawing.Point(2, 21);
             this.txtTotalDollarDebits.Name = "txtTotalDollarDebits";
             this.txtTotalDollarDebits.Size = new System.Drawing.Size(160, 30);
             this.txtTotalDollarDebits.TabIndex = 1;
@@ -507,7 +511,7 @@
             this.grpTotalDinarDebits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpTotalDinarDebits.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpTotalDinarDebits.Appearance.Options.UseFont = true;
-            this.grpTotalDinarDebits.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpTotalDinarDebits.CaptionImage")));
+            this.grpTotalDinarDebits.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpTotalDinarDebits.CaptionImageOptions.Image")));
             this.grpTotalDinarDebits.Controls.Add(this.txtTotalDinarDebits);
             this.grpTotalDinarDebits.Location = new System.Drawing.Point(572, 106);
             this.grpTotalDinarDebits.Name = "grpTotalDinarDebits";
@@ -520,7 +524,7 @@
             this.txtTotalDinarDebits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtTotalDinarDebits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotalDinarDebits.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalDinarDebits.Location = new System.Drawing.Point(2, 23);
+            this.txtTotalDinarDebits.Location = new System.Drawing.Point(2, 21);
             this.txtTotalDinarDebits.Name = "txtTotalDinarDebits";
             this.txtTotalDinarDebits.Size = new System.Drawing.Size(200, 30);
             this.txtTotalDinarDebits.TabIndex = 0;
@@ -531,14 +535,27 @@
             this.btnReportClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReportClient.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportClient.Appearance.Options.UseFont = true;
-            this.btnReportClient.Image = ((System.Drawing.Image)(resources.GetObject("btnReportClient.Image")));
-            this.btnReportClient.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnReportClient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReportClient.ImageOptions.Image")));
+            this.btnReportClient.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnReportClient.Location = new System.Drawing.Point(399, 620);
             this.btnReportClient.Name = "btnReportClient";
             this.btnReportClient.Size = new System.Drawing.Size(377, 37);
             this.btnReportClient.TabIndex = 39;
             this.btnReportClient.Text = "تقرير العميل";
             this.btnReportClient.Click += new System.EventHandler(this.btnReportClient_Click);
+            // 
+            // grpClientType
+            // 
+            this.grpClientType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpClientType.EditValue = 0;
+            this.grpClientType.Location = new System.Drawing.Point(241, 24);
+            this.grpClientType.Name = "grpClientType";
+            this.grpClientType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "العملاء"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "الموردين")});
+            this.grpClientType.Size = new System.Drawing.Size(122, 27);
+            this.grpClientType.TabIndex = 1;
+            this.grpClientType.SelectedIndexChanged += new System.EventHandler(this.grpClientType_SelectedIndexChanged);
             // 
             // ClientsImport
             // 
@@ -586,6 +603,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpTotalDinarDebits)).EndInit();
             this.grpTotalDinarDebits.ResumeLayout(false);
             this.grpTotalDinarDebits.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpClientType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -625,5 +643,6 @@
         private System.Windows.Forms.TextBox txtDollarDebits;
         private DevExpress.XtraEditors.GroupControl grpDinarDebits;
         private System.Windows.Forms.TextBox txtDinarDebits;
+        private DevExpress.XtraEditors.RadioGroup grpClientType;
     }
 }

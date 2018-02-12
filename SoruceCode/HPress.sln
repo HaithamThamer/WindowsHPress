@@ -1,8 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPress", "HPress\HPress.csproj", "{BB7EC253-FE6C-4772-ACA4-570350E7B4A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDatabaseConnection", "..\..\WindowsHDatabaseConnection\HDatabaseConnection\HDatabaseConnection.csproj", "{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,8 +16,15 @@ Global
 		{BB7EC253-FE6C-4772-ACA4-570350E7B4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB7EC253-FE6C-4772-ACA4-570350E7B4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB7EC253-FE6C-4772-ACA4-570350E7B4A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1129D92F-F1B2-4ED0-83E8-494E99BB8469}
 	EndGlobalSection
 EndGlobal
