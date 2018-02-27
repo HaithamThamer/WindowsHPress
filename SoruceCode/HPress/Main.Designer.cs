@@ -163,7 +163,7 @@
             this.dateFrom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateFrom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFrom.Location = new System.Drawing.Point(2, 26);
+            this.dateFrom.Location = new System.Drawing.Point(2, 21);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(170, 27);
             this.dateFrom.TabIndex = 37;
@@ -234,7 +234,7 @@
             // 
             this.txtDelegatePercent.Dock = System.Windows.Forms.DockStyle.Left;
             this.txtDelegatePercent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDelegatePercent.Location = new System.Drawing.Point(2, 23);
+            this.txtDelegatePercent.Location = new System.Drawing.Point(2, 21);
             this.txtDelegatePercent.Name = "txtDelegatePercent";
             this.txtDelegatePercent.Size = new System.Drawing.Size(35, 27);
             this.txtDelegatePercent.TabIndex = 21;
@@ -244,7 +244,7 @@
             this.cmbDelegates.Dock = System.Windows.Forms.DockStyle.Right;
             this.cmbDelegates.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDelegates.FormattingEnabled = true;
-            this.cmbDelegates.Location = new System.Drawing.Point(43, 23);
+            this.cmbDelegates.Location = new System.Drawing.Point(43, 21);
             this.cmbDelegates.Name = "cmbDelegates";
             this.cmbDelegates.Size = new System.Drawing.Size(290, 27);
             this.cmbDelegates.TabIndex = 0;
@@ -409,7 +409,7 @@
             // 
             this.txtPaid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPaid.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaid.Location = new System.Drawing.Point(2, 23);
+            this.txtPaid.Location = new System.Drawing.Point(2, 21);
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.Size = new System.Drawing.Size(216, 30);
             this.txtPaid.TabIndex = 0;
@@ -451,7 +451,7 @@
             this.cmbBills.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbBills.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBills.FormattingEnabled = true;
-            this.cmbBills.Location = new System.Drawing.Point(2, 23);
+            this.cmbBills.Location = new System.Drawing.Point(2, 21);
             this.cmbBills.Name = "cmbBills";
             this.cmbBills.Size = new System.Drawing.Size(75, 27);
             this.cmbBills.TabIndex = 28;
@@ -535,7 +535,7 @@
             // 
             this.txtTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotal.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(2, 23);
+            this.txtTotal.Location = new System.Drawing.Point(2, 21);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(335, 30);
@@ -558,7 +558,7 @@
             // 
             this.txtDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDiscount.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(2, 23);
+            this.txtDiscount.Location = new System.Drawing.Point(2, 21);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(126, 30);
             this.txtDiscount.TabIndex = 0;
@@ -715,7 +715,7 @@
             this.cmbClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbClients.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClients.FormattingEnabled = true;
-            this.cmbClients.Location = new System.Drawing.Point(2, 23);
+            this.cmbClients.Location = new System.Drawing.Point(2, 21);
             this.cmbClients.Name = "cmbClients";
             this.cmbClients.Size = new System.Drawing.Size(246, 27);
             this.cmbClients.TabIndex = 0;

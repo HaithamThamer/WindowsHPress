@@ -39,7 +39,7 @@ namespace HPress
         {
             if (txtClientName.Text != string.Empty)
             {
-                databaseConnection.queryNonReader(string.Format("insert into tbl_clients (name,location,mobile,email,is_active,type,percent) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}');", txtClientName.Text, txtClientLocation.Text, txtClientMobile.Text, txtEmail.Text, isActive.IsOn ? "1" : "0", rdoType.SelectedIndex, txtPercent.Text == "" ? "0" : txtPercent.Text));
+                databaseConnection.queryNonReader(string.Format("insert into tbl_clients (name,location,mobile,email,is_active,type,percent) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}');", txtClientName.Text, txtClientLocation.Text, txtClientMobile.Text, txtEmail.Text, isActive.IsOn ? "1" : "0", rdoType.SelectedIndex == 1 ? 0 : rdoType.SelectedIndex, txtPercent.Text == "" ? "0" : txtPercent.Text));
                 reloadData();
             }
         }
@@ -64,7 +64,7 @@ namespace HPress
         {
             if (clientId != 0)
             {
-                databaseConnection.queryNonReader(string.Format("update tbl_clients set name = '{1}',location = '{2}',mobile = '{3}',email = '{4}',type = '{5}',is_active = '{6}',percent = '{7}' where tbl_clients.id = '{0}';", clientId, txtClientName.Text, txtClientLocation.Text, txtClientMobile.Text, txtEmail.Text, rdoType.SelectedIndex, isActive.IsOn ? "1" : "0",txtPercent.Text));
+                databaseConnection.queryNonReader(string.Format("update tbl_clients set name = '{1}',location = '{2}',mobile = '{3}',email = '{4}',type = '{5}',is_active = '{6}',percent = '{7}' where tbl_clients.id = '{0}';", clientId, txtClientName.Text, txtClientLocation.Text, txtClientMobile.Text, txtEmail.Text, rdoType.SelectedIndex == 1 ? 0 : rdoType.SelectedIndex, isActive.IsOn ? "1" : "0",txtPercent.Text));
                 reloadData();
                 clientId = 0;
             }
@@ -83,6 +83,11 @@ namespace HPress
         private void rdoType_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtPercent.Enabled = rdoType.SelectedIndex == (int)Enumerators.clientType.Delegate;
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            new Users(databaseConnection).ShowDialog();
         }
     }
 }

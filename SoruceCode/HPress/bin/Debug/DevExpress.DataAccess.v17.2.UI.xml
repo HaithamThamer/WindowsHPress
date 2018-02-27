@@ -717,61 +717,41 @@
 
 
         </member>
-        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView">
+        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView">
 
             <summary>
-                <para>Provides a view for the Select the Data Context page of the Data Source Wizard in WinForms applications.
+                <para>Provides a view for the Select the Connection String page of the Data Source Wizard in WinForms applications.
 </para>
             </summary>
 
         </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.#ctor">
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.#ctor">
             <summary>
-                <para>Initializes a new instance of the ChooseEFContextPageView class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.#ctor(DevExpress.DataAccess.Wizard.EFWizardOptions)">
-            <summary>
-                <para>Initializes a new instance of the ChooseEFContextPageView class with the specified settings.
-</para>
-            </summary>
-            <param name="options">
-		An <see cref="T:DevExpress.DataAccess.Wizard.EFWizardOptions"/> enumeration value.
-
-            </param>
-
-
-        </member>
-        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.BrowseForAssembly">
-            <summary>
-                <para>Occurs after the <b>Browse</b> button is clicked on a wizard page and an assembly is selected.
+                <para>Initializes a new instance of the ChooseEFConnectionStringPageView class with the default settings.
 </para>
             </summary>
 
 
         </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.ContextName">
+        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.Changed">
             <summary>
-                <para>Specifies the item selected in the list of available data contexts.
+                <para>Occurs when the selected item in the list of available connections is changed.
 </para>
             </summary>
-            <value>A string that specifies the selected data context.
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.ExistingConnectionName">
+            <summary>
+                <para>Gets the name of the connection selected from the list of available connections.
+</para>
+            </summary>
+            <value>A string specifying the name of the selected connection. 
 </value>
 
 
         </member>
-        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.ContextNameChanged">
-            <summary>
-                <para>Occurs when the selected item in the list of available data contexts is changed.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.HeaderDescription">
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.HeaderDescription">
             <summary>
                 <para>Specifies the description of the current wizard page.
 </para>
@@ -781,23 +761,45 @@
 
 
         </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.Initialize">
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.Initialize">
             <summary>
-                <para>Initializes a wizard page with a list of available data contexts.
+                <para>Initializes a wizard page with the list of available connections.
 </para>
             </summary>
 
 
         </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.RefreshContextList(System.Collections.Generic.IEnumerable`1)">
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.SetConnections(System.Collections.Generic.IEnumerable`1)">
             <summary>
-                <para>Changes the list of available data contexts.
+                <para>Changes the list of existing connections on a wizard page.
 </para>
             </summary>
-            <param name="containers">
-		A collection of <see cref="T:DevExpress.Entity.Model.IContainerInfo"/> objects containing settings of data contexts.
+            <param name="connectionNames">
+		A collection of strings specifying connection names.
 
             </param>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.SetSelectedConnection(System.String)">
+            <summary>
+                <para>Changes the selected item from the list of available connections.
+</para>
+            </summary>
+            <param name="connectionName">
+		A string that specifies the name of the connection to be selected.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.ShouldCreateNewConnection">
+            <summary>
+                <para>Gets whether to create a new data connection or use an existing one from the list.
+</para>
+            </summary>
+            <value><b>true</b>, to create a new connection; otherwise, <b>false</b>. 
+</value>
 
 
         </member>
@@ -1085,88 +1087,6 @@
 
 
         </member>
-        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView">
-
-            <summary>
-                <para>Provides a view for the Save the Connection String page of the Data Source Wizard in WinForms applications.
-
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.#ctor">
-            <summary>
-                <para>Initializes a new instance of the SaveConnectionPageView class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.ConnectionName">
-            <summary>
-                <para>Specifies the name of the created connection.
-</para>
-            </summary>
-            <value>A string specifying the name of the created connection.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.HeaderDescription">
-            <summary>
-                <para>Specifies the description of the current wizard page.
-</para>
-            </summary>
-            <value>A <see cref="T:System.String"/> value that specifies the page description.
-</value>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.SetCanSaveToStorage(System.Boolean)">
-            <summary>
-                <para>Sets whether the connection string can be saved to the dedicated storage.
-</para>
-            </summary>
-            <param name="value">
-		<b>true</b>, if the connection string can be saved to the storage; otherwise, <b>false</b>.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.SetConnectionUsesServerAuth(System.Boolean)">
-            <summary>
-                <para>Sets whether the data connection uses server authentication.
-
-</para>
-            </summary>
-            <param name="value">
-		<b>true</b>, if the data connection uses server authentication; otherwise, <b>false</b>.
-
-            </param>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.ShouldSaveConnectionString">
-            <summary>
-                <para>Specifies whether to save the connection string to the dedicated storage.
-</para>
-            </summary>
-            <value><b>true</b>, to save the connection string; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.ShouldSaveCredentials">
-            <summary>
-                <para>Gets whether to save the user credentials along with the connection string.
-</para>
-            </summary>
-            <value><b>true</b>, to save the user credentials; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
         <member name="T:DevExpress.DataAccess.UI.ObjectBinding.EditParametersContext">
 
             <summary>
@@ -1336,72 +1256,6 @@
 
         </member>
         <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditDataMemberContext.SolutionTypesProvider">
-            <summary>
-                <para>Specifies an object that provides access to the known types in the current solution.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.Entity.ProjectModel.ISolutionTypesProvider"/> interface.
-</value>
-
-
-        </member>
-        <member name="T:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext">
-
-            <summary>
-                <para>Provides settings required to edit the constructors of an object data source.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.#ctor">
-            <summary>
-                <para>Initializes a new instance of the EditConstructorContext class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.OperationMode">
-            <summary>
-                <para>Specifies the availability of an object data source's data, schema or both on the client.
-</para>
-            </summary>
-            <value>An <see cref="T:DevExpress.DataAccess.Wizard.OperationMode"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.ParameterService">
-            <summary>
-                <para>Specifies an object that provides a service functionality to manage report parameters.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.PropertyGridServices">
-            <summary>
-                <para>Specifies services that provide functionality to custom parameter editors displayed in the Property Grid that is invoked from the Data Source wizard.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:System.IServiceProvider"/> interface that is used to obtain the service object of a specific type.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.RepositoryItemsProvider">
-            <summary>
-                <para>Specifies an object that provides repository items for editing query parameters.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.SolutionTypesProvider">
             <summary>
                 <para>Specifies an object that provides access to the known types in the current solution.
 </para>
@@ -2817,105 +2671,6 @@
 
 
         </member>
-        <member name="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1">
-
-            <summary>
-                <para>Provides functionality to customize the Data Source Wizard.
-</para>
-            </summary>
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.Model">
-            <summary>
-                <para>Provides access to a document model associated with a custom wizard page.
-
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.XtraReports.Wizards.XtraReportModel"/> or <see cref="T:DevExpress.DashboardCommon.DashboardDataSourceModel"/> object.
-</value>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterInstance``1(``0)">
-            <summary>
-                <para>Registers a specified service instance.
-</para>
-            </summary>
-            <param name="instance">
-		A server instance.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterPage``2">
-            <summary>
-                <para>Registers a custom wizard page.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterPageView``2">
-            <summary>
-                <para>Registers a custom wizard page view.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterType``2">
-            <summary>
-                <para>Registers a service type.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.Resolve(System.Type)">
-            <summary>
-                <para>Returns the list of available data providers from the internal container.
-</para>
-            </summary>
-            <param name="serviceType">
-		A <see cref="T:System.Type"/> object.
-
-            </param>
-            <returns>A <see cref="T:System.Object"/> value.
-</returns>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.StartPage">
-            <summary>
-                <para>Specifies the starting page of a wizard.
-</para>
-            </summary>
-            <value>A <see cref="T:System.Type"/> object.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.WizardSize">
-            <summary>
-                <para>Specifies the dimensions of the wizard window.
-</para>
-            </summary>
-            <value>A <see cref="T:System.Drawing.Size"/> structure.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.WizardTitle">
-            <summary>
-                <para>Specifies the title of the wizard window.
-</para>
-            </summary>
-            <value>A <see cref="T:System.String"/> value.
-</value>
-
-
-        </member>
         <member name="T:DevExpress.DataAccess.UI.Design.DataSourceOptionsContainer">
 
             <summary>
@@ -3214,120 +2969,6 @@
 
 
         </member>
-        <member name="T:DevExpress.DataAccess.UI.Sql.EditQueryContext">
-
-            <summary>
-                <para>Contains settings used to display the Query Builder dialog when the <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.EditQuery"/> or <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.ManageQueries"/> method is called.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Sql.EditQueryContext.#ctor">
-            <summary>
-                <para>Initializes a new instance of the EditQueryContext class.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.ConnectionProviderService">
-            <summary>
-                <para>Specifies an object that enables the data connection's serialization.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IConnectionProviderService"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.DBSchemaProvider">
-            <summary>
-                <para>For internal use.</para>
-            </summary>
-            <value> </value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.DBSchemaProviderEx">
-            <summary>
-                <para>Specifies a database schema provider for the Query Builder.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IDBSchemaProviderEx"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.DisplayNameProvider">
-            <summary>
-                <para>Specifies a provider of display names to data fields in the Query Builder dialog.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.Data.IDisplayNameProvider"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.Options">
-            <summary>
-                <para>Specifies the <b>Edit Query</b> dialog options.
-</para>
-            </summary>
-            <value>A <see cref="SqlWizardOptions"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.ParameterService">
-            <summary>
-                <para>Specifies an object that provides a service functionality to manage report parameters.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.PropertyGridServices">
-            <summary>
-                <para>Specifies an object that provides a service functionality to the Property Grid.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:System.IServiceProvider"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.QueryValidator">
-            <summary>
-                <para>Specifies an object that is used to validate SQL strings.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.RepositoryItemsProvider">
-            <summary>
-                <para>Specifies an object that provides repository items for editing query parameters.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.ResultSchemaProvider">
-            <summary>
-                <para>Specifies the provider of a data source result schema.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IResultSchemaProvider"/> interface.
-</value>
-
-
-        </member>
         <member name="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider">
 
             <summary>
@@ -3347,152 +2988,6 @@
             </param>
             <returns>A <see cref="RepositoryItem"/> object.
 </returns>
-
-
-        </member>
-        <member name="T:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext">
-
-            <summary>
-                <para>Specifies the Query Builder options when using it in a standalone mode.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.#ctor">
-            <summary>
-                <para>Initializes a new instance of the QueryBuilderEditQueryContext class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ConnectionProviderService">
-            <summary>
-                <para>Specifies an object that enables the data connection's serialization.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IConnectionProviderService"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.CustomQueryValidator">
-            <summary>
-                <para>Provides access to a custom SQL query validator.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.DBSchemaProvider">
-            <summary>
-                <para>Specifies a database schema provider for the Query Builder.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IDBSchemaProviderEx"/> interface that provides the capability to customize the data source schema.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.DisplayNameProvider">
-            <summary>
-                <para>Specifies a provider of display names to data fields in the Query Builder dialog.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.Data.IDisplayNameProvider"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.EnableCustomSql">
-            <summary>
-                <para>Specifies whether or not the Query Builder allows end-users to create and execute custom SQL queries.
-</para>
-            </summary>
-            <value><b>true</b>, to allow end-users to use custom SQL queries; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ExpressionEditorContext">
-            <summary>
-                <para>Specifies the object enabling customization of the Expression Editor. 
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Data.Controls.ExpressionEditor.ExpressionEditorContext"/> object.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.LegacyExpressionEditor">
-            <summary>
-                <para>Enables a user to switch to an older version of the Expression Editor that does not support intelligent code completion. 
-</para>
-            </summary>
-            <value><b>true</b>, to use the older Expression Editor version; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ParameterService">
-            <summary>
-                <para>Provides access to the service for managing report parameters.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.PropertyGridServices">
-            <summary>
-                <para>Specifies an object that provides a service functionality to the Property Grid.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:System.IServiceProvider"/> interface that is used to obtain the service object of a specific type.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.QueryBuilderLight">
-            <summary>
-                <para>Specifies whether or not the Query Builder invoked from the Data Source Wizard enables end-users to specify custom SQL queries, column aliases and expressions.
-</para>
-            </summary>
-            <value><b>true</b>, to disallow end-users from specifying custom SQL queries, column aliases and expressions; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.QueryBuilderTreeListView">
-            <summary>
-                <para>Enables a table-like interface for selecting fields in the Query Builder (instead of a diagram-based control). 
-</para>
-            </summary>
-            <value><b>true</b>, to enable a table-like interface in the Query Builder; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.RepositoryItemsProvider">
-            <summary>
-                <para>Specifies an object that provides repository items for editing query parameters.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items to manage query parameters.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ResultSchemaProvider">
-            <summary>
-                <para>Specifies the provider of a data source result schema.
-</para>
-            </summary>
-            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IResultSchemaProvider"/> interface.
-</value>
 
 
         </member>
@@ -5357,6 +4852,202 @@
 
 
         </member>
+        <member name="T:DevExpress.DataAccess.UI.Sql.EditQueryContext">
+
+            <summary>
+                <para>Contains settings used to display the Query Builder dialog when the <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.EditQuery"/> or <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.ManageQueries"/> method is called.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Sql.EditQueryContext.#ctor">
+            <summary>
+                <para>Initializes a new instance of the EditQueryContext class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.ConnectionProviderService">
+            <summary>
+                <para>Specifies an object that enables the data connection's serialization.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IConnectionProviderService"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.DBSchemaProvider">
+            <summary>
+                <para>For internal use.</para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.DBSchemaProviderEx">
+            <summary>
+                <para>Specifies a database schema provider for the Query Builder.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IDBSchemaProviderEx"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.DisplayNameProvider">
+            <summary>
+                <para>Specifies a provider of display names to data fields in the Query Builder dialog.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.Data.IDisplayNameProvider"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.Options">
+            <summary>
+                <para>Specifies the <b>Edit Query</b> dialog options.
+</para>
+            </summary>
+            <value>A <see cref="SqlWizardOptions"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.ParameterService">
+            <summary>
+                <para>Specifies an object that provides a service functionality to manage report parameters.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.PropertyGridServices">
+            <summary>
+                <para>Specifies an object that provides a service functionality to the Property Grid.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:System.IServiceProvider"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.QueryValidator">
+            <summary>
+                <para>Specifies an object that is used to validate SQL strings.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.RepositoryItemsProvider">
+            <summary>
+                <para>Specifies an object that provides repository items for editing query parameters.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.EditQueryContext.ResultSchemaProvider">
+            <summary>
+                <para>Specifies the provider of a data source result schema.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IResultSchemaProvider"/> interface.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView">
+
+            <summary>
+                <para>Provides a view for the Save the Connection String page of the Data Source Wizard in WinForms applications.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.#ctor">
+            <summary>
+                <para>Initializes a new instance of the SaveConnectionPageView class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.ConnectionName">
+            <summary>
+                <para>Specifies the name of the created connection.
+</para>
+            </summary>
+            <value>A string specifying the name of the created connection.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.HeaderDescription">
+            <summary>
+                <para>Specifies the description of the current wizard page.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> value that specifies the page description.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.SetCanSaveToStorage(System.Boolean)">
+            <summary>
+                <para>Sets whether the connection string can be saved to the dedicated storage.
+</para>
+            </summary>
+            <param name="value">
+		<b>true</b>, if the connection string can be saved to the storage; otherwise, <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.SetConnectionUsesServerAuth(System.Boolean)">
+            <summary>
+                <para>Sets whether the data connection uses server authentication.
+
+</para>
+            </summary>
+            <param name="value">
+		<b>true</b>, if the data connection uses server authentication; otherwise, <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.ShouldSaveConnectionString">
+            <summary>
+                <para>Specifies whether to save the connection string to the dedicated storage.
+</para>
+            </summary>
+            <value><b>true</b>, to save the connection string; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.SaveConnectionPageView.ShouldSaveCredentials">
+            <summary>
+                <para>Gets whether to save the user credentials along with the connection string.
+</para>
+            </summary>
+            <value><b>true</b>, to save the user credentials; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
         <member name="T:DevExpress.DataAccess.UI.EntityFramework.EditFiltersContext">
 
             <summary>
@@ -5483,6 +5174,365 @@
             <param name="dbTables">
 		Initializes a wizard page with the list of available tables and filters.
 A dictionary, specifying a value pair that includes the <b>DBSet</b>'s name and the <b>DBTable</b>.
+
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.DataAccess.UI.Sql.QueryBuilderRunnerDelegate">
+
+            <summary>
+                <para>Enables you to integrate the Query Builder into your application.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Sql.QueryBuilderRunnerDelegate.Invoke(DevExpress.DataAccess.Sql.DBSchema,DevExpress.DataAccess.Sql.SqlDataConnection,DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext)">
+            <summary>
+                <para>Invokes a <see cref="T:DevExpress.DataAccess.UI.Sql.QueryBuilderRunner"/> with the specified connection settings.
+</para>
+            </summary>
+            <param name="dbSchema">
+		A <see cref="T:DevExpress.DataAccess.Sql.DBSchema"/> object that is the data source schema.
+
+            </param>
+            <param name="connection">
+		An <see cref="T:DevExpress.DataAccess.Sql.SqlDataConnection"/> object that specifies a connection to a data provider.
+
+            </param>
+            <param name="context">
+		A <see cref="T:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext"/> object.
+
+            </param>
+            <returns>A <see cref="T:DevExpress.DataAccess.UI.Sql.QueryBuilderRunner"/> object.
+</returns>
+
+
+        </member>
+        <member name="T:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext">
+
+            <summary>
+                <para>Specifies the Query Builder options when using it in a standalone mode.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.#ctor">
+            <summary>
+                <para>Initializes a new instance of the QueryBuilderEditQueryContext class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ConnectionProviderService">
+            <summary>
+                <para>Specifies an object that enables the data connection's serialization.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IConnectionProviderService"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.CustomQueryValidator">
+            <summary>
+                <para>Provides access to a custom SQL query validator.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.DBSchemaProvider">
+            <summary>
+                <para>Specifies a database schema provider for the Query Builder.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IDBSchemaProviderEx"/> interface that provides the capability to customize the data source schema.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.DisplayNameProvider">
+            <summary>
+                <para>Specifies a provider of display names to data fields in the Query Builder dialog.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.Data.IDisplayNameProvider"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.EnableCustomSql">
+            <summary>
+                <para>Specifies whether or not the Query Builder allows end-users to create and execute custom SQL queries.
+</para>
+            </summary>
+            <value><b>true</b>, to allow end-users to use custom SQL queries; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ExpressionEditorContext">
+            <summary>
+                <para>Specifies the object enabling customization of the Expression Editor. 
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Data.Controls.ExpressionEditor.ExpressionEditorContext"/> object.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.LegacyExpressionEditor">
+            <summary>
+                <para>Enables a user to switch to an older version of the Expression Editor that does not support intelligent code completion. 
+</para>
+            </summary>
+            <value><b>true</b>, to use the older Expression Editor version; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ParameterService">
+            <summary>
+                <para>Provides access to the service for managing report parameters.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.PropertyGridServices">
+            <summary>
+                <para>Specifies an object that provides a service functionality to the Property Grid.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:System.IServiceProvider"/> interface that is used to obtain the service object of a specific type.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.QueryBuilderLight">
+            <summary>
+                <para>Specifies whether or not the Query Builder invoked from the Data Source Wizard enables end-users to specify custom SQL queries, column aliases and expressions.
+</para>
+            </summary>
+            <value><b>true</b>, to disallow end-users from specifying custom SQL queries, column aliases and expressions; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.QueryBuilderTreeListView">
+            <summary>
+                <para>Enables a table-like interface for selecting fields in the Query Builder (instead of a diagram-based control). 
+</para>
+            </summary>
+            <value><b>true</b>, to enable a table-like interface in the Query Builder; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.RepositoryItemsProvider">
+            <summary>
+                <para>Specifies an object that provides repository items for editing query parameters.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items to manage query parameters.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext.ResultSchemaProvider">
+            <summary>
+                <para>Specifies the provider of a data source result schema.
+</para>
+            </summary>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Sql.IResultSchemaProvider"/> interface.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1">
+
+            <summary>
+                <para>Provides functionality to customize the Data Source Wizard.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.Model">
+            <summary>
+                <para>Provides access to a document model associated with a custom wizard page.
+
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraReports.Wizards.XtraReportModel"/> or <see cref="T:DevExpress.DashboardCommon.DashboardDataSourceModel"/> object.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterInstance``1(``0)">
+            <summary>
+                <para>Registers a specified service instance.
+</para>
+            </summary>
+            <param name="instance">
+		A server instance.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterPage``2">
+            <summary>
+                <para>Registers a custom wizard page.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterPageView``2">
+            <summary>
+                <para>Registers a custom wizard page view.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.RegisterType``2">
+            <summary>
+                <para>Registers a service type.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.Resolve(System.Type)">
+            <summary>
+                <para>Returns the list of available data providers from the internal container.
+</para>
+            </summary>
+            <param name="serviceType">
+		A <see cref="T:System.Type"/> object.
+
+            </param>
+            <returns>A <see cref="T:System.Object"/> value.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.StartPage">
+            <summary>
+                <para>Specifies the starting page of a wizard.
+</para>
+            </summary>
+            <value>A <see cref="T:System.Type"/> object.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.WizardSize">
+            <summary>
+                <para>Specifies the dimensions of the wizard window.
+</para>
+            </summary>
+            <value>A <see cref="T:System.Drawing.Size"/> structure.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1.WizardTitle">
+            <summary>
+                <para>Specifies the title of the wizard window.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> value.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView">
+
+            <summary>
+                <para>Provides a view for the Select the Data Context page of the Data Source Wizard in WinForms applications.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ChooseEFContextPageView class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.#ctor(DevExpress.DataAccess.Wizard.EFWizardOptions)">
+            <summary>
+                <para>Initializes a new instance of the ChooseEFContextPageView class with the specified settings.
+</para>
+            </summary>
+            <param name="options">
+		An <see cref="T:DevExpress.DataAccess.Wizard.EFWizardOptions"/> enumeration value.
+
+            </param>
+
+
+        </member>
+        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.BrowseForAssembly">
+            <summary>
+                <para>Occurs after the <b>Browse</b> button is clicked on a wizard page and an assembly is selected.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.ContextName">
+            <summary>
+                <para>Specifies the item selected in the list of available data contexts.
+</para>
+            </summary>
+            <value>A string that specifies the selected data context.
+</value>
+
+
+        </member>
+        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.ContextNameChanged">
+            <summary>
+                <para>Occurs when the selected item in the list of available data contexts is changed.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.HeaderDescription">
+            <summary>
+                <para>Specifies the description of the current wizard page.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> value that specifies the page description.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.Initialize">
+            <summary>
+                <para>Initializes a wizard page with a list of available data contexts.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFContextPageView.RefreshContextList(System.Collections.Generic.IEnumerable`1)">
+            <summary>
+                <para>Changes the list of available data contexts.
+</para>
+            </summary>
+            <param name="containers">
+		A collection of <see cref="T:DevExpress.Entity.Model.IContainerInfo"/> objects containing settings of data contexts.
 
             </param>
 
@@ -7995,36 +8045,6 @@ A dictionary, specifying a value pair that includes the <b>DBSet</b>'s name and 
 
 
         </member>
-        <member name="T:DevExpress.DataAccess.UI.Sql.QueryBuilderRunnerDelegate">
-
-            <summary>
-                <para>Enables you to integrate the Query Builder into your application.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Sql.QueryBuilderRunnerDelegate.Invoke(DevExpress.DataAccess.Sql.DBSchema,DevExpress.DataAccess.Sql.SqlDataConnection,DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext)">
-            <summary>
-                <para>Invokes a <see cref="T:DevExpress.DataAccess.UI.Sql.QueryBuilderRunner"/> with the specified connection settings.
-</para>
-            </summary>
-            <param name="dbSchema">
-		A <see cref="T:DevExpress.DataAccess.Sql.DBSchema"/> object that is the data source schema.
-
-            </param>
-            <param name="connection">
-		An <see cref="T:DevExpress.DataAccess.Sql.SqlDataConnection"/> object that specifies a connection to a data provider.
-
-            </param>
-            <param name="context">
-		A <see cref="T:DevExpress.DataAccess.UI.Sql.QueryBuilderEditQueryContext"/> object.
-
-            </param>
-            <returns>A <see cref="T:DevExpress.DataAccess.UI.Sql.QueryBuilderRunner"/> object.
-</returns>
-
-
-        </member>
         <member name="T:DevExpress.DataAccess.UI.Wizard.Views.MultiQueryConfigureParametersPageView">
 
             <summary>
@@ -8555,63 +8575,6 @@ A dictionary, specifying a value pair that includes the <b>DBSet</b>'s name and 
 
 
         </member>
-        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView">
-
-            <summary>
-                <para>Provides a view for the Select a Worksheet, Table or Named Range page of the Data Source Wizard in WinForms applications.
-
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.#ctor">
-            <summary>
-                <para>Initializes a new instance of the ChooseExcelFileDataRangePageView class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.Changed">
-            <summary>
-                <para>Occurs when the selected item in the list of available worksheets, tables and named regions is changed.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.HeaderDescription">
-            <summary>
-                <para>Specifies the description of the current wizard page.
-</para>
-            </summary>
-            <value>A <see cref="T:System.String"/> value that specifies the page description.
-</value>
-
-
-        </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.Initialize(DevExpress.DataAccess.Wizard.Presenters.ListBoxItem[])">
-            <summary>
-                <para>Initializes a wizard page with the list of available worksheets, tables and named regions.
-</para>
-            </summary>
-            <param name="items">
-		A collection of <see cref="T:DevExpress.DataAccess.Wizard.Presenters.ListBoxItem"/> objects containing the settings of file data ranges.
-
-            </param>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.SelectedItem">
-            <summary>
-                <para>Specifies the item selected in the list of available worksheets, tables and named regions.
-</para>
-            </summary>
-            <value>An object containing settings of the selected item. 
-</value>
-
-
-        </member>
         <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView">
 
             <summary>
@@ -9064,88 +9027,68 @@ A dictionary, specifying a value pair that includes the <b>DBSet</b>'s name and 
 
 
         </member>
-        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView">
+        <member name="T:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext">
 
             <summary>
-                <para>Provides a view for the Select the Connection String page of the Data Source Wizard in WinForms applications.
+                <para>Provides settings required to edit the constructors of an object data source.
 </para>
             </summary>
 
         </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.#ctor">
+        <member name="M:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.#ctor">
             <summary>
-                <para>Initializes a new instance of the ChooseEFConnectionStringPageView class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.Changed">
-            <summary>
-                <para>Occurs when the selected item in the list of available connections is changed.
+                <para>Initializes a new instance of the EditConstructorContext class with the default settings.
 </para>
             </summary>
 
 
         </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.ExistingConnectionName">
+        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.OperationMode">
             <summary>
-                <para>Gets the name of the connection selected from the list of available connections.
+                <para>Specifies the availability of an object data source's data, schema or both on the client.
 </para>
             </summary>
-            <value>A string specifying the name of the selected connection. 
+            <value>An <see cref="T:DevExpress.DataAccess.Wizard.OperationMode"/> enumeration value.
 </value>
 
 
         </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.HeaderDescription">
+        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.ParameterService">
             <summary>
-                <para>Specifies the description of the current wizard page.
+                <para>Specifies an object that provides a service functionality to manage report parameters.
 </para>
             </summary>
-            <value>A <see cref="T:System.String"/> value that specifies the page description.
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.
 </value>
 
 
         </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.Initialize">
+        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.PropertyGridServices">
             <summary>
-                <para>Initializes a wizard page with the list of available connections.
+                <para>Specifies services that provide functionality to custom parameter editors displayed in the Property Grid that is invoked from the Data Source wizard.
 </para>
             </summary>
+            <value>An object implementing the <see cref="T:System.IServiceProvider"/> interface that is used to obtain the service object of a specific type.
+</value>
 
 
         </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.SetConnections(System.Collections.Generic.IEnumerable`1)">
+        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.RepositoryItemsProvider">
             <summary>
-                <para>Changes the list of existing connections on a wizard page.
+                <para>Specifies an object that provides repository items for editing query parameters.
 </para>
             </summary>
-            <param name="connectionNames">
-		A collection of strings specifying connection names.
-
-            </param>
+            <value>An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface.
+</value>
 
 
         </member>
-        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.SetSelectedConnection(System.String)">
+        <member name="P:DevExpress.DataAccess.UI.ObjectBinding.EditConstructorContext.SolutionTypesProvider">
             <summary>
-                <para>Changes the selected item from the list of available connections.
+                <para>Specifies an object that provides access to the known types in the current solution.
 </para>
             </summary>
-            <param name="connectionName">
-		A string that specifies the name of the connection to be selected.
-
-            </param>
-
-
-        </member>
-        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseEFConnectionStringPageView.ShouldCreateNewConnection">
-            <summary>
-                <para>Gets whether to create a new data connection or use an existing one from the list.
-</para>
-            </summary>
-            <value><b>true</b>, to create a new connection; otherwise, <b>false</b>. 
+            <value>An object implementing the <see cref="T:DevExpress.Entity.ProjectModel.ISolutionTypesProvider"/> interface.
 </value>
 
 
@@ -9314,6 +9257,63 @@ A dictionary, specifying a value pair that includes the <b>DBSet</b>'s name and 
 </para>
             </summary>
             <value>An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IWaitFormActivator"/> interface.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView">
+
+            <summary>
+                <para>Provides a view for the Select a Worksheet, Table or Named Range page of the Data Source Wizard in WinForms applications.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ChooseExcelFileDataRangePageView class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.Changed">
+            <summary>
+                <para>Occurs when the selected item in the list of available worksheets, tables and named regions is changed.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.HeaderDescription">
+            <summary>
+                <para>Specifies the description of the current wizard page.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> value that specifies the page description.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.Initialize(DevExpress.DataAccess.Wizard.Presenters.ListBoxItem[])">
+            <summary>
+                <para>Initializes a wizard page with the list of available worksheets, tables and named regions.
+</para>
+            </summary>
+            <param name="items">
+		A collection of <see cref="T:DevExpress.DataAccess.Wizard.Presenters.ListBoxItem"/> objects containing the settings of file data ranges.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseExcelFileDataRangePageView.SelectedItem">
+            <summary>
+                <para>Specifies the item selected in the list of available worksheets, tables and named regions.
+</para>
+            </summary>
+            <value>An object containing settings of the selected item. 
 </value>
 
 

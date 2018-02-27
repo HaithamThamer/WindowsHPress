@@ -32,8 +32,9 @@ namespace HPress
                 {
                     cmbClients.Items.Add(dt.Rows[i][0].ToString());
                 }
+                cmbClients.Text = cmbClients.Items[0].ToString();
             }
-            cmbClients.Text = cmbClients.Items[0].ToString();
+            
 
             DataTable dt2 = databaseConnection.query(string.Format("select name from tbl_clients where is_active = 1 and type = {0} order by id asc", (int)Enumerators.clientType.Delegate));
             if (dt.Rows.Count > 0)
@@ -52,6 +53,10 @@ namespace HPress
             if (Properties.Settings.Default.userType == (int)Enumerators.UserType.User)
             {
                 txtDelegatePercent.Visible = false;
+                btnAddClient.Enabled = false;
+                isSell.Enabled = false;
+                cmbDelegates.Enabled = false;   
+
                 //btnBalance.Enabled = false;
             }
             //txtProductDescription.Focus();
@@ -81,7 +86,7 @@ namespace HPress
         private void cmbClients_DropDown(object sender, EventArgs e)
         {
             cmbClients.Items.Clear();
-            System.Data.DataTable dt = databaseConnection.query(string.Format("select name from tbl_clients where type = '{0}' order by id asc", isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier));
+            System.Data.DataTable dt = databaseConnection.query(string.Format("select name from tbl_clients where type = '0' order by id asc", isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier));
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -108,12 +113,19 @@ namespace HPress
             cmbBills.Enabled = true;
             isEdit = false;
             dateFrom.Text = DateTime.Now.ToString();
-            cmbClients.SelectedIndex = 0;
+            
             grpPaid.Text = "المدفوع";
             grpTotal.Text = "المجموع";
             cmbClients_SelectedIndexChanged(null, null);
-            cmbClients.SelectedIndex = 0;
-            cmbDelegates.SelectedIndex = 0;
+            if (cmbClients.Items.Count > 0)
+            {
+                cmbClients.SelectedIndex = 0;
+            }
+            if (cmbDelegates.Items.Count > 0)
+            {
+                cmbDelegates.SelectedIndex = 0;
+
+            }
             grpPaid.Enabled = false;
             isCash.Enabled = true;
             remaining = paid = 0;
@@ -122,7 +134,6 @@ namespace HPress
             grpDate.Text = "تاريخ";
             grpDate.CustomHeaderButtons[0].Properties.Checked = false;
             txtDelegatePercent.Text = "0";
-            cmbDelegates.SelectedIndex = 0;
             billDate = DateTime.Now;
         }
 
@@ -145,8 +156,8 @@ namespace HPress
                 grpInfo.Text = "معلومات المورد";
 
             }
-            cmbClients_DropDown(null, null);
-            cmbClients.Text = cmbClients.Items.Count > 0 ? cmbClients.Items[0].ToString() : "";
+            cmbClients_SelectedIndexChanged(null, null);
+            //cmbClients.Text = cmbClients.Items.Count > 0 ? cmbClients.Items[0].ToString() : "";
         }
 
         private void cmbDelegates_DropDown(object sender, EventArgs e)
@@ -323,7 +334,7 @@ namespace HPress
             if (isEdit)
             {
                 string s = string.Format(
-                    "update tbl_bills set is_account = '{0}',client_id = (select id from tbl_clients where name = '{1}' and tbl_clients.type = '{2}'),is_dollar = '{3}',is_cash = '{4}',note = '{5}',discount = '{6}',is_sell = '{7}', name = '{8}', location = '{9}', phone = '{10}' , email = '{11}',delegate_id = (select id from tbl_clients where name = '{12}' and tbl_clients.type = '2') ,datetime = '{13}' ,delegate_percent = '{14}' where id = '{15}';",
+                    "update tbl_bills set is_account = '{0}',client_id = (select id from tbl_clients where name = '{1}' and tbl_clients.type = '0'),is_dollar = '{3}',is_cash = '{4}',note = '{5}',discount = '{6}',is_sell = '{7}', name = '{8}', location = '{9}', phone = '{10}' , email = '{11}',delegate_id = (select id from tbl_clients where name = '{12}' and tbl_clients.type = '2') ,datetime = '{13}' ,delegate_percent = '{14}' where id = '{15}';",
                     isAccount.IsOn ? "1" : "0",
                     cmbClients.Text,
                     isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier,
@@ -347,7 +358,7 @@ namespace HPress
             if (dgvProducts.Rows.Count > 0)
             {
                 //insert into tbl_bills (is_account,is_sell,client_id,is_dollar,is_cash,note,discount,name,location,phone,email,delegate_id,datetime) values ('1','1',(select id from tbl_clients where tbl_clients.name = 'نقدي'),'0','1','','0','نقدي','دهوك','0750','@',(select id from tbl_clients where tbl_clients.name = '222'),'2017-03-01 00:00:00');select max(id) from tbl_bills;
-                string s = string.Format("insert into tbl_bills (is_account,is_sell,client_id,is_dollar,is_cash,note,discount,name,location,phone,email,delegate_id,datetime,delegate_percent) values ('{0}','{1}',(select id from tbl_clients where tbl_clients.name = '{2}' and tbl_clients.`type` = '{3}' limit 0,1),'{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}',(select id from tbl_clients where tbl_clients.name = '{12}' and tbl_clients.type = '2'),'{13}','{14}');select max(id) from tbl_bills;",
+                string s = string.Format("insert into tbl_bills (is_account,is_sell,client_id,is_dollar,is_cash,note,discount,name,location,phone,email,delegate_id,datetime,delegate_percent) values ('{0}','{1}',(select id from tbl_clients where tbl_clients.name = '{2}' and tbl_clients.`type` = '0' limit 0,1),'{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}',(select id from tbl_clients where tbl_clients.name = '{12}' and tbl_clients.type = '2'),'{13}','{14}');select max(id) from tbl_bills;",
                     isAccount.IsOn ? "1" : "0",
                     isSell.IsOn ? "1" : "0",
                     cmbClients.Text,
@@ -387,7 +398,15 @@ namespace HPress
                 }
                 if (txtPaid.Text != "0")
                 {
-                    databaseConnection.queryNonReader(string.Format("insert into tbl_balance (client_id,value,bill_id,is_dollar,creation,is_import) values ((select id from tbl_clients where name = '{0}' and tbl_clients.type = '{1}'),'{2}','{3}','{4}','{5}','{6}');", cmbClients.Text,isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier, txtPaid.Text.Replace(",",""), id, isDollar.IsOn ? "1" : "0", dateFrom.Value.ToString("yyyy-MM-dd 00:00:00"),isSell.IsOn ? "1" : "0"));
+                    try
+                    {
+                        databaseConnection.queryNonReader(string.Format("insert into tbl_balance (client_id,value,bill_id,is_dollar,creation,is_import) values ((select id from tbl_clients where name = '{0}' and tbl_clients.type = '0'),'{2}','{3}','{4}','{5}','{6}');", cmbClients.Text, isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier, txtPaid.Text.Replace(",", ""), id, isDollar.IsOn ? "1" : "0", dateFrom.Value.ToString("yyyy-MM-dd 00:00:00"), isSell.IsOn ? "1" : "0"));
+                    }
+                    catch (Exception)
+                    {
+                        databaseConnection.queryNonReader(string.Format("insert into tbl_balance_pay (id) value (1)"));
+                        databaseConnection.queryNonReader(string.Format("insert into tbl_balance (client_id,value,bill_id,is_dollar,creation,is_import) values ((select id from tbl_clients where name = '{0}' and tbl_clients.type = '0'),'{2}','{3}','{4}','{5}','{6}');", cmbClients.Text, isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier, txtPaid.Text.Replace(",", ""), id, isDollar.IsOn ? "1" : "0", dateFrom.Value.ToString("yyyy-MM-dd 00:00:00"), isSell.IsOn ? "1" : "0"));
+                    }
                 }
                 remaining = double.Parse(databaseConnection.query(string.Format("select ifnull(sum(if(tbl_bills.is_dollar = 1,tbl_balance.value * {0},tbl_balance.value)),0) from tbl_balance,tbl_bills where tbl_balance.bill_id = {1} and tbl_balance.bill_id = tbl_bills.id", Properties.Settings.Default.dollarValue, id)).Rows[0][0].ToString());
                 ReportA4 reportA4 = new ReportA4(
@@ -451,7 +470,11 @@ namespace HPress
 
         private void cmbClients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            System.Data.DataTable dt = databaseConnection.query(string.Format("select id,name,location, mobile, email,ifnull((ifnull((select SUM(IF(tbl_balance.is_dollar = 1 ,tbl_balance.value * getDollar(tbl_balance.creation),tbl_balance.value)) from tbl_balance,tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = '{1}' and tbl_balance.is_import = 1),0) - ifnull((select sum(if(tbl_bills.is_dollar = 0,tbl_products.price  * tbl_products.count,tbl_products.price*getDollar(tbl_bills.datetime)  * tbl_products.count)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{1}'),0) + (select sum(ifnull(if(tbl_bills.is_dollar = 1,tbl_bills.discount * getDollar(tbl_bills.`datetime`),tbl_bills.discount),0)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{1}')),0) as `remaining`from tbl_clients where name = '{0}'", cmbClients.Text,isSell.IsOn ? "1" : "0"));
+            System.Data.DataTable dt = databaseConnection.query(string.Format("select id, name, location, mobile, email, ifnull( ( ifnull((select SUM(IF(tbl_balance.is_dollar = 1 ,tbl_balance.value * getDollar(tbl_balance.creation),tbl_balance.value)) from tbl_balance,tbl_bills where tbl_balance.client_id = tbl_clients.id and tbl_bills.id = tbl_balance.bill_id and tbl_bills.is_sell = '{1}' and tbl_balance.is_import = '{1}'),0)- ifnull((select sum(if(tbl_bills.is_dollar = 0,tbl_products.price  * tbl_products.count,tbl_products.price*getDollar(tbl_bills.datetime)  * tbl_products.count)) from tbl_products,tbl_bills where tbl_products.bill_id = tbl_bills.id and tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{1}'),0)+ ifnull((select sum(ifnull(if(tbl_bills.is_dollar = 1,tbl_bills.discount * getDollar(tbl_bills.`datetime`),tbl_bills.discount),0)) from tbl_bills where tbl_bills.client_id = tbl_clients.id and tbl_bills.is_cash = 0 and tbl_bills.is_sell = '{1}'),0)),0) as `remaining`from tbl_clients where name = '{0}'", cmbClients.Text,isSell.IsOn ? "1" : "0"));
+            if (dt.Rows.Count == 0)
+            {
+                return;
+            }
             clientId = int.Parse(dt.Rows[0][0].ToString());
             txtClientName.Text = dt.Rows[0][1].ToString();
             txtClientLocation.Text = dt.Rows[0][2].ToString();
@@ -562,6 +585,11 @@ namespace HPress
         bool isAddOnly = false;
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (cmbDelegates.Text == string.Empty || cmbClients.Text == string.Empty)
+            {
+                MessageBox.Show("المندوب أو العميل فارغ");
+                return;
+            }
             isAddOnly = true;
             btnSell_Click(null, null);
         }
@@ -653,10 +681,10 @@ namespace HPress
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            string s = databaseConnection.query(string.Format("select count(id) from tbl_clients where name = '{0}' and type = '{1}'", txtClientName.Text, (int)(isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier))).Rows[0][0].ToString();
+            string s = databaseConnection.query(string.Format("select count(id) from tbl_clients where name = '{0}' and type = '0'", txtClientName.Text, (int)(isSell.IsOn ? (int)Enumerators.clientType.Client : (int)Enumerators.clientType.Supplier))).Rows[0][0].ToString();
             if (s != "1")
             {
-                databaseConnection.queryNonReader(string.Format("insert into tbl_clients (name,location,mobile,email,type,is_active,percent) values ('{0}','{1}','{2}','{3}','{4}',1,0);",txtClientName.Text,txtClientLocation.Text,txtClientMobile.Text,txtClientEmail.Text,isSell.IsOn ? (int)Enumerators.clientType.Client:(int)Enumerators.clientType.Supplier));
+                databaseConnection.queryNonReader(string.Format("insert into tbl_clients (name,location,mobile,email,type,is_active,percent) values ('{0}','{1}','{2}','{3}',0,1,0);",txtClientName.Text,txtClientLocation.Text,txtClientMobile.Text,txtClientEmail.Text,isSell.IsOn ? (int)Enumerators.clientType.Client:(int)Enumerators.clientType.Supplier));
                 cmbClients.Text = txtClientName.Text;
             }else
             {

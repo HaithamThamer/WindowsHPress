@@ -1,10 +1,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPress", "HPress\HPress.csproj", "{BB7EC253-FE6C-4772-ACA4-570350E7B4A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDatabaseConnection", "..\..\WindowsHDatabaseConnection\HDatabaseConnection\HDatabaseConnection.csproj", "{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRegsiter", "..\..\WindowsHRegsiter\HRegsiter.csproj", "{FDD873EA-6741-4B24-B87C-3E5D87B02714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4D1EF0-D6DB-4A63-A437-4E3CBD788E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD873EA-6741-4B24-B87C-3E5D87B02714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD873EA-6741-4B24-B87C-3E5D87B02714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD873EA-6741-4B24-B87C-3E5D87B02714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD873EA-6741-4B24-B87C-3E5D87B02714}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

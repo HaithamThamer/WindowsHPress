@@ -615,7 +615,7 @@ namespace HPress
 
         private void grpImport_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbClients.Items.AddRange(getClients(cmbClients, grpImport.SelectedIndex == 2 ? Enumerators.clientType.ClientSupplier : grpImport.SelectedIndex == 1 ? Enumerators.clientType.Client : Enumerators.clientType.Supplier));
+            cmbClients.Items.AddRange(getClients(cmbClients, Enumerators.clientType.Client));
         }
     }
 }

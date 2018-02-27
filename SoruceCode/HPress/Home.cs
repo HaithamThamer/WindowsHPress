@@ -23,8 +23,8 @@ namespace HPress
         public Home()
         {
             product = new HRegsiter.Product(Application.ExecutablePath.ToString());
-
             databaseConnection = new HDatabaseConnection.HMySQLConnection(product.getValue((int)Enumerators.Settings.ServerIP), product.getValue((int)Enumerators.Settings.DatabaseUsername), product.getValue((int)Enumerators.Settings.DatabasePassword), product.getValue((int)Enumerators.Settings.DatabaseName));
+
             Properties.Settings.Default.imageLogo1 = product.getValue((int)Enumerators.Settings.logo1);
             Properties.Settings.Default.address = product.getValue((int)Enumerators.Settings.address);
 
@@ -38,7 +38,7 @@ namespace HPress
                 Environment.Exit(0);
             }
 
-            
+
 
             InitializeComponent();
 
@@ -51,7 +51,12 @@ namespace HPress
             //User
             if (Properties.Settings.Default.userType == (int)Enumerators.UserType.User)
             {
+
+                btnClientsImports.Enabled = false;
+                btnDebits.Enabled = false;
+                btnExport.Enabled = false;
                 btnClients.Enabled = false;
+
                 //btnBalance.Enabled = false;
             }
             btnDollar.Text = Properties.Settings.Default.dollarValue.ToString();
@@ -59,6 +64,7 @@ namespace HPress
             this.Text = Application.ProductName;
             picMain.Image = Image.FromFile(Properties.Settings.Default.imageLogo1);
             pnlMain.BackColor = System.Drawing.ColorTranslator.FromHtml(Properties.Settings.Default.color);
+
         }
 
 

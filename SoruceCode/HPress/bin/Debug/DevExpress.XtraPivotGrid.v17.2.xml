@@ -223,6 +223,14 @@
 
 
         </member>
+        <member name="F:DevExpress.XtraPivotGrid.PivotContextMenuIds.HideFieldOnCustomizationFormMenuID">
+            <summary>
+                <para> </para>
+            </summary>
+            <returns> </returns>
+
+
+        </member>
         <member name="F:DevExpress.XtraPivotGrid.PivotContextMenuIds.MoveLeftMenuID">
             <summary>
                 <para>The 'Move to Left' item that is displayed in the field header context menu, in the 'Order' submenu. Used to move the header one position left within its area.
@@ -398,90 +406,6 @@
 </para>
             </summary>
             <value>An object which represents the processed cell's value. 
-</value>
-
-
-        </member>
-        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldToolTips">
-
-            <summary>
-                <para>Provides tooltip options for a Pivot Grid field.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.#ctor(DevExpress.XtraPivotGrid.PivotGridField)">
-            <summary>
-                <para>Initializes a new instance of the PivotGridFieldToolTips class.
-</para>
-            </summary>
-            <param name="field">
-		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is a PivotGrid field.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.GetValueText(System.Object)">
-            <summary>
-                <para>Returns the formatted text representation of the specified value according to the settings used to represent the field value tooltip.
-
-</para>
-            </summary>
-            <param name="value">
-		An object which identifies the value to format. 
-
-            </param>
-            <returns>A string that specifies the formatted text representation of the specified value. 
-</returns>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.HeaderText">
-            <summary>
-                <para>Gets or sets a field header tooltip.
-</para>
-            </summary>
-            <value>A string value that is a field header tooltip.
-</value>
-
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.Reset">
-            <summary>
-                <para>Resets the tooltip settings to their default values.
-
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.ShouldSerialize">
-            <summary>
-                <para>Tests whether the <see cref="T:DevExpress.XtraPivotGrid.PivotGridFieldToolTips"/> object should be persisted.
-</para>
-            </summary>
-            <returns><b>true</b> if the object should be persisted; otherwise, <b>false</b>. 
-</returns>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.ValueFormat">
-            <summary>
-                <para>Provides access to the formatting settings applied to a field value tooltip.
-</para>
-            </summary>
-            <value>A <see cref="FormatInfo"/> object that provides the formatting settings applied to a field value tooltip. 
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.ValueText">
-            <summary>
-                <para>Gets or sets a field value tooltip.
-</para>
-            </summary>
-            <value>A string value that is a field value tooltip.
 </value>
 
 
@@ -689,6 +613,58 @@
 </para>
             </summary>
             <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridValueHitTest"/> enumeration member that specifies which field value cell element is located under the test point.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelQueryFilterCriteriaEventHandler">
+
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelQueryFilterCriteria"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelQueryFilterCriteriaEventHandler.Invoke(System.Object,DevExpress.XtraPivotGrid.FilterPopupExcelQueryFilterCriteriaEventArgs)">
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelCustomizeTemplate"/> event.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPivotGrid.FilterPopupExcelQueryFilterCriteriaEventArgs"/> object that contains event data.
+
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelQueryFilterCriteriaEventArgs">
+
+            <summary>
+                <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelQueryFilterCriteria"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelQueryFilterCriteriaEventArgs.Field">
+            <summary>
+                <para>Gets the Pivot Grid field for which the event is raised.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is the Pivot Grid field.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelQueryFilterCriteriaEventArgs.PivotGrid">
+            <summary>
+                <para>Get the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/> that raised the event.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>.
 </value>
 
 
@@ -1197,6 +1173,40 @@
 
 
         </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelCustomizeTemplateEventArgs">
+
+            <summary>
+                <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelCustomizeTemplate"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelCustomizeTemplateEventArgs.#ctor(DevExpress.XtraPivotGrid.PivotGridField,System.Windows.Forms.Control)">
+            <summary>
+                <para>Initializes a new instance of the FilterPopupExcelCustomizeTemplateEventArgs class.
+</para>
+            </summary>
+            <param name="field">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is a Pivot Grid field.
+
+            </param>
+            <param name="template">
+		A <see cref="T:System.Windows.Forms.Control"/> object that is a filter popup's template.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelCustomizeTemplateEventArgs.Field">
+            <summary>
+                <para>Gets the Pivot Grid field for which the event is raised.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is the Pivot Grid field.
+</value>
+
+
+        </member>
         <member name="T:DevExpress.XtraPivotGrid.PivotCustomChartDataSourceDataEventHandler">
 
             <summary>
@@ -1308,10 +1318,118 @@
 
 
         </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotFilter">
+
+            <summary>
+                <para>A filter applied to data displayed in the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>. 
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotFilter.#ctor(DevExpress.PivotGrid.Filtering.IFilterOwnerBase,DevExpress.XtraPivotGrid.IFilterFormOwner)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="owner">
+		 
+
+            </param>
+            <param name="formOwner">
+		 
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotFilter.ChangeFilterEditorVisible">
+            <summary>
+                <para>Toggles the Filter Editor visibility.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotFilter.Criteria">
+            <summary>
+                <para>Gets or sets a filter criteria applied to data displayed in the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>. 
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant that specifies a filter criteria applied to data displayed in the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>. 
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotFilter.HideForm">
+            <summary>
+                <para>Closes the Filter Editor.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotFilter.IsFilterEditorShown">
+            <summary>
+                <para>Gets whether or not the Filter Editor is currently displayed.
+
+</para>
+            </summary>
+            <value><b>true</b>, if the Filter Editor is currently displayed; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotFilter.Reset">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotFilter.ShouldSerialize">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <returns> 
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotFilter.ShowForm">
+            <summary>
+                <para>Opens the Filter Editor.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotFilter.ShowOperandTypeIcon">
+            <summary>
+                <para>Gets or sets whether the operand's value can be swapped.
+</para>
+            </summary>
+            <value><b>true</b>, to allow end-users to swap the operand's value; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotFilter.ToString">
+            <summary>
+                <para>Returns the string that represents the current object.
+</para>
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents the current PivotFilter object. 
+</returns>
+
+
+        </member>
         <member name="T:DevExpress.XtraPivotGrid.PivotQueryExceptionEventHandler">
 
             <summary>
-                <para> </para>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.QueryException"/> event. 
+</para>
             </summary>
 
         </member>
@@ -1622,10 +1740,11 @@
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsFilterPopup.FieldFilterPopupMode">
             <summary>
-                <para>Gets or sets the display mode of the filter dropdown for all fields within the PivotGrid control.
+                <para>Gets or sets the field's filter popup mode for all fields.
 </para>
             </summary>
-            <value>A <see cref="FieldFilterPopupMode"/> enumeration value that is a filter popup mode. 
+            <value>A <see cref="FieldFilterPopupMode"/> value that specifies the field's filter popup mode for all fields.
+
 </value>
 
 
@@ -1890,6 +2009,400 @@
 
 
         </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter">
+
+            <summary>
+                <para>Contains the field's filtering options.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.#ctor(System.EventHandler,DevExpress.WebUtils.IViewBagOwner,System.String)">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <param name="optionsChanged">
+		 
+
+            </param>
+            <param name="viewBagOwner">
+		 
+
+            </param>
+            <param name="objectPath">
+		 
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.Assign(DevExpress.Utils.Controls.BaseOptions)">
+            <summary>
+                <para>Copies settings of the specified object to the current object.
+</para>
+            </summary>
+            <param name="options">
+		An <see cref="T:DevExpress.Utils.Controls.BaseOptions"/> descendant whose settings are copied to the current object. 
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterDateTimeValuesTabFilterType">
+            <summary>
+                <para>Gets or sets the type of filtering UI used to create filters in the Values tab in the Excel-style filter popup (if the current field contains date-time values).
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.ExcelFilterDateTimeValuesTabFilterType"/> value that specifies the type of filtering UI used to create filters in the Values tab in the Excel-style filter popup.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterDefaultTab">
+            <summary>
+                <para>Gets or sets the default tab opened in the Excel-style filter popup.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.XtraPivotGrid.ExcelFilterDefaultTab"/> value that specifies the default tab opened in the Excel-style filter popup.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterEnumFilters">
+            <summary>
+                <para>Gets or sets a set of relational operators (equality and inequalities) used to create a filter condition in the Filters tab of the Excel-style filter popup (if the current field contains enumeration data). 
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.XtraPivotGrid.ExcelFilterEnumFilters"/> value that specifies a set of relational operators (equality and inequalities) used to create a filter condition in the Filters tab of the Excel-style filter popup.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterImmediateUpdate">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterNumericValuesTabFilterType">
+            <summary>
+                <para>Gets or sets the type of filtering UI used to create filters in the Values tab in the Excel-style filter popup (if the current field contains numeric data). 
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.XtraPivotGrid.ExcelFilterNumericValuesTabFilterType"/> value that specifies the type of filtering UI used to create filters in the Values tab in the Excel-style filter popup.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterShowAllValues">
+            <summary>
+                <para>Gets or sets whether or not filters applied to other fields affect filter values displayed for the current field in the Excel-style filter popup.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> value that specifies whether or not filters applied to other fields affect filter values displayed for the current field in the Excel-style filter popup.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterShowBlanks">
+            <summary>
+                <para>Gets or sets whether or not the Excel-style filter pupop shows NULL values from a current field.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> value that specifies whether or not the Excel-style filter pupop shows NULL values from a current field.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter.PopupExcelFilterTextFilters">
+            <summary>
+                <para>Gets or sets a set of relational operators (equality and inequalities) used to create a filter condition in the Filters tab of the Excel-style filter popup (if the current field contains text data). 
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.XtraPivotGrid.ExcelFilterTextFilters"/> value that specifies a set of relational operators (equality and inequalities) used to create a filter condition in the Filters tab of the Excel-style filter popup.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldImageOptions">
+
+            <summary>
+                <para>Contains settings that allow you to set up raster and vector icons for the current <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldImageOptions.#ctor(DevExpress.XtraPivotGrid.PivotGridField)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldImageOptions class.
+</para>
+            </summary>
+            <param name="owner">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that specifies the Pivot Grid field.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldImageOptions.Assign(DevExpress.Utils.ImageOptions)">
+            <summary>
+                <para>Copies settings of the specified object to the current object.
+</para>
+            </summary>
+            <param name="source">
+		An ImageOptions object whose settings are copied to the current object. 
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldImageOptions.ImageIndex">
+            <summary>
+                <para>Gets or sets the index of the image displayed within the field header.
+</para>
+            </summary>
+            <value>An integer value specifying the image by its zero-based index within the source collection. <b>-1</b> to display no image.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldImageOptions.Images">
+            <summary>
+                <para>Gets or sets a collection of images that can be displayed within field headers.
+</para>
+            </summary>
+            <value>An object that is an image collection providing images.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelPrepareTemplateEventHandler">
+
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelPrepareTemplate"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelPrepareTemplateEventHandler.Invoke(System.Object,DevExpress.XtraPivotGrid.FilterPopupExcelPrepareTemplateEventArgs)">
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelPrepareTemplate"/> event.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPivotGrid.FilterPopupExcelPrepareTemplateEventArgs"/> object that contains event data.
+
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelPrepareTemplateEventArgs">
+
+            <summary>
+                <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelPrepareTemplate"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelPrepareTemplateEventArgs.#ctor(DevExpress.XtraPivotGrid.PivotGridField,System.Windows.Forms.Control)">
+            <summary>
+                <para>Initializes a new instance of the FilterPopupExcelPrepareTemplateEventArgs class.
+</para>
+            </summary>
+            <param name="field">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is a Pivot Grid field.
+
+            </param>
+            <param name="template">
+		A <see cref="T:System.Windows.Forms.Control"/> object that is a filter popup's template.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelPrepareTemplateEventArgs.Field">
+            <summary>
+                <para>Gets the Pivot Grid field for which the event is raised.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is the Pivot Grid field.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelEventHandler">
+
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.ShowFilterPopupExcel"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelEventHandler.Invoke(System.Object,DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs)">
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.ShowFilterPopupExcel"/> event.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs"/> object that contains event data.
+
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs">
+
+            <summary>
+                <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.ShowFilterPopupExcel"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.DefaultFilterType">
+            <summary>
+                <para>Gets or sets the filter operator selected by default in the Filters tab.
+</para>
+            </summary>
+            <value>A CustomUIFilterType enumeration value that specifies the filter operator used by default.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.Field">
+            <summary>
+                <para>Get the Pivot Grid field being processed.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is the Pivot Grid field being processed.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.IsRadioMode">
+            <summary>
+                <para>Gets or sets whether single (the radio mode) or multiple filter values can be selected simultaneously.
+</para>
+            </summary>
+            <value><b>true</b>, to enable the radio mode; otherwise, <b>false</b>. Default is <b>false</b>. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowAggregates">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <value> 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowBlanks">
+            <summary>
+                <para>Gets or sets whether or not to show the 'Is Blank' and 'Is Not Blank' filter conditions.
+</para>
+            </summary>
+            <value><b>true</b>, to show the 'Is Blank' and 'Is Not Blank' filter conditions; otherwise, <b>false</b>. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowComparisons">
+            <summary>
+                <para>Gets or sets whether or not to show comparison filter conditions (Greater Than, Less Than, etc.).
+</para>
+            </summary>
+            <value><b>true</b>, to show comparison filter conditions; otherwise, <b>false</b>. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowCustomFilters">
+            <summary>
+                <para>Gets or sets whether or not to show the 'Custom Filter'.
+</para>
+            </summary>
+            <value><b>true</b>, to show the 'Custom Filter'; otherwise, <b>false</b>. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowFiltersTab">
+            <summary>
+                <para>Gets or sets whether or not to show the Filters tab.
+</para>
+            </summary>
+            <value><b>true</b>, to show the Filters tab; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowNulls">
+            <summary>
+                <para>Gets or sets whether or not to show the 'Is Null' and 'Is Not Null' filter conditions.
+</para>
+            </summary>
+            <value>true, to show the 'Is Null' and 'Is Not Null' filter conditions; otherwise, false. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowPredefinedFilters">
+            <summary>
+                <para>Gets or sets whether or not to show the 'Predefined Filters'.
+</para>
+            </summary>
+            <value><b>true</b>, to show the 'Predefined Filters'; otherwise, <b>false</b>. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelEventArgs.ShowSequences">
+            <summary>
+                <para>For internal use.
+</para>
+            </summary>
+            <value> 
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelCustomizeTemplateEventHandler">
+
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelCustomizeTemplate"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelCustomizeTemplateEventHandler.Invoke(System.Object,DevExpress.XtraPivotGrid.FilterPopupExcelCustomizeTemplateEventArgs)">
+            <summary>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraGrid.Views.Base.ColumnView.FilterPopupExcelCustomizeTemplate"/> event.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPivotGrid.FilterPopupExcelCustomizeTemplateEventArgs"/> object that contains event data.
+
+            </param>
+
+
+        </member>
         <member name="T:DevExpress.XtraPivotGrid.CancelPivotCellEditEventArgs">
 
             <summary>
@@ -1930,6 +2443,105 @@
 </para>
             </summary>
             <value>A <see cref="T:DevExpress.XtraEditors.Repository.RepositoryItem"/> descendant that represents the in-place editor's settings.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx">
+
+            <summary>
+                <para>Contains options for a field.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.#ctor(DevExpress.XtraPivotGrid.PivotOptionsChangedEventHandler,DevExpress.WebUtils.IViewBagOwner,System.String)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldOptionsEx class with the specified settings.
+</para>
+            </summary>
+            <param name="optionsChanged">
+		A delegate that will receive change notifications.
+
+            </param>
+            <param name="viewBagOwner">
+		An IViewBagOwner object that is used to initialize the created object.
+
+            </param>
+            <param name="objectPath">
+		A string value that is used to initialize the created object.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.AllowEdit">
+            <summary>
+                <para>Gets or sets whether data editing is allowed for the current field.
+</para>
+            </summary>
+            <value><b>true</b> to allow editing cell values that correspond to the current data field; otherwise, <b>false</b>.
+
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.AllowHide">
+            <summary>
+                <para>Gets or sets whether or not an end-user can hide the current field.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> value that specifies whether or not an end-user can hide the current field.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.FieldFilterPopupMode">
+            <summary>
+                <para>Gets or sets the field's filter popup mode.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.FieldFilterPopupMode"/> value that specifies the field's filter popup mode.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.IsFilterRadioMode">
+            <summary>
+                <para>Gets or sets whether an end-user is allowed to select only a single item in the filter drop-down.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> value that specifies whether an end-user is allowed to select only a single item in the filter drop-down.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.ReadOnly">
+            <summary>
+                <para>Gets or sets whether end-users can modify cell values.
+</para>
+            </summary>
+            <value><b>true</b> to prevent a cell value from being changed; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.ShowButtonMode">
+            <summary>
+                <para>Gets or sets which cells corresponding to the current field  display editor buttons.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotShowButtonModeEnum"/> value that specifies the current display mode for cell buttons.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.ShowUnboundExpressionMenu">
+            <summary>
+                <para>Gets or sets whether an end-user can open an Expression Editor for the current unbound field using a context menu.
+</para>
+            </summary>
+            <value><b>true</b>, if an end-user can open an Expression Editor for the current unbound field using a context menu; otherwise, <b>false</b>.
 </value>
 
 
@@ -2264,6 +2876,102 @@
 
 
         </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection">
+
+            <summary>
+                <para>A collection of style format conditions.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.#ctor">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection"/> class.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.Add(DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition)">
+            <summary>
+                <para>Appends a style condition object to the collection.
+</para>
+            </summary>
+            <param name="condition">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> object to be added to the collection.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.AddRange(DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition[])">
+            <summary>
+                <para>Adds an array of style condition objects to the end of the collection.
+</para>
+            </summary>
+            <param name="conditions">
+		An array of <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> objects to be appended to the collection.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.CompareValues(System.Object,System.Object)">
+            <summary>
+                <para>Performs a comparison of two objects of the same type and returns a value indicating whether one is less than, equal to or greater than the other.
+</para>
+            </summary>
+            <param name="val1">
+		The first object to compare.
+
+            </param>
+            <param name="val2">
+		The second object to compare.
+
+            </param>
+            <returns>An integer value indicating whether one is less than, equal to or greater than the other.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.IsLoading">
+            <summary>
+                <para>Indicates whether the Pivot Grid Control that owns the current collection is currently being initialized.
+</para>
+            </summary>
+            <value><b>true</b> if the Pivot Grid Control is being initialized; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.Item(System.Int32)">
+            <summary>
+                <para>Provides indexed access to individual items within the collection.
+</para>
+            </summary>
+            <param name="index">
+		An integer value specifying the item's zero based index within the collection. If its negative or exceeds the last available index, an exception is raised. 
+
+            </param>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> object which resides at the specified position within the collection.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.Item(System.Object)">
+            <summary>
+                <para>Gets a style format condition with the specified tag.
+</para>
+            </summary>
+            <param name="tag">
+		An object which contains information associated with the style format condition. 
+
+            </param>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> object which represents a style format condition within the collection whose <see cref="P:DevExpress.XtraEditors.StyleFormatConditionBase.Tag"/> property's value matches the <i>tag</i> parameter. <b>null</b> (<b>Nothing</b> in Visual Basic) if no style format condition is found.
+</value>
+
+
+        </member>
         <member name="T:DevExpress.XtraPivotGrid.CustomExportHeaderEventArgs">
 
             <summary>
@@ -2481,13 +3189,16 @@
         </member>
         <member name="M:DevExpress.XtraPivotGrid.Prefilter.#ctor(DevExpress.PivotGrid.Filtering.IFilterOwnerBase,DevExpress.XtraPivotGrid.IFilterFormOwner)">
             <summary>
-                <para> </para>
+                <para>For internal use.
+</para>
             </summary>
             <param name="owner">
 		 
+
             </param>
             <param name="formOwner">
 		 
+
             </param>
 
 
@@ -2599,25 +3310,25 @@
 
 
         </member>
-        <member name="T:DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventHandler">
+        <member name="T:DevExpress.XtraPivotGrid.PivotCustomGroupIntervalEventArgs">
 
             <summary>
-                <para>Represents a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.CustomDrawFieldHeaderArea"/> event.
+                <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.CustomGroupInterval"/> event.
 </para>
             </summary>
 
         </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventHandler.Invoke(System.Object,DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventArgs)">
+        <member name="M:DevExpress.XtraPivotGrid.PivotCustomGroupIntervalEventArgs.#ctor(DevExpress.XtraPivotGrid.PivotGridField,System.Object)">
             <summary>
-                <para>Represents a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.CustomDrawFieldHeaderArea"/> event.
+                <para>Initializes a new instance of the PivotCustomGroupIntervalEventArgs class.
 </para>
             </summary>
-            <param name="sender">
-		The event source. This parameter identifies the Pivot Grid Control which raised the event.
+            <param name="field">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that represents the processed field.
 
             </param>
-            <param name="e">
-		A <see cref="T:DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventArgs"/> object which contains event data.
+            <param name="value">
+		An object that specifies the currently processed value. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotCustomGroupIntervalEventArgsBase`1.Value"/> property.
 
             </param>
 
@@ -2698,30 +3409,6 @@
             </summary>
             <value>An integer value that specifies the row index. 
 </value>
-
-
-        </member>
-        <member name="T:DevExpress.XtraPivotGrid.PivotCustomGroupIntervalEventArgs">
-
-            <summary>
-                <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.CustomGroupInterval"/> event.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotCustomGroupIntervalEventArgs.#ctor(DevExpress.XtraPivotGrid.PivotGridField,System.Object)">
-            <summary>
-                <para>Initializes a new instance of the PivotCustomGroupIntervalEventArgs class.
-</para>
-            </summary>
-            <param name="field">
-		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that represents the processed field.
-
-            </param>
-            <param name="value">
-		An object that specifies the currently processed value. This value is assigned to the <see cref="P:DevExpress.XtraPivotGrid.PivotCustomGroupIntervalEventArgsBase`1.Value"/> property.
-
-            </param>
 
 
         </member>
@@ -2846,19 +3533,23 @@
         <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelDataEventHandler">
 
             <summary>
-                <para> </para>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelData"/> event.
+</para>
             </summary>
 
         </member>
         <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelDataEventHandler.Invoke(System.Object,DevExpress.XtraPivotGrid.FilterPopupExcelDataEventArgs)">
             <summary>
-                <para> </para>
+                <para>References a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelData"/> event.
+</para>
             </summary>
             <param name="sender">
-		 
+		The event source.
+
             </param>
             <param name="e">
-		 
+		A <see cref="T:DevExpress.XtraGrid.Views.Grid.FilterPopupExcelDataEventArgs"/> object that contains event data.
+
             </param>
 
 
@@ -2866,58 +3557,71 @@
         <member name="T:DevExpress.XtraPivotGrid.FilterPopupExcelDataEventArgs">
 
             <summary>
-                <para> </para>
+                <para>Provides data for the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelData"/> event.
+</para>
             </summary>
 
         </member>
         <member name="M:DevExpress.XtraPivotGrid.FilterPopupExcelDataEventArgs.#ctor(DevExpress.XtraPivotGrid.PivotGridField,System.Object[],System.String[])">
             <summary>
-                <para> </para>
+                <para>Initializes a new instance of the FilterPopupExcelDataEventArgs class.
+</para>
             </summary>
             <param name="field">
-		 
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is a Pivot Grid field.
+
             </param>
             <param name="values">
-		 
+		An array of objects that are filter values.
+
             </param>
             <param name="displayTexts">
-		 
+		An array of <see cref="T:System.String"/> values that are display texts.
+
             </param>
 
 
         </member>
         <member name="P:DevExpress.XtraPivotGrid.FilterPopupExcelDataEventArgs.Field">
             <summary>
-                <para> </para>
+                <para>Gets a Pivot Grid field for which the event is raised.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is a Pivot Grid field.
+</value>
 
 
         </member>
         <member name="T:DevExpress.XtraPivotGrid.ExcelFilterNumericValuesTabFilterType">
 
             <summary>
-                <para> </para>
+                <para>Lists values that specify the type of filtering UI used to create filters in the Values tab in the Excel-style filter popup (if the current field contains numeric data).
+</para>
             </summary>
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterNumericValuesTabFilterType.Default">
             <summary>
-                <para> </para>
+                <para>The 'Values' tab displays a default filtering UI (Range).
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterNumericValuesTabFilterType.List">
             <summary>
-                <para> </para>
+                <para>The 'Values' tab displays numeric values as a list.
+
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterNumericValuesTabFilterType.Range">
             <summary>
-                <para> </para>
+                <para>The 'Values' tab displays a range track bar.
+
+</para>
             </summary>
 
 
@@ -2925,27 +3629,31 @@
         <member name="T:DevExpress.XtraPivotGrid.ExcelFilterEnumFilters">
 
             <summary>
-                <para> </para>
+                <para>Lists values that specify a set of relational operators (equality and inequalities) used to create a filter condition in the Filters tab of the Excel-style filter popup (if the current field contains enumeration data).
+</para>
             </summary>
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterEnumFilters.AllFilters">
             <summary>
-                <para> </para>
+                <para>The 'Filters' tab includes all available operators, including the inequality operators (<i>GreaterThan</i>, <i>GreaterThanOrEqualTo</i>, <i>LessThan</i>, <i>LessThanOrEqualTo</i>, <i>Between</i>).
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterEnumFilters.Default">
             <summary>
-                <para> </para>
+                <para>The 'Filters' tab contains a default set of operators.
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterEnumFilters.EqualityFilters">
             <summary>
-                <para> </para>
+                <para>The 'Filters' tab includes only the equality relational operators (<i>Equals</i>, <i>DoesNotEqual</i>).
+</para>
             </summary>
 
 
@@ -2953,27 +3661,33 @@
         <member name="T:DevExpress.XtraPivotGrid.ExcelFilterDateTimeValuesTabFilterType">
 
             <summary>
-                <para> </para>
+                <para>Lists values that specify the type of filtering UI used to create filters in the Values tab in the Excel-style Filter popup (if the current field contains date-time values).
+</para>
             </summary>
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterDateTimeValuesTabFilterType.Default">
             <summary>
-                <para> </para>
+                <para>The 'Values' tab displays a default filtering UI (Tree).
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterDateTimeValuesTabFilterType.List">
             <summary>
-                <para> </para>
+                <para>The 'Values' tab displays date-time values as a list.
+
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterDateTimeValuesTabFilterType.Tree">
             <summary>
-                <para> </para>
+                <para>The 'Values' tab displays date-time values as a tree.
+
+</para>
             </summary>
 
 
@@ -2981,27 +3695,31 @@
         <member name="T:DevExpress.XtraPivotGrid.ExcelFilterDefaultTab">
 
             <summary>
-                <para> </para>
+                <para>Lists values that specify the default tab in the Excel-style filter popup.
+</para>
             </summary>
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterDefaultTab.Default">
             <summary>
-                <para> </para>
+                <para>A default tab is opened by default.
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterDefaultTab.Filters">
             <summary>
-                <para> </para>
+                <para>The 'Filters' tab is opened by default.
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterDefaultTab.Values">
             <summary>
-                <para> </para>
+                <para>The 'Values' tab is opened by default.
+</para>
             </summary>
 
 
@@ -3009,13 +3727,15 @@
         <member name="T:DevExpress.XtraPivotGrid.FieldFilterPopupMode">
 
             <summary>
-                <para> </para>
+                <para>Lists values that specify the field's filter popup mode.
+</para>
             </summary>
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.FieldFilterPopupMode.Classic">
             <summary>
-                <para>A classic filter dropdown.
+                <para>A Classic filter popup.
+<para></para>
 </para>
             </summary>
 
@@ -3023,16 +3743,102 @@
         </member>
         <member name="F:DevExpress.XtraPivotGrid.FieldFilterPopupMode.Default">
             <summary>
-                <para> </para>
+                <para>A default filter popup type.
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.FieldFilterPopupMode.Excel">
             <summary>
-                <para>An Excel style filter dropdown.
+                <para>An Excel-style filter popup.
+<para></para>
 </para>
             </summary>
+
+
+        </member>
+        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldToolTips">
+
+            <summary>
+                <para>Provides tooltip options for a Pivot Grid field.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.#ctor(DevExpress.XtraPivotGrid.PivotGridField)">
+            <summary>
+                <para>Initializes a new instance of the PivotGridFieldToolTips class.
+</para>
+            </summary>
+            <param name="field">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridField"/> object that is a PivotGrid field.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.GetValueText(System.Object)">
+            <summary>
+                <para>Returns the formatted text representation of the specified value according to the settings used to represent the field value tooltip.
+
+</para>
+            </summary>
+            <param name="value">
+		An object which identifies the value to format. 
+
+            </param>
+            <returns>A string that specifies the formatted text representation of the specified value. 
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.HeaderText">
+            <summary>
+                <para>Gets or sets a field header tooltip.
+</para>
+            </summary>
+            <value>A string value that is a field header tooltip.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.Reset">
+            <summary>
+                <para>Resets the tooltip settings to their default values.
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.ShouldSerialize">
+            <summary>
+                <para>Tests whether the <see cref="T:DevExpress.XtraPivotGrid.PivotGridFieldToolTips"/> object should be persisted.
+</para>
+            </summary>
+            <returns><b>true</b> if the object should be persisted; otherwise, <b>false</b>. 
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.ValueFormat">
+            <summary>
+                <para>Provides access to the formatting settings applied to a field value tooltip.
+</para>
+            </summary>
+            <value>A <see cref="FormatInfo"/> object that provides the formatting settings applied to a field value tooltip. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldToolTips.ValueText">
+            <summary>
+                <para>Gets or sets a field value tooltip.
+</para>
+            </summary>
+            <value>A string value that is a field value tooltip.
+</value>
 
 
         </member>
@@ -5195,99 +6001,27 @@
 
 
         </member>
-        <member name="T:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection">
+        <member name="T:DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventHandler">
 
             <summary>
-                <para>A collection of style format conditions.
+                <para>Represents a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.CustomDrawFieldHeaderArea"/> event.
 </para>
             </summary>
 
         </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.#ctor">
+        <member name="M:DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventHandler.Invoke(System.Object,DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventArgs)">
             <summary>
-                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection"/> class.
+                <para>Represents a method that will handle the <see cref="E:DevExpress.XtraPivotGrid.PivotGridControl.CustomDrawFieldHeaderArea"/> event.
 </para>
             </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.Add(DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition)">
-            <summary>
-                <para>Appends a style condition object to the collection.
-</para>
-            </summary>
-            <param name="condition">
-		A <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> object to be added to the collection.
+            <param name="sender">
+		The event source. This parameter identifies the Pivot Grid Control which raised the event.
 
             </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.AddRange(DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition[])">
-            <summary>
-                <para>Adds an array of style condition objects to the end of the collection.
-</para>
-            </summary>
-            <param name="conditions">
-		An array of <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> objects to be appended to the collection.
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPivotGrid.PivotCustomDrawHeaderAreaEventArgs"/> object which contains event data.
 
             </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.CompareValues(System.Object,System.Object)">
-            <summary>
-                <para>Performs a comparison of two objects of the same type and returns a value indicating whether one is less than, equal to or greater than the other.
-</para>
-            </summary>
-            <param name="val1">
-		The first object to compare.
-
-            </param>
-            <param name="val2">
-		The second object to compare.
-
-            </param>
-            <returns>An integer value indicating whether one is less than, equal to or greater than the other.
-</returns>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.IsLoading">
-            <summary>
-                <para>Indicates whether the Pivot Grid Control that owns the current collection is currently being initialized.
-</para>
-            </summary>
-            <value><b>true</b> if the Pivot Grid Control is being initialized; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.Item(System.Int32)">
-            <summary>
-                <para>Provides indexed access to individual items within the collection.
-</para>
-            </summary>
-            <param name="index">
-		An integer value specifying the item's zero based index within the collection. If its negative or exceeds the last available index, an exception is raised. 
-
-            </param>
-            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> object which resides at the specified position within the collection.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFormatConditionCollection.Item(System.Object)">
-            <summary>
-                <para>Gets a style format condition with the specified tag.
-</para>
-            </summary>
-            <param name="tag">
-		An object which contains information associated with the style format condition. 
-
-            </param>
-            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridStyleFormatCondition"/> object which represents a style format condition within the collection whose <see cref="P:DevExpress.XtraEditors.StyleFormatConditionBase.Tag"/> property's value matches the <i>tag</i> parameter. <b>null</b> (<b>Nothing</b> in Visual Basic) if no style format condition is found.
-</value>
 
 
         </member>
@@ -6311,10 +7045,10 @@
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridField.CustomTotals">
             <summary>
-                <para>Gets the collection of custom totals for the current field.
+                <para>Gets the current field's custom total collection.
 </para>
             </summary>
-            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridCustomTotalCollection"/> object which represent the collection of custom totals.
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridCustomTotalCollection"/> object which represent the custom totals' collection.
 </value>
 
 
@@ -6362,19 +7096,21 @@
         </member>
         <member name="M:DevExpress.XtraPivotGrid.PivotGridField.GetCaption">
             <summary>
-                <para>Gets the Pivot Grid field's caption.
+                <para>Gets or sets the field's display caption.
 </para>
             </summary>
-            <returns>A System.String object that is the Pivot Grid field's caption.
+            <returns>A <see cref="T:System.String"/> object that is the field's display caption. 
 </returns>
 
 
         </member>
         <member name="M:DevExpress.XtraPivotGrid.PivotGridField.GetDescription">
             <summary>
-                <para> </para>
+                <para>Gets this field's description, assigned using the <b>[Display(Description = ". . .")]</b> data attribute.
+</para>
             </summary>
-            <returns> </returns>
+            <returns>A <see cref="T:System.String"/> value that is the fields's description.
+</returns>
 
 
         </member>
@@ -6403,9 +7139,11 @@
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridField.ImageOptions">
             <summary>
-                <para> </para>
+                <para>Provides access to settings that allow you to set up raster and vector icons for this PivotGridField.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridFieldImageOptions"/> object containing settings that allow you to set up raster and vector icons for this PivotGridField.
+</value>
 
 
         </member>
@@ -6421,9 +7159,13 @@
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridField.OptionsFilter">
             <summary>
-                <para> </para>
+                <para>Provides access to the field's filtering options.
+
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridFieldOptionsFilter"/> object containing the field's filtering options.
+
+</value>
 
 
         </member>
@@ -6451,22 +7193,26 @@
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridField.ShowActiveFilterButton">
             <summary>
-                <para> </para>
+                <para>Gets whether or not filtering is applied to the current field.
+</para>
             </summary>
-            <value> </value>
+            <value><b>true</b>, if filtering is applied to the current field; otherwise, <b>false</b>. 
+</value>
 
 
         </member>
         <member name="M:DevExpress.XtraPivotGrid.PivotGridField.ShowExcelFilterPopup">
             <summary>
-                <para> </para>
+                <para>Invokes the Excel-style filter popup for the current field.
+
+</para>
             </summary>
 
 
         </member>
         <member name="M:DevExpress.XtraPivotGrid.PivotGridField.ShowFilterPopup">
             <summary>
-                <para>Displays the filter dropdown for the current field.
+                <para>Invokes the Classic filter popup for the current field.
 </para>
             </summary>
 
@@ -7314,33 +8060,41 @@
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridControl.ActiveFilter">
             <summary>
-                <para> </para>
+                <para>Provides access to settings of the filter applied to the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>'s data.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotFilter"/> object that is a filter applied to data displayed in the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>. 
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridControl.ActiveFilterCriteria">
             <summary>
-                <para> </para>
+                <para>Gets or sets the filter criteria applied to the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>'s data.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant that specifies a filter criteria applied to data displayed in the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>. 
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridControl.ActiveFilterEnabled">
             <summary>
-                <para> </para>
+                <para>Gets or sets whether to apply the filter criteria specified using the <see cref="P:DevExpress.XtraPivotGrid.PivotGridControl.ActiveFilterCriteria"/> or <see cref="P:DevExpress.XtraPivotGrid.PivotGridControl.ActiveFilterString"/>.
+</para>
             </summary>
-            <value> </value>
+            <value><b>true</b>, to apply a filter criteria; otherwise, <b>false</b>.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridControl.ActiveFilterString">
             <summary>
-                <para> </para>
+                <para>Gets or sets a string that specifies the filter criteria applied to the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>'s data.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:System.String"/> value that specifies a string that specifies a filter criteria applied to data displayed in the <see cref="T:DevExpress.XtraPivotGrid.PivotGridControl"/>. 
+</value>
 
 
         </member>
@@ -8412,7 +9166,7 @@
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.CustomFilterPopupItems">
             <summary>
-                <para>Allows you to customize the filter drop-down list items.
+                <para>Allows you to customize items displayed in the Classic filter popup.
 </para>
             </summary>
 
@@ -9596,7 +10350,7 @@
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.FieldFilterChanged">
             <summary>
-                <para>Occurs after the filter criteria have been changed for a specific field.
+                <para>Occurs after a specific field's filter criteria was changed.
 </para>
             </summary>
 
@@ -9753,28 +10507,32 @@
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelCustomizeTemplate">
             <summary>
-                <para> </para>
+                <para>Allows you to customize templates used by Excel-style filter popups and external editors generated using Filtering UI Context.
+</para>
             </summary>
 
 
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelData">
             <summary>
-                <para> </para>
+                <para>Allows you to remove and modify items within Excel-style filter popups, as well as add custom items that apply specific filtering conditions.
+</para>
             </summary>
 
 
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelPrepareTemplate">
             <summary>
-                <para> </para>
+                <para>Allows you to replace templates used by Excel-style filter popups and external editors generated using Filtering UI Context.
+</para>
             </summary>
 
 
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.FilterPopupExcelQueryFilterCriteria">
             <summary>
-                <para> </para>
+                <para>Allows you to customize a filter criteria applied using Excel-style filter popups.
+</para>
             </summary>
 
 
@@ -10163,7 +10921,7 @@
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.GroupFilterChanged">
             <summary>
-                <para>Occurs after a group filter condition has been changed.
+                <para>Occurs after a group filter condition was changed.
 </para>
             </summary>
 
@@ -10509,10 +11267,10 @@
         </member>
         <member name="P:DevExpress.XtraPivotGrid.PivotGridControl.OptionsFilterPopup">
             <summary>
-                <para>Contains settings that specify the appearance and behavior of filter dropdown windows.
+                <para>Provides access to options that define the Classic filter popup's appearance and behavior.
 </para>
             </summary>
-            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridOptionsFilterPopup"/> object that specifies the appearance and behavior of filter dropdown windows.
+            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotGridOptionsFilterPopup"/> object that specifies the appearance and behavior of the Classic filter popup.
 
 </value>
 
@@ -11180,7 +11938,8 @@
         </member>
         <member name="E:DevExpress.XtraPivotGrid.PivotGridControl.ShowFilterPopupExcel">
             <summary>
-                <para> </para>
+                <para>Allows you to customize the Excel-style filter popup (for instance, to hide specific filtering conditions from the "Filters" tab).
+</para>
             </summary>
 
 
@@ -13025,125 +13784,32 @@
         <member name="T:DevExpress.XtraPivotGrid.ExcelFilterTextFilters">
 
             <summary>
-                <para> </para>
+                <para>Lists values that specify a set of relational operators (equality and inequalities) used to create a filter condition in the Filters tab of the Excel-style filter popup (if the current field contains text data).
+</para>
             </summary>
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterTextFilters.AllFilters">
             <summary>
-                <para> </para>
+                <para>The 'Filters' tab includes all available operators, including the inequality operators (<i>GreaterThan</i>, <i>GreaterThanOrEqualTo</i>, <i>LessThan</i>, <i>LessThanOrEqualTo</i>, <i>Between</i>).
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterTextFilters.Default">
             <summary>
-                <para> </para>
+                <para>The 'Filters' tab contains a default set of operators.
+</para>
             </summary>
 
 
         </member>
         <member name="F:DevExpress.XtraPivotGrid.ExcelFilterTextFilters.TextFilters">
             <summary>
-                <para> </para>
-            </summary>
-
-
-        </member>
-        <member name="T:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx">
-
-            <summary>
-                <para>Contains options for a field.
+                <para>The 'Filters' tab includes only the equality relational operators (<i>Equals</i>, <i>DoesNotEqual</i>).
 </para>
             </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.#ctor(DevExpress.XtraPivotGrid.PivotOptionsChangedEventHandler,DevExpress.WebUtils.IViewBagOwner,System.String)">
-            <summary>
-                <para>Initializes a new instance of the PivotGridFieldOptionsEx class with the specified settings.
-</para>
-            </summary>
-            <param name="optionsChanged">
-		A delegate that will receive change notifications.
-
-            </param>
-            <param name="viewBagOwner">
-		An IViewBagOwner object that is used to initialize the created object.
-
-            </param>
-            <param name="objectPath">
-		A string value that is used to initialize the created object.
-
-            </param>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.AllowEdit">
-            <summary>
-                <para>Gets or sets whether data editing is allowed for the current field.
-</para>
-            </summary>
-            <value><b>true</b> to allow editing cell values that correspond to the current data field; otherwise, <b>false</b>.
-
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.AllowHide">
-            <summary>
-                <para>Gets or sets whether or not an end-user can hide the current field.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> value that specifies whether or not an end-user can hide the current field.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.FieldFilterPopupMode">
-            <summary>
-                <para> </para>
-            </summary>
-            <value> </value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.IsFilterRadioMode">
-            <summary>
-                <para>Gets or sets whether an end-user is allowed to select only a single item in the filter drop-down.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> value that specifies whether an end-user is allowed to select only a single item in the filter drop-down.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.ReadOnly">
-            <summary>
-                <para>Gets or sets whether end-users can modify cell values.
-</para>
-            </summary>
-            <value><b>true</b> to prevent a cell value from being changed; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.ShowButtonMode">
-            <summary>
-                <para>Gets or sets which cells corresponding to the current field  display editor buttons.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.XtraPivotGrid.PivotShowButtonModeEnum"/> value that specifies the current display mode for cell buttons.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptionsEx.ShowUnboundExpressionMenu">
-            <summary>
-                <para>Gets or sets whether an end-user can open an Expression Editor for the current unbound field using a context menu.
-</para>
-            </summary>
-            <value><b>true</b>, if an end-user can open an Expression Editor for the current unbound field using a context menu; otherwise, <b>false</b>.
-</value>
 
 
         </member>

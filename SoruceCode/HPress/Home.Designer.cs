@@ -63,7 +63,7 @@
             // 
             this.picMain.Location = new System.Drawing.Point(3, 50);
             this.picMain.Name = "picMain";
-            this.picMain.Size = new System.Drawing.Size(295, 182);
+            this.picMain.Size = new System.Drawing.Size(295, 170);
             this.picMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMain.TabIndex = 9;
             this.picMain.TabStop = false;
@@ -79,7 +79,7 @@
             this.btnClientsImports.Name = "btnClientsImports";
             this.btnClientsImports.Size = new System.Drawing.Size(301, 44);
             this.btnClientsImports.TabIndex = 8;
-            this.btnClientsImports.Text = "العملاء";
+            this.btnClientsImports.Text = "العملاء و الموردين";
             this.btnClientsImports.Click += new System.EventHandler(this.btnClientsImports_Click);
             // 
             // btnMain
@@ -163,7 +163,7 @@
             this.btnClients.Name = "btnClients";
             this.btnClients.Size = new System.Drawing.Size(301, 44);
             this.btnClients.TabIndex = 1;
-            this.btnClients.Text = "العملاء";
+            this.btnClients.Text = "الموارد البشرية";
             this.btnClients.Click += new System.EventHandler(this.btnClientAdd_Click);
             // 
             // Home

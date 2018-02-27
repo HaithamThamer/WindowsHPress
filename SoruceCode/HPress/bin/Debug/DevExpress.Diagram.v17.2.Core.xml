@@ -129,30 +129,6 @@
 
 
         </member>
-        <member name="T:DevExpress.Diagram.Core.ModifySelectionMode">
-
-            <summary>
-                <para>Lists the values used to specify whether to add or replace the existing selection with selected diagram items.
-</para>
-            </summary>
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ModifySelectionMode.AddToSelection">
-            <summary>
-                <para>Selected diagram items are added to the existing selection.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ModifySelectionMode.ReplaceSelection">
-            <summary>
-                <para>The existing selection is replaced with selected diagram items.
-</para>
-            </summary>
-
-
-        </member>
         <member name="T:DevExpress.Diagram.Core.DiagramCommandsBase">
 
             <summary>
@@ -1421,6 +1397,78 @@
 
 
         </member>
+        <member name="T:DevExpress.Diagram.Core.ImageFlipMode">
+
+            <summary>
+                <para>Lists values that specify how the image is flipped.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.Both">
+            <summary>
+                <para>The image is flipped both vertically and horizontally.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.Horizontal">
+            <summary>
+                <para>The image is flipped horizontally.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.None">
+            <summary>
+                <para>The image is not flipped.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.Vertical">
+            <summary>
+                <para>The image is flipped vertically.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Diagram.Core.Layout.CircularLayoutOrder">
+
+            <summary>
+                <para>Lists the values used to specify how the circular layout algorithm arranges shapes.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutOrder.Clockwise">
+            <summary>
+                <para>Arrange shapes clockwise.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutOrder.Counterclockwise">
+            <summary>
+                <para>Arrange shapes counterclockwise.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutOrder.Optimal">
+            <summary>
+                <para>Arrange shapes minimizing the number of crossings of connection lines.
+</para>
+            </summary>
+
+
+        </member>
         <member name="T:DevExpress.Diagram.Core.Direction">
 
             <summary>
@@ -1464,7 +1512,8 @@
         <member name="T:DevExpress.Diagram.Core.ConnectorPointType">
 
             <summary>
-                <para> </para>
+                <para>Lists values that specify whether the connector point is the begin or end point.
+</para>
             </summary>
 
         </member>
@@ -1786,38 +1835,6 @@
             <summary>
                 <para>The diagram has a vertical orientation.
 
-</para>
-            </summary>
-
-
-        </member>
-        <member name="T:DevExpress.Diagram.Core.Alignment">
-
-            <summary>
-                <para>Lists the values used to specify how the tree layout algorithm arranges shapes relatively to the layout axis.
-</para>
-            </summary>
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.Alignment.Center">
-            <summary>
-                <para>Items are aligned along the layout axis.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.Alignment.Far">
-            <summary>
-                <para>In a left-to-right layout, items are aligned to the right from the layout axis. In a right-to-left layout, items are aligned to the left.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.Alignment.Near">
-            <summary>
-                <para>In a left-to-right layout, items are aligned to the left from the layout axis. In a right-to-left layout, items are aligned to the right.
 </para>
             </summary>
 
@@ -4274,38 +4291,6 @@ If the generation and/or expansion depth is set to a non-default value, expand/c
 
 
         </member>
-        <member name="T:DevExpress.Diagram.Core.Layout.CircularLayoutOrder">
-
-            <summary>
-                <para>Lists the values used to specify how the circular layout algorithm arranges shapes.
-</para>
-            </summary>
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutOrder.Clockwise">
-            <summary>
-                <para>Arrange shapes clockwise.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutOrder.Counterclockwise">
-            <summary>
-                <para>Arrange shapes counterclockwise.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutOrder.Optimal">
-            <summary>
-                <para>Arrange shapes minimizing the number of crossings of connection lines.
-</para>
-            </summary>
-
-
-        </member>
         <member name="T:DevExpress.Diagram.Core.TextAlignmentKind">
 
             <summary>
@@ -4379,6 +4364,32 @@ If the generation and/or expansion depth is set to a non-default value, expand/c
         <member name="F:DevExpress.Diagram.Core.VerticalAlignmentKind.Top">
             <summary>
                 <para>The text is aligned to the top of the shape.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Diagram.Core.ContainerDragMode">
+
+            <summary>
+                <para>Lists the values used to specify whether containers can be dragged by any point or only by the header and bounds.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ContainerDragMode.ByAnyPoint">
+            <summary>
+                <para>Containers can be dragged by any point.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ContainerDragMode.ByHeaderAndBounds">
+            <summary>
+                <para>Containers can be dragged only by the header and bounds.
+
 </para>
             </summary>
 
@@ -4515,6 +4526,30 @@ If the generation and/or expansion depth is set to a non-default value, expand/c
         <member name="F:DevExpress.Diagram.Core.ConnectorPointRestrictions.None">
             <summary>
                 <para>Restrictions are not applied.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Diagram.Core.ModifySelectionMode">
+
+            <summary>
+                <para>Lists the values used to specify whether to add or replace the existing selection with selected diagram items.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ModifySelectionMode.AddToSelection">
+            <summary>
+                <para>Selected diagram items are added to the existing selection.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.ModifySelectionMode.ReplaceSelection">
+            <summary>
+                <para>The existing selection is replaced with selected diagram items.
 </para>
             </summary>
 
@@ -5181,6 +5216,38 @@ If the generation and/or expansion depth is set to a non-default value, expand/c
 
 
         </member>
+        <member name="T:DevExpress.Diagram.Core.Alignment">
+
+            <summary>
+                <para>Lists the values used to specify how the tree layout algorithm arranges shapes relatively to the layout axis.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.Alignment.Center">
+            <summary>
+                <para>Items are aligned along the layout axis.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.Alignment.Far">
+            <summary>
+                <para>In a left-to-right layout, items are aligned to the right from the layout axis. In a right-to-left layout, items are aligned to the left.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Diagram.Core.Alignment.Near">
+            <summary>
+                <para>In a left-to-right layout, items are aligned to the left from the layout axis. In a right-to-left layout, items are aligned to the right.
+</para>
+            </summary>
+
+
+        </member>
         <member name="T:DevExpress.Diagram.Core.Layout.CircularLayoutSettings">
 
             <summary>
@@ -5659,32 +5726,6 @@ If the generation and/or expansion depth is set to a non-default value, expand/c
 
 
         </member>
-        <member name="T:DevExpress.Diagram.Core.ContainerDragMode">
-
-            <summary>
-                <para>Lists the values used to specify whether containers can be dragged by any point or only by the header and bounds.
-
-</para>
-            </summary>
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ContainerDragMode.ByAnyPoint">
-            <summary>
-                <para>Containers can be dragged by any point.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ContainerDragMode.ByHeaderAndBounds">
-            <summary>
-                <para>Containers can be dragged only by the header and bounds.
-
-</para>
-            </summary>
-
-
-        </member>
         <member name="T:DevExpress.Diagram.Core.PageSetupTabs">
 
             <summary>
@@ -5985,46 +6026,6 @@ If the generation and/or expansion depth is set to a non-default value, expand/c
             </param>
             <returns>A ShapeDescription instance with updated properties.
 </returns>
-
-
-        </member>
-        <member name="T:DevExpress.Diagram.Core.ImageFlipMode">
-
-            <summary>
-                <para>Lists values that specify how the image is flipped.
-</para>
-            </summary>
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.Both">
-            <summary>
-                <para>The image is flipped both vertically and horizontally.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.Horizontal">
-            <summary>
-                <para>The image is flipped horizontally.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.None">
-            <summary>
-                <para>The image is not flipped.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.Diagram.Core.ImageFlipMode.Vertical">
-            <summary>
-                <para>The image is flipped vertically.
-</para>
-            </summary>
 
 
         </member>

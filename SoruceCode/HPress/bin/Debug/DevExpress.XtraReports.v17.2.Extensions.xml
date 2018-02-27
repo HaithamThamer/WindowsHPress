@@ -916,46 +916,6 @@
 
 
         </member>
-        <member name="T:DevExpress.XtraReports.Extensions.ParametersRequestExtension">
-
-            <summary>
-                <para>Supports the creation of custom parameter editors in a Print Preview.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Extensions.ParametersRequestExtension.AssociateReportWithExtension(DevExpress.XtraReports.UI.XtraReport,System.String)">
-            <summary>
-                <para>Associates the report with the custom parameter extension, to implement custom parameter editors in a print preview.
-</para>
-            </summary>
-            <param name="report">
-		An <see cref="T:DevExpress.XtraReports.UI.XtraReport"/> object.
-
-            </param>
-            <param name="contextName">
-		A <see cref="T:System.String"/> value, identifying the context.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Extensions.ParametersRequestExtension.RegisterExtension(DevExpress.XtraReports.Extensions.ParametersRequestExtension,System.String)">
-            <summary>
-                <para>Registers the custom parameters request extension, to implement custom parameter editors in a print preview.
-</para>
-            </summary>
-            <param name="extension">
-		A <see cref="T:DevExpress.XtraReports.Extensions.ParametersRequestExtension"/> object.
-
-            </param>
-            <param name="contextName">
-		A <see cref="T:System.String"/> value, identifying the context.
-
-            </param>
-
-
-        </member>
         <member name="T:DevExpress.XtraReports.UserDesigner.XRDesignMdiControllerDesignSettings">
 
             <summary>
@@ -1008,23 +968,28 @@
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.MasterDetailSelectDataMembersPageView.DoAddFieldsAction(System.Action,DevExpress.XtraReports.Wizards.Presenters.MasterDetailFieldModel)">
             <summary>
-                <para> </para>
+                <para>Performs actions with the view required before and after adding fields.
+</para>
             </summary>
             <param name="action">
-		 
+		A <see cref="T:System.Action"/> delegate.
+
             </param>
             <param name="rootAddedField">
-		 
+		A <see cref="T:DevExpress.XtraReports.Wizards.Presenters.MasterDetailFieldModel"/> object that specifies the root field.
+
             </param>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.MasterDetailSelectDataMembersPageView.DoRemoveFieldsAction(System.Action)">
             <summary>
-                <para> </para>
+                <para>Performs actions with the view required before and after removing fields.
+</para>
             </summary>
             <param name="action">
-		 
+		A <see cref="T:System.Action"/> delegate.
+
             </param>
 
 
@@ -1045,10 +1010,12 @@
 </para>
             </summary>
             <param name="queriesModel">
-		 
+		A collection of <see cref="T:DevExpress.XtraReports.Wizards.Presenters.MasterDetailQueryModel"/> objects.
+
             </param>
             <param name="fieldsModel">
-		 
+		A collection of <see cref="T:DevExpress.XtraReports.Wizards.Presenters.MasterDetailFieldModel"/> objects.
+
             </param>
 
 
@@ -1408,19 +1375,43 @@
 
 
         </member>
-        <member name="T:DevExpress.XtraReports.Wizards3.Views.ChooseSummaryOptionsPageView">
+        <member name="T:DevExpress.XtraReports.Extensions.ParametersRequestExtension">
 
             <summary>
-                <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.ChooseSummaryOptionsPageView"/> class instead.
+                <para>Supports the creation of custom parameter editors in a Print Preview.
 </para>
             </summary>
 
         </member>
-        <member name="M:DevExpress.XtraReports.Wizards3.Views.ChooseSummaryOptionsPageView.#ctor">
+        <member name="M:DevExpress.XtraReports.Extensions.ParametersRequestExtension.AssociateReportWithExtension(DevExpress.XtraReports.UI.XtraReport,System.String)">
             <summary>
-                <para>Initializes a new instance of the ChooseSummaryOptionsPageView class with the default settings.
+                <para>Associates the report with the custom parameter extension, to implement custom parameter editors in a print preview.
 </para>
             </summary>
+            <param name="report">
+		An <see cref="T:DevExpress.XtraReports.UI.XtraReport"/> object.
+
+            </param>
+            <param name="contextName">
+		A <see cref="T:System.String"/> value, identifying the context.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Extensions.ParametersRequestExtension.RegisterExtension(DevExpress.XtraReports.Extensions.ParametersRequestExtension,System.String)">
+            <summary>
+                <para>Registers the custom parameters request extension, to implement custom parameter editors in a print preview.
+</para>
+            </summary>
+            <param name="extension">
+		A <see cref="T:DevExpress.XtraReports.Extensions.ParametersRequestExtension"/> object.
+
+            </param>
+            <param name="contextName">
+		A <see cref="T:System.String"/> value, identifying the context.
+
+            </param>
 
 
         </member>
@@ -1975,6 +1966,23 @@
 
 
         </member>
+        <member name="T:DevExpress.XtraReports.Wizards3.Views.ChooseReportLayoutPageView">
+
+            <summary>
+                <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.ChooseReportLayoutPageView"/> class instead.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards3.Views.ChooseReportLayoutPageView.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ChooseReportLayoutPageView class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
         <member name="T:DevExpress.XtraReports.Wizards3.Views.AddGroupingLevelPageView">
 
             <summary>
@@ -1986,6 +1994,22 @@
         <member name="M:DevExpress.XtraReports.Wizards3.Views.AddGroupingLevelPageView.#ctor">
             <summary>
                 <para>Creates a new instance of the AddGroupingLevelPageView class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.XtraReports.Wizards3.Views.SelectColumnsPageView">
+
+            <summary>
+                <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView"/> class instead.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards3.Views.SelectColumnsPageView.#ctor">
+            <summary>
+                <para>Initializes a new instance of the SelectColumnsPageView class with the default settings.
 </para>
             </summary>
 
@@ -3193,38 +3217,49 @@
         </member>
         <member name="M:DevExpress.XtraReports.ReportGeneration.ReportGenerator.GenerateReport(DevExpress.XtraGrid.Views.Base.BaseView,DevExpress.XtraReports.ReportGeneration.ReportGenerationOptions,System.Boolean)">
             <summary>
-                <para> </para>
+                <para>Generates a new report using the specified grid view.
+</para>
             </summary>
             <param name="view">
-		 
+		A <see cref="T:DevExpress.XtraGrid.Views.Base.BaseView"/> descendant.
+
             </param>
             <param name="options">
-		 
+		A <see cref="T:DevExpress.XtraReports.ReportGeneration.ReportGenerationOptions"/> object.
+
             </param>
             <param name="useExpressionBindings">
-		 
+		<b>true</b>, to use expression bindings; <b>false</b>, to use the legacy binding mode.
+
             </param>
-            <returns> </returns>
+            <returns>An <see cref="T:DevExpress.XtraReports.UI.XtraReport"/> object.
+</returns>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.ReportGeneration.ReportGenerator.GenerateReport(DevExpress.XtraReports.UI.XtraReport,DevExpress.XtraGrid.Views.Base.BaseView,DevExpress.XtraReports.ReportGeneration.ReportGenerationOptions,System.Boolean)">
             <summary>
-                <para> </para>
+                <para>Generates a new report using the specified source report and grid view. Only the settings related to the document layout of the source report are preserved in the resulting report (such as <see cref="P:DevExpress.XtraReports.UI.XtraReport.Landscape"/> and <see cref="P:DevExpress.XtraReports.UI.XtraReport.Margins"/>).
+</para>
             </summary>
             <param name="report">
-		 
+		An <see cref="T:DevExpress.XtraReports.UI.XtraReport"/> object.
+
             </param>
             <param name="view">
-		 
+		A <see cref="T:DevExpress.XtraGrid.Views.Base.BaseView"/> descendant.
+
             </param>
             <param name="options">
-		 
+		A <see cref="T:DevExpress.XtraReports.ReportGeneration.ReportGenerationOptions"/> object.
+
             </param>
             <param name="useExpressionBindings">
-		 
+		<b>true</b>, to use expression bindings; <b>false</b>, to use the legacy binding mode.
+
             </param>
-            <returns> </returns>
+            <returns>An <see cref="T:DevExpress.XtraReports.UI.XtraReport"/> object.
+</returns>
 
 
         </member>
@@ -3708,103 +3743,126 @@
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.AllowDiscountEditing">
             <summary>
-                <para> </para>
+                <para>Specifies whether the discount value can be edited.
+</para>
             </summary>
-            <value> </value>
+            <value><b>true</b>, if the discount value can be edited; otherwise, <b>false</b>.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.AllowTaxEditing">
             <summary>
-                <para> </para>
+                <para>Specifies whether the tax value can be edited.
+</para>
             </summary>
-            <value> </value>
+            <value><b>true</b>, if the tax value can be edited; otherwise, <b>false</b>.
+</value>
 
 
         </member>
         <member name="E:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.Changed">
             <summary>
-                <para> </para>
+                <para>Occurs when any property on the current wizard page changes.
+</para>
             </summary>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.CurrencyFormat">
             <summary>
-                <para> </para>
+                <para>Specifies the index of the selected currency format.
+</para>
             </summary>
-            <value> </value>
+            <value>An index of the selected currency format.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.CurrencySymbol">
             <summary>
-                <para> </para>
+                <para>Specifies the selected currency symbol.
+</para>
             </summary>
-            <value> </value>
+            <value>A string that specifies the currency symbol.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.DiscountValue">
             <summary>
-                <para> </para>
+                <para>Specifies the discount value.
+</para>
             </summary>
-            <value> </value>
+            <value>An object that specifies the discount value.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.DiscountValueRange">
             <summary>
-                <para> </para>
+                <para>Specifies to which range a discount value should be applied.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraReports.Wizards.TemplateValueRange"/> enumeration value.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.DiscountValueType">
             <summary>
-                <para> </para>
+                <para>Specifies the selected discount value type.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraReports.Wizards.TemplateValueType"/> enumeration value.
+</value>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.FillAvailableDiscountValueTypes(System.Collections.ICollection)">
             <summary>
-                <para> </para>
+                <para>Populates the list of available types for discount values.
+</para>
             </summary>
             <param name="discountValueTypes">
-		 
+		A collection of discount value types.
+
             </param>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.FillAvailableTaxValueTypes(System.Collections.ICollection)">
             <summary>
-                <para> </para>
+                <para>Populates the list of available types for tax values.
+</para>
             </summary>
             <param name="taxValueTypes">
-		 
+		A collection of tax value types.
+
             </param>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.FillCurrencyFormats(System.Collections.ICollection)">
             <summary>
-                <para> </para>
+                <para>Populates the list of available currency formats. 
+</para>
             </summary>
             <param name="currencyFormats">
-		 
+		A collection of currency formats.
+
             </param>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.FillCurrencySymbols(System.Collections.ICollection)">
             <summary>
-                <para> </para>
+                <para>Populates the list of available currency symbols. 
+</para>
             </summary>
             <param name="currencySymbols">
-		 
+		A collection of currency symbols.
+
             </param>
 
 
@@ -3819,70 +3877,94 @@
 
 
         </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.SetDataSource(System.Object)">
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.SetDataSource(System.Object,System.String,System.String)">
             <summary>
-                <para> </para>
+                <para>Sets the data source with the specified settings for providing data to template fields.
+</para>
             </summary>
             <param name="dataSource">
-		 
+		An object that specifies the data source. 
+
+            </param>
+            <param name="dataSourceName">
+		A string that specifies the data source name. 
+
+            </param>
+            <param name="dataMember">
+		A string that specifies the data source member. 
+
             </param>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.TaxInclusive">
             <summary>
-                <para> </para>
+                <para>Specifies whether the tax value is included in the price values.
+</para>
             </summary>
-            <value> </value>
+            <value><b>true</b>, if the tax is included in the price values; otherwise, <b>false</b>.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.TaxValue">
             <summary>
-                <para> </para>
+                <para>Specifies the tax value.
+</para>
             </summary>
-            <value> </value>
+            <value>An object that specifies the tax value.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.TaxValueRange">
             <summary>
-                <para> </para>
+                <para>Specifies to which range a tax value should be applied.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraReports.Wizards.TemplateValueRange"/> enumeration value.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.TaxValueType">
             <summary>
-                <para> </para>
+                <para>Specifies the selected tax value type.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraReports.Wizards.TemplateValueType"/> enumeration value.
+</value>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.UpdateDiscountEditorProperties(System.Boolean,System.String)">
             <summary>
-                <para> </para>
+                <para>Updates the discount editor according to the specified settings.
+</para>
             </summary>
             <param name="isNumeric">
-		 
+		<b>true</b>, if the discount value is manually entered; <b>false</b>, if this value is not specified or obtained from a data source
+
             </param>
             <param name="mask">
-		 
+		A string that specifies the mask applied to the discount value. 
+
             </param>
 
 
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.SpecifyReportTemplateOptionsPageView.UpdateTaxEditorProperties(System.Boolean,System.String)">
             <summary>
-                <para> </para>
+                <para>Updates the tax editor according to the specified settings.
+</para>
             </summary>
             <param name="isNumeric">
-		 
+		<b>true</b>, if the tax value is manually entered; <b>false</b>, if this value is not specified or obtained from a data source. 
+
             </param>
             <param name="mask">
-		 
+		A string that specifies the mask applied to the tax value. 
+
             </param>
 
 
@@ -3917,25 +3999,31 @@
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.MapReportTemplateFieldsPageView.SetDataSource(System.Object,System.String,System.String)">
             <summary>
-                <para> </para>
+                <para>Sets the data source with the specified settings for providing data to template fields.
+</para>
             </summary>
             <param name="dataSource">
-		 
+		An object that specifies the data source. 
+
             </param>
             <param name="dataSourceName">
-		 
+		A string that specifies the data source name. 
+
             </param>
             <param name="dataMember">
-		 
+		A string that specifies the data source member. 
+
             </param>
 
 
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.MapReportTemplateFieldsPageView.TemplateFields">
             <summary>
-                <para> </para>
+                <para>Specifies the collection of available template fields.
+</para>
             </summary>
-            <value> </value>
+            <value>A collection of <see cref="T:DevExpress.XtraReports.Wizards.Templates.TemplateField"/> objects.
+</value>
 
 
         </member>
@@ -3957,10 +4045,12 @@
         </member>
         <member name="M:DevExpress.XtraReports.Wizards.Views.ChooseReportTemplatePageView.FillTemplates(System.Collections.Generic.IEnumerable`1)">
             <summary>
-                <para> </para>
+                <para>Populates the list of available templates.
+</para>
             </summary>
             <param name="templates">
-		 
+		A collection of <see cref="T:DevExpress.XtraReports.Wizards.Templates.TemplateInfo"/> objects.
+
             </param>
 
 
@@ -3979,9 +4069,11 @@
         </member>
         <member name="P:DevExpress.XtraReports.Wizards.Views.ChooseReportTemplatePageView.TemplateReportType">
             <summary>
-                <para> </para>
+                <para>Specifies the selected template report type.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:System.Type"/> object.
+</value>
 
 
         </member>
@@ -5257,61 +5349,6 @@
 
 
         </member>
-        <member name="T:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel">
-
-            <summary>
-                <para>The <b>Property Grid</b> dock panel that enables modifying the properties of a report, its bands and controls in the End-User Report Designer.
-
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.#ctor">
-            <summary>
-                <para>Initializes a new instance of the PropertyGridDockPanel class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.#ctor(DevExpress.XtraBars.Docking.DockManager,DevExpress.XtraBars.Docking.DockingStyle)">
-            <summary>
-                <para>Initializes a new instance of the PropertyGridDockPanel class with the specified docking style and owner.
-</para>
-            </summary>
-            <param name="dockManager">
-		A <see cref="T:DevExpress.XtraBars.Docking.DockManager"/> object which represents the owner of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.DockManager"/> property.
-
-            </param>
-            <param name="dock">
-		A <see cref="T:DevExpress.XtraBars.Docking.DockingStyle"/> enumeration value which represents the docking style of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.Dock"/> property.
-
-            </param>
-
-
-        </member>
-        <member name="P:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.ShowCategories">
-            <summary>
-                <para>Gets or sets a value indicating whether to show categories for the items in the Property Grid, or show them in alphabetical order.
-
-</para>
-            </summary>
-            <value><b>true</b> to show categories; <b>false</b> to sort alphabetically.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.ShowDescription">
-            <summary>
-                <para>Gets or sets a value indicating whether to show the <b>Description</b> bar at the bottom of the Property Grid.
-
-</para>
-            </summary>
-            <value><b>true</b> to show the Description bar; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
         <member name="T:DevExpress.XtraReports.UserDesigner.GroupAndSortDockPanel">
 
             <summary>
@@ -5413,6 +5450,40 @@
 		An object implementing the <see cref="T:System.ComponentModel.Design.IDesignerHost"/> interface that is used to manage designer transactions and components.
 
             </param>
+
+
+        </member>
+        <member name="T:DevExpress.XtraReports.UserDesigner.ErrorListDockPanel">
+
+            <summary>
+                <para>The <b>Scripts Errors</b> dock panel that displays the results of script validation in the End-User Report Designer.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UserDesigner.ErrorListDockPanel.#ctor(DevExpress.XtraBars.Docking.DockManager,DevExpress.XtraBars.Docking.DockingStyle)">
+            <summary>
+                <para>Initializes a new instance of the ErrorListDockPanel class with the specified docking style and owner.
+</para>
+            </summary>
+            <param name="dockManager">
+		A <see cref="T:DevExpress.XtraBars.Docking.DockManager"/> object which represents the owner of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.DockManager"/> property.
+
+
+            </param>
+            <param name="dock">
+		A <see cref="T:DevExpress.XtraBars.Docking.DockingStyle"/> enumeration value which represents the docking style of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.Dock"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UserDesigner.ErrorListDockPanel.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ErrorListDockPanel class with the default settings.
+</para>
+            </summary>
 
 
         </member>
@@ -6765,7 +6836,8 @@
         </member>
         <member name="F:DevExpress.XtraReports.UserDesigner.ReportCommand.VerbConvertToExpressions">
             <summary>
-                <para> </para>
+                <para><para>Invokes the dialog that converts a report to use expression bindings instead of the legacy data bindings.</para>
+</para>
             </summary>
 
 
@@ -7711,20 +7783,29 @@
 
 
         </member>
-        <member name="T:DevExpress.XtraReports.Wizards3.Views.ChooseReportLayoutPageView">
+        <member name="T:DevExpress.XtraReports.Configuration.PivotGridDesignOptions">
 
             <summary>
-                <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.ChooseReportLayoutPageView"/> class instead.
-
+                <para>Enables you to specify the settings related to the Pivot Grid behavior.
 </para>
             </summary>
 
         </member>
-        <member name="M:DevExpress.XtraReports.Wizards3.Views.ChooseReportLayoutPageView.#ctor">
+        <member name="M:DevExpress.XtraReports.Configuration.PivotGridDesignOptions.#ctor">
             <summary>
-                <para>Initializes a new instance of the ChooseReportLayoutPageView class with the default settings.
+                <para>Initializes a new instance of the PivotGridDesignOptions class with the default settings.
 </para>
             </summary>
+
+
+        </member>
+        <member name="P:DevExpress.XtraReports.Configuration.PivotGridDesignOptions.ShowLoadXmlDataDesignerTab">
+            <summary>
+                <para>Specifies whether to show the <b>Load Data from XML</b> tab in the Pivot Grid Designer.
+</para>
+            </summary>
+            <value><b>true</b>, to show the <b>Load Data from XML</b> tab; otherwise, <b>false</b>.
+</value>
 
 
         </member>
@@ -7829,6 +7910,188 @@
                 <para>The components are displayed in the Report Explorer.
 </para>
             </summary>
+
+
+        </member>
+        <member name="T:DevExpress.XtraReports.Wizards3.Views.ChooseSummaryOptionsPageView">
+
+            <summary>
+                <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.ChooseSummaryOptionsPageView"/> class instead.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards3.Views.ChooseSummaryOptionsPageView.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ChooseSummaryOptionsPageView class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.XtraReports.UI.IReportDesignTool">
+
+            <summary>
+                <para>Provides methods for showing both the standard and ribbon-based End-User Report Designer forms.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesigner">
+            <summary>
+                <para>When implemented by a class, invokes the standard End-User Report Designer form which allows a report to be edited by end-users.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesigner(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
+            <summary>
+                <para>When implemented by a class, invokes the standard End-User Report Designer form using the specified look and feel settings, and with the specified design panels hidden.
+
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
+
+            </param>
+            <param name="hiddenPanels">
+		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesigner(DevExpress.LookAndFeel.UserLookAndFeel)">
+            <summary>
+                <para>When implemented by a class, invokes the standard End-User Report Designer form which allows a report to be edited by end-users using the specified look and feel settings.
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel)">
+            <summary>
+                <para>When implemented by a class, invokes the standard End-User Report Designer form which is shown modally and allows a report to be edited by end-users using the specified look and feel settings.
+
+
+
+
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesignerDialog">
+            <summary>
+                <para>When implemented by a class, invokes the standard End-User Report Designer form modally. This form allows a report to be edited by end-users.
+
+
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
+            <summary>
+                <para>When implemented by a class, invokes the standard End-User Report Designer form modally using the specified look and feel settings and with the specified design panels hidden.
+
+
+
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the <b>Preview Form</b>.
+
+            </param>
+            <param name="hiddenPanels">
+		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesigner">
+            <summary>
+                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form which allows a report to be edited by end-users.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesigner(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
+            <summary>
+                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form using the specified look and feel settings, and with the specified design panels hidden.
+
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
+
+            </param>
+            <param name="hiddenPanels">
+		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesigner(DevExpress.LookAndFeel.UserLookAndFeel)">
+            <summary>
+                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form which allows a report to be edited by end-users using the specified look and feel settings.
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel)">
+            <summary>
+                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form modally, using the specified look and feel settings.
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesignerDialog">
+            <summary>
+                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form modally. This form allows a report to be edited by end-users.
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
+            <summary>
+                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form modally, using the specified look and feel settings, and with the specified design panels hidden.
+
+</para>
+            </summary>
+            <param name="lookAndFeel">
+		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
+
+            </param>
+            <param name="hiddenPanels">
+		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
+
+            </param>
 
 
         </member>
@@ -7946,6 +8209,177 @@
             </summary>
             <value>A <see cref="T:System.String"/> value.
 </value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView">
+
+            <summary>
+                <para>This page is no longer used in the current Report Wizard implementation. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.MultiQuerySelectFieldsPageView"/> class instead (corresponding to the Choose Fields to Display in a Report (Multi-Query Version) wizard page).
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.#ctor">
+            <summary>
+                <para>Initializes a new instance of the SelectColumnsPageView class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.ActiveColumnsChanged">
+            <summary>
+                <para>Occurs when the collection of the currently selected columns is changed.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.AddAllColumnsClicked">
+            <summary>
+                <para>Occurs when the <b>Add All Columns</b> button is clicked on a wizard page.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.AddColumnsClicked">
+            <summary>
+                <para>Occurs when the <b>Add Columns</b> button is clicked on a wizard page.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableAddAllColumnsButton(System.Boolean)">
+            <summary>
+                <para>Activates or deactivates the <b>Add All Columns</b> button on a wizard page.
+</para>
+            </summary>
+            <param name="enable">
+		<b>true</b> to activate the button; otherwise <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableAddColumnsButton(System.Boolean)">
+            <summary>
+                <para>Activates or deactivates the <b>Add Columns</b> button on a wizard page.
+</para>
+            </summary>
+            <param name="enable">
+		<b>true</b> to activate the button; otherwise <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableRemoveAllColumnsButton(System.Boolean)">
+            <summary>
+                <para>Activates or deactivates the <b>Remove All Columns</b> button on a wizard page.
+</para>
+            </summary>
+            <param name="enable">
+		<b>true</b> to activate the button, <b>false</b> to deactivate the button.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableRemoveColumnsButton(System.Boolean)">
+            <summary>
+                <para>Activates or deactivates the <b>Remove Columns</b> button on a wizard page.
+</para>
+            </summary>
+            <param name="enable">
+		<b>true</b> to activate the button; otherwise <b>false</b>.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.FillAvailableColumns(DevExpress.Data.XtraReports.DataProviders.ColumnInfo[])">
+            <summary>
+                <para>Populates the list of available commands.
+</para>
+            </summary>
+            <param name="columns">
+		An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects, specifying the columns to be added to the list.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.FillSelectedColumns(DevExpress.Data.XtraReports.DataProviders.ColumnInfo[])">
+            <summary>
+                <para>Populates the list of selected columns.
+</para>
+            </summary>
+            <param name="columns">
+		An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects, specifying the columns to be added to the list.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.GetActiveAvailableColumns">
+            <summary>
+                <para>Gets a collection of the items selected in the list of available columns.
+</para>
+            </summary>
+            <returns>An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.GetActiveSelectedColumns">
+            <summary>
+                <para>Gets a collection of the items selected in the list of selected columns.
+</para>
+            </summary>
+            <returns>An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.HeaderDescription">
+            <summary>
+                <para>Specifies the description of the current wizard page.
+
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> value that specifies the page description.
+</value>
+
+
+        </member>
+        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.RemoveAllColumnsClicked">
+            <summary>
+                <para>Occurs when the <b>Remove All Columns</b> button is clicked on a wizard page.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.RemoveColumnsClicked">
+            <summary>
+                <para>Occurs when the <b>Remove Columns</b> button is clicked on a wizard page.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.ShowWaitIndicator(System.Boolean)">
+            <summary>
+                <para>Shows or hides the wait indicator on a wizard page.
+</para>
+            </summary>
+            <param name="visibility">
+		<b>true</b> to show the wait indicator; otherwise <b>false</b>.
+
+            </param>
 
 
         </member>
@@ -8709,6 +9143,61 @@
 
 
         </member>
+        <member name="T:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel">
+
+            <summary>
+                <para>The <b>Property Grid</b> dock panel that enables modifying the properties of a report, its bands and controls in the End-User Report Designer.
+
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.#ctor">
+            <summary>
+                <para>Initializes a new instance of the PropertyGridDockPanel class with the default settings.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.#ctor(DevExpress.XtraBars.Docking.DockManager,DevExpress.XtraBars.Docking.DockingStyle)">
+            <summary>
+                <para>Initializes a new instance of the PropertyGridDockPanel class with the specified docking style and owner.
+</para>
+            </summary>
+            <param name="dockManager">
+		A <see cref="T:DevExpress.XtraBars.Docking.DockManager"/> object which represents the owner of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.DockManager"/> property.
+
+            </param>
+            <param name="dock">
+		A <see cref="T:DevExpress.XtraBars.Docking.DockingStyle"/> enumeration value which represents the docking style of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.Dock"/> property.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.ShowCategories">
+            <summary>
+                <para>Gets or sets a value indicating whether to show categories for the items in the Property Grid, or show them in alphabetical order.
+
+</para>
+            </summary>
+            <value><b>true</b> to show categories; <b>false</b> to sort alphabetically.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel.ShowDescription">
+            <summary>
+                <para>Gets or sets a value indicating whether to show the <b>Description</b> bar at the bottom of the Property Grid.
+
+</para>
+            </summary>
+            <value><b>true</b> to show the Description bar; otherwise, <b>false</b>.
+</value>
+
+
+        </member>
         <member name="T:DevExpress.XtraReports.UserDesigner.ValidateSqlEventArgs">
 
             <summary>
@@ -8899,385 +9388,6 @@
 		A <see cref="T:System.Drawing.Image"/> object, specifying the template's icon.
 
             </param>
-
-
-        </member>
-        <member name="T:DevExpress.XtraReports.UI.IReportDesignTool">
-
-            <summary>
-                <para>Provides methods for showing both the standard and ribbon-based End-User Report Designer forms.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesigner">
-            <summary>
-                <para>When implemented by a class, invokes the standard End-User Report Designer form which allows a report to be edited by end-users.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesigner(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
-            <summary>
-                <para>When implemented by a class, invokes the standard End-User Report Designer form using the specified look and feel settings, and with the specified design panels hidden.
-
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
-
-            </param>
-            <param name="hiddenPanels">
-		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesigner(DevExpress.LookAndFeel.UserLookAndFeel)">
-            <summary>
-                <para>When implemented by a class, invokes the standard End-User Report Designer form which allows a report to be edited by end-users using the specified look and feel settings.
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel)">
-            <summary>
-                <para>When implemented by a class, invokes the standard End-User Report Designer form which is shown modally and allows a report to be edited by end-users using the specified look and feel settings.
-
-
-
-
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesignerDialog">
-            <summary>
-                <para>When implemented by a class, invokes the standard End-User Report Designer form modally. This form allows a report to be edited by end-users.
-
-
-
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
-            <summary>
-                <para>When implemented by a class, invokes the standard End-User Report Designer form modally using the specified look and feel settings and with the specified design panels hidden.
-
-
-
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the <b>Preview Form</b>.
-
-            </param>
-            <param name="hiddenPanels">
-		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesigner">
-            <summary>
-                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form which allows a report to be edited by end-users.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesigner(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
-            <summary>
-                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form using the specified look and feel settings, and with the specified design panels hidden.
-
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
-
-            </param>
-            <param name="hiddenPanels">
-		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesigner(DevExpress.LookAndFeel.UserLookAndFeel)">
-            <summary>
-                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form which allows a report to be edited by end-users using the specified look and feel settings.
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel)">
-            <summary>
-                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form modally, using the specified look and feel settings.
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesignerDialog">
-            <summary>
-                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form modally. This form allows a report to be edited by end-users.
-
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UI.IReportDesignTool.ShowRibbonDesignerDialog(DevExpress.LookAndFeel.UserLookAndFeel,DevExpress.XtraReports.UserDesigner.DesignDockPanelType)">
-            <summary>
-                <para>When implemented by a class, invokes the ribbon-based End-User Report Designer form modally, using the specified look and feel settings, and with the specified design panels hidden.
-
-</para>
-            </summary>
-            <param name="lookAndFeel">
-		A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object which specifies the look and feel settings applied to the End-User Report Designer form.
-
-            </param>
-            <param name="hiddenPanels">
-		A <see cref="T:DevExpress.XtraReports.UserDesigner.DesignDockPanelType"/> enumeration value identifying the End-User Designer dock panels to be hidden.
-
-            </param>
-
-
-        </member>
-        <member name="T:DevExpress.XtraReports.Configuration.PivotGridDesignOptions">
-
-            <summary>
-                <para>Enables you to specify the settings related to the Pivot Grid behavior.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Configuration.PivotGridDesignOptions.#ctor">
-            <summary>
-                <para>Initializes a new instance of the PivotGridDesignOptions class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="P:DevExpress.XtraReports.Configuration.PivotGridDesignOptions.ShowLoadXmlDataDesignerTab">
-            <summary>
-                <para>Specifies whether to show the <b>Load Data from XML</b> tab in the Pivot Grid Designer.
-</para>
-            </summary>
-            <value><b>true</b>, to show the <b>Load Data from XML</b> tab; otherwise, <b>false</b>.
-</value>
-
-
-        </member>
-        <member name="T:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView">
-
-            <summary>
-                <para>This page is no longer used in the current Report Wizard implementation. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.MultiQuerySelectFieldsPageView"/> class instead (corresponding to the Choose Fields to Display in a Report (Multi-Query Version) wizard page).
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.#ctor">
-            <summary>
-                <para>Initializes a new instance of the SelectColumnsPageView class with the default settings.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.ActiveColumnsChanged">
-            <summary>
-                <para>Occurs when the collection of the currently selected columns is changed.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.AddAllColumnsClicked">
-            <summary>
-                <para>Occurs when the <b>Add All Columns</b> button is clicked on a wizard page.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.AddColumnsClicked">
-            <summary>
-                <para>Occurs when the <b>Add Columns</b> button is clicked on a wizard page.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableAddAllColumnsButton(System.Boolean)">
-            <summary>
-                <para>Activates or deactivates the <b>Add All Columns</b> button on a wizard page.
-</para>
-            </summary>
-            <param name="enable">
-		<b>true</b> to activate the button; otherwise <b>false</b>.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableAddColumnsButton(System.Boolean)">
-            <summary>
-                <para>Activates or deactivates the <b>Add Columns</b> button on a wizard page.
-</para>
-            </summary>
-            <param name="enable">
-		<b>true</b> to activate the button; otherwise <b>false</b>.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableRemoveAllColumnsButton(System.Boolean)">
-            <summary>
-                <para>Activates or deactivates the <b>Remove All Columns</b> button on a wizard page.
-</para>
-            </summary>
-            <param name="enable">
-		<b>true</b> to activate the button, <b>false</b> to deactivate the button.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.EnableRemoveColumnsButton(System.Boolean)">
-            <summary>
-                <para>Activates or deactivates the <b>Remove Columns</b> button on a wizard page.
-</para>
-            </summary>
-            <param name="enable">
-		<b>true</b> to activate the button; otherwise <b>false</b>.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.FillAvailableColumns(DevExpress.Data.XtraReports.DataProviders.ColumnInfo[])">
-            <summary>
-                <para>Populates the list of available commands.
-</para>
-            </summary>
-            <param name="columns">
-		An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects, specifying the columns to be added to the list.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.FillSelectedColumns(DevExpress.Data.XtraReports.DataProviders.ColumnInfo[])">
-            <summary>
-                <para>Populates the list of selected columns.
-</para>
-            </summary>
-            <param name="columns">
-		An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects, specifying the columns to be added to the list.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.GetActiveAvailableColumns">
-            <summary>
-                <para>Gets a collection of the items selected in the list of available columns.
-</para>
-            </summary>
-            <returns>An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects.
-</returns>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.GetActiveSelectedColumns">
-            <summary>
-                <para>Gets a collection of the items selected in the list of selected columns.
-</para>
-            </summary>
-            <returns>An array of <see cref="T:DevExpress.Data.XtraReports.DataProviders.ColumnInfo"/> objects.
-</returns>
-
-
-        </member>
-        <member name="P:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.HeaderDescription">
-            <summary>
-                <para>Specifies the description of the current wizard page.
-
-</para>
-            </summary>
-            <value>A <see cref="T:System.String"/> value that specifies the page description.
-</value>
-
-
-        </member>
-        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.RemoveAllColumnsClicked">
-            <summary>
-                <para>Occurs when the <b>Remove All Columns</b> button is clicked on a wizard page.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="E:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.RemoveColumnsClicked">
-            <summary>
-                <para>Occurs when the <b>Remove Columns</b> button is clicked on a wizard page.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView.ShowWaitIndicator(System.Boolean)">
-            <summary>
-                <para>Shows or hides the wait indicator on a wizard page.
-</para>
-            </summary>
-            <param name="visibility">
-		<b>true</b> to show the wait indicator; otherwise <b>false</b>.
-
-            </param>
-
-
-        </member>
-        <member name="T:DevExpress.XtraReports.Wizards3.Views.SelectColumnsPageView">
-
-            <summary>
-                <para>Obsolete. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.SelectColumnsPageView"/> class instead.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraReports.Wizards3.Views.SelectColumnsPageView.#ctor">
-            <summary>
-                <para>Initializes a new instance of the SelectColumnsPageView class with the default settings.
-</para>
-            </summary>
 
 
         </member>
@@ -9633,40 +9743,6 @@
                 <para>This interface is no longer used in the current Report Wizard implementation. Use the <see cref="T:DevExpress.XtraReports.Wizards.Views.IChooseReportTypePageView"/> interface instead.
 </para>
             </summary>
-
-        </member>
-        <member name="T:DevExpress.XtraReports.UserDesigner.ErrorListDockPanel">
-
-            <summary>
-                <para>The <b>Scripts Errors</b> dock panel that displays the results of script validation in the End-User Report Designer.
-
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UserDesigner.ErrorListDockPanel.#ctor(DevExpress.XtraBars.Docking.DockManager,DevExpress.XtraBars.Docking.DockingStyle)">
-            <summary>
-                <para>Initializes a new instance of the ErrorListDockPanel class with the specified docking style and owner.
-</para>
-            </summary>
-            <param name="dockManager">
-		A <see cref="T:DevExpress.XtraBars.Docking.DockManager"/> object which represents the owner of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.DockManager"/> property.
-
-
-            </param>
-            <param name="dock">
-		A <see cref="T:DevExpress.XtraBars.Docking.DockingStyle"/> enumeration value which represents the docking style of the created object. This value is assigned to the <see cref="P:DevExpress.XtraBars.Docking.DockPanel.Dock"/> property.
-
-            </param>
-
-
-        </member>
-        <member name="M:DevExpress.XtraReports.UserDesigner.ErrorListDockPanel.#ctor">
-            <summary>
-                <para>Initializes a new instance of the ErrorListDockPanel class with the default settings.
-</para>
-            </summary>
-
 
         </member>
         <member name="T:DevExpress.XtraReports.Extensions.GetTemplatesHandler">

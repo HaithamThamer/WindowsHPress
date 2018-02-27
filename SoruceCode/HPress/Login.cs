@@ -36,7 +36,7 @@ namespace HPress
             {
                 return;
             }
-            System.Data.DataTable dt = databaseConnection.query(string.Format("select count(name),type from tbl_users where name = '{0}' and password = '{1}'",txtUsername.Text,txtPassword.Text));
+            System.Data.DataTable dt = databaseConnection.query(string.Format("select count(name),ifnull(type,0) from tbl_users where name = '{0}' and password = '{1}'", txtUsername.Text,txtPassword.Text));
             string r = dt.Rows[0][0].ToString();
             if (r != "0")
             {

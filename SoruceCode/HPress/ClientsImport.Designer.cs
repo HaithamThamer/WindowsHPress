@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientsImport));
             this.dgvResults = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -56,6 +57,8 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dateTo = new System.Windows.Forms.DateTimePicker();
             this.grpMain = new DevExpress.XtraEditors.GroupControl();
+            this.grpIsImpot = new System.Windows.Forms.GroupBox();
+            this.isImport = new DevExpress.XtraEditors.ToggleSwitch();
             this.grpDollarDebits = new DevExpress.XtraEditors.GroupControl();
             this.txtDollarDebits = new System.Windows.Forms.TextBox();
             this.grpDinarDebits = new DevExpress.XtraEditors.GroupControl();
@@ -67,7 +70,6 @@
             this.grpTotalDinarDebits = new DevExpress.XtraEditors.GroupControl();
             this.txtTotalDinarDebits = new System.Windows.Forms.TextBox();
             this.btnReportClient = new DevExpress.XtraEditors.SimpleButton();
-            this.grpClientType = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
@@ -83,6 +85,8 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpMain)).BeginInit();
             this.grpMain.SuspendLayout();
+            this.grpIsImpot.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.isImport.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpDollarDebits)).BeginInit();
             this.grpDollarDebits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpDinarDebits)).BeginInit();
@@ -93,7 +97,6 @@
             this.grpTotalDollarDebits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpTotalDinarDebits)).BeginInit();
             this.grpTotalDinarDebits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grpClientType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResults
@@ -117,16 +120,24 @@
             this.dgvResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResults.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvResults.Location = new System.Drawing.Point(12, 106);
-            this.dgvResults.Name = "dgvResults";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResults.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResults.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvResults.Location = new System.Drawing.Point(12, 106);
+            this.dgvResults.Name = "dgvResults";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResults.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvResults.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResults.Size = new System.Drawing.Size(381, 529);
@@ -174,9 +185,9 @@
             this.groupControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl4.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl4.CaptionImageOptions.Image")));
             this.groupControl4.Controls.Add(this.txtBalanceValue);
-            this.groupControl4.Location = new System.Drawing.Point(501, 245);
+            this.groupControl4.Location = new System.Drawing.Point(601, 245);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(275, 57);
+            this.groupControl4.Size = new System.Drawing.Size(175, 57);
             this.groupControl4.TabIndex = 25;
             this.groupControl4.Text = "الرصيد";
             // 
@@ -186,7 +197,7 @@
             this.txtBalanceValue.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBalanceValue.Location = new System.Drawing.Point(2, 21);
             this.txtBalanceValue.Name = "txtBalanceValue";
-            this.txtBalanceValue.Size = new System.Drawing.Size(271, 36);
+            this.txtBalanceValue.Size = new System.Drawing.Size(171, 36);
             this.txtBalanceValue.TabIndex = 0;
             this.txtBalanceValue.TextChanged += new System.EventHandler(this.txtBalanceValue_TextChanged);
             this.txtBalanceValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBalanceValue_KeyPress);
@@ -239,7 +250,6 @@
             // 
             this.grpClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpClients.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpClients.CaptionImageOptions.Image")));
-            this.grpClients.Controls.Add(this.grpClientType);
             this.grpClients.Controls.Add(this.cmbClients);
             this.grpClients.Location = new System.Drawing.Point(399, 171);
             this.grpClients.Name = "grpClients";
@@ -249,13 +259,12 @@
             // 
             // cmbClients
             // 
-            this.cmbClients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbClients.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClients.FormattingEnabled = true;
-            this.cmbClients.Location = new System.Drawing.Point(5, 24);
+            this.cmbClients.Location = new System.Drawing.Point(2, 21);
             this.cmbClients.Name = "cmbClients";
-            this.cmbClients.Size = new System.Drawing.Size(230, 27);
+            this.cmbClients.Size = new System.Drawing.Size(373, 27);
             this.cmbClients.TabIndex = 0;
             this.cmbClients.DropDown += new System.EventHandler(this.cmbClients_DropDown);
             this.cmbClients.SelectedIndexChanged += new System.EventHandler(this.cmbClients_SelectedIndexChanged);
@@ -385,6 +394,7 @@
             // grpMain
             // 
             this.grpMain.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpMain.CaptionImageOptions.Image")));
+            this.grpMain.Controls.Add(this.grpIsImpot);
             this.grpMain.Controls.Add(this.grpDollarDebits);
             this.grpMain.Controls.Add(this.grpDinarDebits);
             this.grpMain.Controls.Add(this.grpPayMethod);
@@ -412,6 +422,35 @@
             this.grpMain.TabIndex = 39;
             this.grpMain.Text = "واردات العملاء";
             this.grpMain.Paint += new System.Windows.Forms.PaintEventHandler(this.grpMain_Paint);
+            // 
+            // grpIsImpot
+            // 
+            this.grpIsImpot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpIsImpot.Controls.Add(this.isImport);
+            this.grpIsImpot.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpIsImpot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(0)))));
+            this.grpIsImpot.Location = new System.Drawing.Point(501, 246);
+            this.grpIsImpot.Name = "grpIsImpot";
+            this.grpIsImpot.Size = new System.Drawing.Size(94, 58);
+            this.grpIsImpot.TabIndex = 46;
+            this.grpIsImpot.TabStop = false;
+            this.grpIsImpot.Text = "وارد";
+            // 
+            // isImport
+            // 
+            this.isImport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.isImport.EditValue = true;
+            this.isImport.Location = new System.Drawing.Point(3, 23);
+            this.isImport.Name = "isImport";
+            this.isImport.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isImport.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(183)))), ((int)(((byte)(0)))));
+            this.isImport.Properties.Appearance.Options.UseFont = true;
+            this.isImport.Properties.Appearance.Options.UseForeColor = true;
+            this.isImport.Properties.OffText = "";
+            this.isImport.Properties.OnText = "";
+            this.isImport.Size = new System.Drawing.Size(88, 32);
+            this.isImport.TabIndex = 20;
+            this.isImport.Toggled += new System.EventHandler(this.isImport_Toggled);
             // 
             // grpDollarDebits
             // 
@@ -544,19 +583,6 @@
             this.btnReportClient.Text = "تقرير العميل";
             this.btnReportClient.Click += new System.EventHandler(this.btnReportClient_Click);
             // 
-            // grpClientType
-            // 
-            this.grpClientType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpClientType.EditValue = 0;
-            this.grpClientType.Location = new System.Drawing.Point(241, 24);
-            this.grpClientType.Name = "grpClientType";
-            this.grpClientType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(0, "العملاء"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(1, "الموردين")});
-            this.grpClientType.Size = new System.Drawing.Size(122, 27);
-            this.grpClientType.TabIndex = 1;
-            this.grpClientType.SelectedIndexChanged += new System.EventHandler(this.grpClientType_SelectedIndexChanged);
-            // 
             // ClientsImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,6 +615,8 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpMain)).EndInit();
             this.grpMain.ResumeLayout(false);
+            this.grpIsImpot.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.isImport.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpDollarDebits)).EndInit();
             this.grpDollarDebits.ResumeLayout(false);
             this.grpDollarDebits.PerformLayout();
@@ -603,7 +631,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpTotalDinarDebits)).EndInit();
             this.grpTotalDinarDebits.ResumeLayout(false);
             this.grpTotalDinarDebits.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grpClientType.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -643,6 +670,7 @@
         private System.Windows.Forms.TextBox txtDollarDebits;
         private DevExpress.XtraEditors.GroupControl grpDinarDebits;
         private System.Windows.Forms.TextBox txtDinarDebits;
-        private DevExpress.XtraEditors.RadioGroup grpClientType;
+        private System.Windows.Forms.GroupBox grpIsImpot;
+        private DevExpress.XtraEditors.ToggleSwitch isImport;
     }
 }

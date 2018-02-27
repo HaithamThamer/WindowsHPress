@@ -148,6 +148,215 @@
 
 
         </member>
+        <member name="T:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout">
+
+            <summary>
+                <para> </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.#ctor(DevExpress.XtraDiagram.DiagramControl)">
+            <summary>
+                <para> </para>
+            </summary>
+            <param name="diagram">
+		 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.ConnectorsRouting">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.HierarchyAlignment">
+            <summary>
+                <para>Specifies the mind-map tree layout vertical alignment relative to the layout direction axis.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.HierarchySpacing">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.NodeAlignment">
+            <summary>
+                <para>Specifies the mind-map tree layout horizontal alignment relative to the layout direction axis.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.NodeSpacing">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.Orientation">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.RootSpacing">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.SplitMode">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.SubTreeAlignment">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.SubTreeDefaultSplitMode">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsMindMapTreeLayout.SubTreeSelector">
+            <summary>
+                <para> </para>
+            </summary>
+            <value> </value>
+
+
+        </member>
+        <member name="T:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout">
+
+            <summary>
+                <para>Contains tip-over tree layout settings.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.#ctor(DevExpress.XtraDiagram.DiagramControl)">
+            <summary>
+                <para>Initializes a new instance of the DiagramOptionsTipOverTreeLayout class.
+</para>
+            </summary>
+            <param name="diagram">
+		The owner of the options object created.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.ConnectorsRouting">
+            <summary>
+                <para>Gets or sets whether applying the Tip-over tree layout affects connector routing. This is a dependency property.
+</para>
+            </summary>
+            <value>A <b>TreeConnectorsRouting</b> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.Direction">
+            <summary>
+                <para>Specifies the tip-over tree layout direction. 
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.TipOverDirection"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.HorizontalAlignment">
+            <summary>
+                <para>Gets or sets the horizontal alignment of the tip-over diagram. This is a dependency property.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the horizontal alignment of the diagram.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.Offset">
+            <summary>
+                <para>Gets or sets the offset used by the layout algorithm.
+</para>
+            </summary>
+            <value>A System.Single value that is the offset in pixels.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.OffsetMode">
+            <summary>
+                <para>Specifies whether to offset child shapes from the center or the edge of the parent shape.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.TipOverOffsetMode"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.SplitMode">
+            <summary>
+                <para>Specifies whether to apply the layout algorithm only to items that are connected to at least one other item. 
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.SplitToConnectedComponentsMode"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.VerticalAlignment">
+            <summary>
+                <para>Gets or sets the vertical alignment of the tip-over diagram. This is a dependency property.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the vertical alignment of the diagram.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.VerticalSpacing">
+            <summary>
+                <para>Specifies the distance between layers of hierarchy. 
+</para>
+            </summary>
+            <value>A System.Single value that represents the distance in pixels.
+</value>
+
+
+        </member>
         <member name="T:DevExpress.XtraDiagram.Options.DiagramOptionsView">
 
             <summary>
@@ -2053,9 +2262,11 @@
         </member>
         <member name="M:DevExpress.XtraDiagram.DiagramItem.GetDiagram">
             <summary>
-                <para> </para>
+                <para>Gets the diagram control that is the owner of the diagram item.
+</para>
             </summary>
-            <returns> </returns>
+            <returns>A <see cref="T:DevExpress.XtraDiagram.DiagramControl"/> object that is the owner of the DiagramItem.
+</returns>
 
 
         </member>
@@ -2109,9 +2320,11 @@
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramItem.IsTextEditMode">
             <summary>
-                <para> </para>
+                <para>Gets whether the diagram item's text is currently being edited. 
+</para>
             </summary>
-            <value> </value>
+            <value><b>true</b>, if diagram item text editing is in progress; otherwise, <b>false</b>. 
+</value>
 
 
         </member>
@@ -3322,7 +3535,7 @@
         </member>
         <member name="E:DevExpress.XtraDiagram.DiagramControl.DeletingItems">
             <summary>
-                <para>Fires when the end-user removes items from the diagram canvas.
+                <para>Fires when the end-user removes items from the diagram canvas. Obsoleted. Use the <see cref="E:DevExpress.XtraDiagram.DiagramControl.ItemsDeleting"/> event instead.
 </para>
             </summary>
 
@@ -3752,17 +3965,21 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramControl.ItemTypeRegistrator">
             <summary>
-                <para> </para>
+                <para>Provides access to methods used to create serializable custom diagram item types.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.Diagram.Core.DiagramItemTypeRegistrator"/> object. 
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramControl.LastShapeStyles">
             <summary>
-                <para> </para>
+                <para>Provides access to the collection of the recently used shape styles.
+</para>
             </summary>
-            <value> </value>
+            <value>A read-only collection of the recently used shape styles.
+</value>
 
 
         </member>
@@ -3800,9 +4017,11 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramControl.MenuManager">
             <summary>
-                <para> </para>
+                <para>Gets or sets the menu manager which controls the look and feel of the context menus.
+</para>
             </summary>
-            <value> </value>
+            <value>An object which implements the <see cref="T:DevExpress.Utils.Menu.IDXMenuManager"/> interface.
+</value>
 
 
         </member>
@@ -3922,9 +4141,11 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramControl.Page">
             <summary>
-                <para> </para>
+                <para>Gets the diagram canvas.
+</para>
             </summary>
-            <value> </value>
+            <value>A DevExpress.XtraDiagram.DiagramRoot object that represents the diagram canvas.
+</value>
 
 
         </member>
@@ -4517,6 +4738,117 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
 
 
         </member>
+        <member name="T:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout">
+
+            <summary>
+                <para>Contains tree layout settings.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.#ctor(DevExpress.XtraDiagram.DiagramControl)">
+            <summary>
+                <para>Initializes a new instance of the DiagramOptionsTreeLayout class.
+</para>
+            </summary>
+            <param name="diagram">
+		The owner of the options object created.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.Alignment">
+            <summary>
+                <para>Specifies the tree layout alignment.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.BreadthAlignment">
+            <summary>
+                <para>Gets or sets the tree diagram horizontal alignment relative to the layout direction axis.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the horizontal alignment of the tree diagram.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.ConnectorsRouting">
+            <summary>
+                <para>Gets or sets whether applying the Tree layout affects connector routing. This is a dependency property.
+
+</para>
+            </summary>
+            <value>A <b>TreeConnectorsRouting</b> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.DepthAlignment">
+            <summary>
+                <para>Gets or sets the tree diagram vertical alignment relative to the layout direction axis.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the vertical alignment of the tree diagram.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.Direction">
+            <summary>
+                <para>Specifies the tree layout direction. 
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.LayoutDirection"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.HorizontalSpacing">
+            <summary>
+                <para>Specifies the distance between shapes on the same level of hierarchy.
+</para>
+            </summary>
+            <value>A System.Single value that represents the distance in pixels.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.IsCompact">
+            <summary>
+                <para>Specifies whether the automatic tree layout arranges shapes minimizing the space between them.
+</para>
+            </summary>
+            <value><b>true</b> to enable the compact tree layout; otherwise, <b>false</b>. By default, <b>true</b>.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.SplitMode">
+            <summary>
+                <para>Specifies which diagram items are realigned when performing automatic relayout.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.SplitToConnectedComponentsMode"/> enumeration value.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.VerticalSpacing">
+            <summary>
+                <para>Specifies the distance between layers of hierarchy. 
+</para>
+            </summary>
+            <value>A System.Single value that represents the distance in pixels.
+</value>
+
+
+        </member>
         <member name="T:DevExpress.XtraDiagram.DiagramConnectionChangedEventArgs">
 
             <summary>
@@ -4526,38 +4858,47 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="M:DevExpress.XtraDiagram.DiagramConnectionChangedEventArgs.#ctor(DevExpress.XtraDiagram.DiagramConnector,DevExpress.XtraDiagram.DiagramItem,DevExpress.XtraDiagram.DiagramItem,System.Int32,System.Int32,DevExpress.Utils.PointFloat,DevExpress.Utils.PointFloat,DevExpress.Diagram.Core.ConnectorPointType)">
             <summary>
-                <para> </para>
+                <para>Initializes a new instance of the DiagramConnectionChangedEventArgs class with the specified settings.
+</para>
             </summary>
             <param name="connector">
-		 
+		The connector whose beginning/ending item has been changed.
+
             </param>
             <param name="oldItem">
-		 
+		The diagram item the connector has been detached from.
+
             </param>
             <param name="newItem">
-		 
+		The diagram item the connector has been attached to.
+
             </param>
             <param name="oldIndex">
-		 
+		The index of the connection point on the diagram item the connector has been detached from.
+
             </param>
             <param name="newIndex">
-		 
+		The index of the connection point on the diagram item the connector has been attached to.
+
             </param>
             <param name="oldPoint">
-		 
+		The initial coordinates of the connection point which has been moved.
+
             </param>
             <param name="newPoint">
-		 
+		The current coordinates of the connection point which has been moved.
+
             </param>
             <param name="connectorPointType">
-		 
+		The type of the connection point which has been moved.
+
             </param>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangedEventArgs.Connector">
             <summary>
-                <para>Gets the connector whose beginning/ending item has been changed.
+                <para>Returns the connector whose beginning/ending item has been changed.
 
 </para>
             </summary>
@@ -4568,33 +4909,41 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangedEventArgs.ConnectorPointType">
             <summary>
-                <para> </para>
+                <para>Returns the type of the connection point which has been moved.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.Diagram.Core.ConnectorPointType"/> enumeration value.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangedEventArgs.NewIndex">
             <summary>
-                <para> </para>
+                <para>Returns the index of the connection point on the diagram item the connector has been attached to.
+</para>
             </summary>
-            <value> </value>
+            <value>A zero-based index of the connection point on the diagram item the connector has been attached to. <b>-1</b> if the connector was not attached to an item.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangedEventArgs.NewItem">
             <summary>
-                <para> </para>
+                <para>Returns the diagram item the connector has been attached to.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraDiagram.DiagramItem"/> descendant that represents the diagram item the connector has been attached to.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangedEventArgs.NewPoint">
             <summary>
-                <para> </para>
+                <para>Returns the current coordinates of the connection point which has been moved.
+</para>
             </summary>
-            <value> </value>
+            <value>A System.Windows.Point value that is the current coordinates of the connection point which has been moved.
+</value>
 
 
         </member>
@@ -4637,38 +4986,47 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="M:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.#ctor(DevExpress.XtraDiagram.DiagramConnector,DevExpress.XtraDiagram.DiagramItem,DevExpress.XtraDiagram.DiagramItem,System.Int32,System.Int32,DevExpress.Utils.PointFloat,DevExpress.Utils.PointFloat,DevExpress.Diagram.Core.ConnectorPointType)">
             <summary>
-                <para> </para>
+                <para>Initializes a new instance of the DiagramConnectionChangingEventArgs class with the specified settings.
+</para>
             </summary>
             <param name="connector">
-		 
+		The connector whose beginning/ending item is about to be changed.
+
             </param>
             <param name="oldItem">
-		 
+		The diagram item the connector is about to be detached from.
+
             </param>
             <param name="newItem">
-		 
+		The diagram item the connector is about to be attached to.
+
             </param>
             <param name="oldIndex">
-		 
+		The index of the connection point on the diagram item the connector is about to be detached from.
+
             </param>
             <param name="newIndex">
-		 
+		The index of the connection point on the diagram item the connector is about to be attached to.
+
             </param>
             <param name="oldPoint">
-		 
+		The initial coordinates of the connection point which is about to be moved.
+
             </param>
             <param name="newPoint">
-		 
+		The new coordinates of the connection point which is about to be moved.
+
             </param>
             <param name="connectorPointType">
-		 
+		The type of the connection point which is about to be moved.
+
             </param>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.Connector">
             <summary>
-                <para>Gets the connector whose beginning/ending item is about to be changed.
+                <para>Returns the connector whose beginning/ending item is about to be changed.
 </para>
             </summary>
             <value>A <see cref="T:DevExpress.XtraDiagram.DiagramConnector"/> object.
@@ -4678,57 +5036,77 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.ConnectorPointType">
             <summary>
-                <para> </para>
+                <para>Returns the type of the connection point which is about to be moved.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.Diagram.Core.ConnectorPointType"/> enumeration value.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.NewIndex">
             <summary>
-                <para> </para>
+                <para>Returns the index of the connection point on the diagram item to which the connector is about to be attached.
+
+</para>
             </summary>
-            <value> </value>
+            <value>A zero-based index of the connection point on the diagram item to which the connector is about to be attached. <b>-1</b> if the connector is not getting attached to an item.
+
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.NewItem">
             <summary>
-                <para> </para>
+                <para>Returns the diagram item the connector is about to be attached to.
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraDiagram.DiagramItem"/> descendant that represents the diagram item the connector is about to be attached to.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.NewPoint">
             <summary>
-                <para> </para>
+                <para>Returns the new coordinates of the connection point which is about to be moved.
+</para>
             </summary>
-            <value> </value>
+            <value>A System.Windows.Point value that is the new coordinates of the connection point which is about to be moved.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.OldIndex">
             <summary>
-                <para> </para>
+                <para>Returns the index of the connection point on the diagram item from which the connector is about to be detached.
+
+</para>
             </summary>
-            <value> </value>
+            <value>A zero-based index of the connection point on the diagram item from which the connector is about to be detached. <b>-1</b> if the connector is not attached to an item.
+
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.OldItem">
             <summary>
-                <para> </para>
+                <para>Returns the diagram item from which the connector is about to be detached.
+
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraDiagram.DiagramItem"/> descendant that represents the diagram item from which the connector is about to be detached.
+
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramConnectionChangingEventArgs.OldPoint">
             <summary>
-                <para> </para>
+                <para>Returns the initial coordinates of the connection point which is about to be moved.
+</para>
             </summary>
-            <value> </value>
+            <value>A System.Windows.Point value that is the initial coordinates of the connection point which is about to be moved.
+</value>
 
 
         </member>
@@ -4742,19 +5120,24 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="M:DevExpress.XtraDiagram.DiagramClosedEditorEventArgs.#ctor(DevExpress.XtraDiagram.DiagramItem,System.Boolean,System.String,System.String)">
             <summary>
-                <para> </para>
+                <para>Initializes a new instance of the DiagramClosedEditorEventArgs class with the specified settings.
+</para>
             </summary>
             <param name="item">
-		 
+		The item for which the text editor has been closed.
+
             </param>
             <param name="valueChanged">
-		 
+		<b>true</b>, if the shape text has been changed; otherwise, <b>false</b>.
+
             </param>
             <param name="oldValue">
-		 
+		The previously assigned shape text.
+
             </param>
             <param name="newValue">
-		 
+		The new shape text.
+
             </param>
 
 
@@ -4771,17 +5154,21 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramClosedEditorEventArgs.NewValue">
             <summary>
-                <para> </para>
+                <para>Gets or sets the new shape text.
+</para>
             </summary>
-            <value> </value>
+            <value>A string value that is the new shape text.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramClosedEditorEventArgs.OldValue">
             <summary>
-                <para> </para>
+                <para>Gets the previously assigned shape text.
+</para>
             </summary>
-            <value> </value>
+            <value>A string value that is the previously assigned shape text.
+</value>
 
 
         </member>
@@ -4837,9 +5224,11 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramShowingSaveDialogEventArgs.DefaultFileName">
             <summary>
-                <para> </para>
+                <para>Gets or sets the default name of the file to which to save the diagram.
+</para>
             </summary>
-            <value> </value>
+            <value>A string value that is the default name of the file to which to save the diagram.
+</value>
 
 
         </member>
@@ -5108,25 +5497,32 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="M:DevExpress.XtraDiagram.CustomDrawBackgroundEventArgs.#ctor(System.Drawing.Graphics,DevExpress.XtraDiagram.DiagramDrawingContext,System.Drawing.RectangleF,System.Drawing.RectangleF,System.Collections.Generic.IEnumerable`1,System.Drawing.RectangleF,System.Nullable`1,System.Nullable`1,System.Nullable`1)">
             <summary>
-                <para> </para>
+                <para>Initializes a new instance of the CustomDrawBackgroundEventArgs class with the specified settings.
+</para>
             </summary>
             <param name="graphics">
-		 
+		A System.Drawing.Graphics object that provides painting facilities.
+
             </param>
             <param name="context">
-		 
+		A <see cref="T:DevExpress.XtraDiagram.DiagramDrawingContext"/> enumeration value.
+
             </param>
             <param name="contentBounds">
-		 
+		The bounds of the background excluding margins.
+
             </param>
             <param name="totalBounds">
-		 
+		The total bounds of the background.
+
             </param>
             <param name="pages">
-		 
+		A list of diagram pages represented by DevExpress.XtraDiagram.DiagramPageInfo objects.
+
             </param>
             <param name="viewportBounds">
-		 
+		The viewport bounds.
+
             </param>
             <param name="printBounds">
 		 
@@ -5142,33 +5538,41 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.CustomDrawBackgroundEventArgs.ContentBounds">
             <summary>
-                <para> </para>
+                <para>Gets the rectangle which encompasses the background area excluding margins.
+</para>
             </summary>
-            <value> </value>
+            <value>The bounds of the background excluding margins.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.CustomDrawBackgroundEventArgs.Context">
             <summary>
-                <para> </para>
+                <para>Gets whether the item is to be drawn on the canvas, toolbox, in the print or export output or as the drag preview. 
+</para>
             </summary>
-            <value> </value>
+            <value>A <see cref="T:DevExpress.XtraDiagram.DiagramDrawingContext"/> enumeration value.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.CustomDrawBackgroundEventArgs.Graphics">
             <summary>
-                <para> </para>
+                <para>Returns an object that provides painting facilities.
+</para>
             </summary>
-            <value> </value>
+            <value>A System.Drawing.Graphics object that provides painting facilities.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.CustomDrawBackgroundEventArgs.PagesInfo">
             <summary>
-                <para> </para>
+                <para>Gets the list of diagram pages.
+</para>
             </summary>
-            <value> </value>
+            <value>A list of DevExpress.XtraDiagram.DiagramPageInfo objects.
+</value>
 
 
         </member>
@@ -5198,17 +5602,21 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.CustomDrawBackgroundEventArgs.TotalBounds">
             <summary>
-                <para> </para>
+                <para>Gets the rectangle which encompasses the total background area. 
+</para>
             </summary>
-            <value> </value>
+            <value>The total bounds of the background.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.CustomDrawBackgroundEventArgs.ViewportBounds">
             <summary>
-                <para> </para>
+                <para>Gets the rectangle which encompasses the viewport area.
+</para>
             </summary>
-            <value> </value>
+            <value>The viewport bounds.
+</value>
 
 
         </member>
@@ -5516,6 +5924,47 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
 
 
         </member>
+        <member name="T:DevExpress.XtraDiagram.CustomDrawItemMode">
+
+            <summary>
+                <para>Lists values that specify which elements of the default painting should be enabled when handling the <see cref="E:DevExpress.XtraDiagram.DiagramControl.CustomDrawItem"/> event.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.All">
+            <summary>
+                <para>Enable the default painting of all elements of the item.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.Background">
+            <summary>
+                <para>Enable only the default painting of the item's background.
+
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.Content">
+            <summary>
+                <para>Enable only the default painting of the item's content.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.None">
+            <summary>
+                <para>Disable the default painting of all elements of the item.
+</para>
+            </summary>
+
+
+        </member>
         <member name="T:DevExpress.XtraDiagram.DiagramDataBindingControllerBase">
 
             <summary>
@@ -5612,16 +6061,19 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="E:DevExpress.XtraDiagram.DiagramDataBindingControllerBase.DiagramItemAdded">
             <summary>
-                <para> </para>
+                <para>Fires each time the data binding controller generates a diagram item.
+</para>
             </summary>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramDataBindingControllerBase.EnableNotificationToSource">
             <summary>
-                <para> </para>
+                <para>Gets or sets whether to send the data change notifications to the data source.
+</para>
             </summary>
-            <value> </value>
+            <value><b>true</b> to enable the data change notifications to the data source; otherwise, <b>false</b>. By default, <b>true</b>.
+</value>
 
 
         </member>
@@ -5659,17 +6111,21 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramDataBindingControllerBase.ItemsPath">
             <summary>
-                <para> </para>
+                <para>Specifies the name of the data field that identifies the collection of nested data items.
+</para>
             </summary>
-            <value> </value>
+            <value>A string value that is the name of the data field that identifies the collection of data items.
+</value>
 
 
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramDataBindingControllerBase.ItemsSelector">
             <summary>
-                <para> </para>
+                <para>Gets or sets the selector that returns the data field that identifies the collection of nested data items.
+</para>
             </summary>
-            <value> </value>
+            <value>An object implementing the DevExpress.Diagram.Core.IChildrenSelector interface.
+</value>
 
 
         </member>
@@ -5685,9 +6141,11 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="P:DevExpress.XtraDiagram.DiagramDataBindingControllerBase.KeySelector">
             <summary>
-                <para> </para>
+                <para>Gets or sets the selector that returns the data field that identifies the data item.
+</para>
             </summary>
-            <value> </value>
+            <value>An object implementing the DevExpress.Diagram.Core.IKeySelector interface.
+</value>
 
 
         </member>
@@ -5785,7 +6243,8 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         </member>
         <member name="E:DevExpress.XtraDiagram.DiagramDataBindingController.DiagramConnectorAdded">
             <summary>
-                <para> </para>
+                <para>Fires each time the data binding controller generates a connector.
+</para>
             </summary>
 
 
@@ -6072,217 +6531,6 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
 
 
         </member>
-        <member name="T:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout">
-
-            <summary>
-                <para>Contains tree layout settings.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.#ctor(DevExpress.XtraDiagram.DiagramControl)">
-            <summary>
-                <para>Initializes a new instance of the DiagramOptionsTreeLayout class.
-</para>
-            </summary>
-            <param name="diagram">
-		The owner of the options object created.
-
-            </param>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.Alignment">
-            <summary>
-                <para>Specifies the tree layout alignment.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.BreadthAlignment">
-            <summary>
-                <para>Gets or sets the tree diagram horizontal alignment relative to the layout direction axis.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the horizontal alignment of the tree diagram.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.ConnectorsRouting">
-            <summary>
-                <para>Gets or sets whether applying the Tree layout affects connector routing. This is a dependency property.
-
-</para>
-            </summary>
-            <value>A <b>TreeConnectorsRouting</b> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.DepthAlignment">
-            <summary>
-                <para>Gets or sets the tree diagram vertical alignment relative to the layout direction axis.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the vertical alignment of the tree diagram.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.Direction">
-            <summary>
-                <para>Specifies the tree layout direction. 
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.LayoutDirection"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.HorizontalSpacing">
-            <summary>
-                <para>Specifies the distance between shapes on the same level of hierarchy.
-</para>
-            </summary>
-            <value>A System.Single value that represents the distance in pixels.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.IsCompact">
-            <summary>
-                <para>Specifies whether the automatic tree layout arranges shapes minimizing the space between them.
-</para>
-            </summary>
-            <value><b>true</b> to enable the compact tree layout; otherwise, <b>false</b>. By default, <b>true</b>.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.SplitMode">
-            <summary>
-                <para>Specifies which diagram items are realigned when performing automatic relayout.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.SplitToConnectedComponentsMode"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTreeLayout.VerticalSpacing">
-            <summary>
-                <para>Specifies the distance between layers of hierarchy. 
-</para>
-            </summary>
-            <value>A System.Single value that represents the distance in pixels.
-</value>
-
-
-        </member>
-        <member name="T:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout">
-
-            <summary>
-                <para>Contains tip-over tree layout settings.
-</para>
-            </summary>
-
-        </member>
-        <member name="M:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.#ctor(DevExpress.XtraDiagram.DiagramControl)">
-            <summary>
-                <para>Initializes a new instance of the DiagramOptionsTipOverTreeLayout class.
-</para>
-            </summary>
-            <param name="diagram">
-		The owner of the options object created.
-
-            </param>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.ConnectorsRouting">
-            <summary>
-                <para>Gets or sets whether applying the Tip-over tree layout affects connector routing. This is a dependency property.
-</para>
-            </summary>
-            <value>A <b>TreeConnectorsRouting</b> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.Direction">
-            <summary>
-                <para>Specifies the tip-over tree layout direction. 
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.TipOverDirection"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.HorizontalAlignment">
-            <summary>
-                <para>Gets or sets the horizontal alignment of the tip-over diagram. This is a dependency property.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the horizontal alignment of the diagram.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.Offset">
-            <summary>
-                <para>Gets or sets the offset used by the layout algorithm.
-</para>
-            </summary>
-            <value>A System.Single value that is the offset in pixels.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.OffsetMode">
-            <summary>
-                <para>Specifies whether to offset child shapes from the center or the edge of the parent shape.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.TipOverOffsetMode"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.SplitMode">
-            <summary>
-                <para>Specifies whether to apply the layout algorithm only to items that are connected to at least one other item. 
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Layout.SplitToConnectedComponentsMode"/> enumeration value.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.VerticalAlignment">
-            <summary>
-                <para>Gets or sets the vertical alignment of the tip-over diagram. This is a dependency property.
-</para>
-            </summary>
-            <value>A <see cref="T:DevExpress.Diagram.Core.Alignment"/> enumeration value that specifies the vertical alignment of the diagram.
-</value>
-
-
-        </member>
-        <member name="P:DevExpress.XtraDiagram.Options.DiagramOptionsTipOverTreeLayout.VerticalSpacing">
-            <summary>
-                <para>Specifies the distance between layers of hierarchy. 
-</para>
-            </summary>
-            <value>A System.Single value that represents the distance in pixels.
-</value>
-
-
-        </member>
         <member name="T:DevExpress.XtraDiagram.Options.DiagramOptionsSugiyamaLayout">
 
             <summary>
@@ -6560,47 +6808,6 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         <member name="F:DevExpress.XtraDiagram.DiagramDrawingContext.Toolbox">
             <summary>
                 <para>The item is to be drawn on the toolbox.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="T:DevExpress.XtraDiagram.CustomDrawItemMode">
-
-            <summary>
-                <para>Lists values that specify which elements of the default painting should be enabled when handling the <see cref="E:DevExpress.XtraDiagram.DiagramControl.CustomDrawItem"/> event.
-</para>
-            </summary>
-
-        </member>
-        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.All">
-            <summary>
-                <para>Enable the default painting of all elements of the item.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.Background">
-            <summary>
-                <para>Enable only the default painting of the item's background.
-
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.Content">
-            <summary>
-                <para>Enable only the default painting of the item's content.
-</para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.XtraDiagram.CustomDrawItemMode.None">
-            <summary>
-                <para>Disable the default painting of all elements of the item.
 </para>
             </summary>
 

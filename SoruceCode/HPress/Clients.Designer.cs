@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clients));
             this.dgvClients = new System.Windows.Forms.DataGridView();
             this.txtClientName = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@
             this.btnRemove = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.addClient = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUsers = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdoType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.isActive.Properties)).BeginInit();
@@ -59,47 +60,47 @@
             // 
             this.dgvClients.AllowUserToAddRows = false;
             this.dgvClients.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvClients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClients.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClients.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvClients.Location = new System.Drawing.Point(12, 73);
             this.dgvClients.Name = "dgvClients";
             this.dgvClients.ReadOnly = true;
             this.dgvClients.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClients.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClients.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvClients.RowHeadersVisible = false;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dgvClients.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dgvClients.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvClients.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClients.Size = new System.Drawing.Size(489, 351);
+            this.dgvClients.Size = new System.Drawing.Size(495, 351);
             this.dgvClients.TabIndex = 0;
             this.dgvClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellClick);
             // 
@@ -170,14 +171,14 @@
             // rdoType
             // 
             this.rdoType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdoType.Location = new System.Drawing.Point(507, 73);
+            this.rdoType.Location = new System.Drawing.Point(513, 73);
             this.rdoType.Name = "rdoType";
             this.rdoType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "عميل"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "مورد"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "مندوب"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "موظف")});
-            this.rdoType.Size = new System.Drawing.Size(142, 83);
+            this.rdoType.Size = new System.Drawing.Size(142, 80);
             this.rdoType.TabIndex = 12;
             this.rdoType.SelectedIndexChanged += new System.EventHandler(this.rdoType_SelectedIndexChanged);
             // 
@@ -211,9 +212,9 @@
             // btnRemove
             // 
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
-            this.btnRemove.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnRemove.Location = new System.Drawing.Point(507, 284);
+            this.btnRemove.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.ImageOptions.Image")));
+            this.btnRemove.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnRemove.Location = new System.Drawing.Point(513, 281);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(142, 55);
             this.btnRemove.TabIndex = 11;
@@ -223,9 +224,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnUpdate.Location = new System.Drawing.Point(507, 223);
+            this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
+            this.btnUpdate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnUpdate.Location = new System.Drawing.Point(513, 220);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(142, 55);
             this.btnUpdate.TabIndex = 10;
@@ -235,20 +236,33 @@
             // addClient
             // 
             this.addClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addClient.Image = ((System.Drawing.Image)(resources.GetObject("addClient.Image")));
-            this.addClient.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.addClient.Location = new System.Drawing.Point(507, 162);
+            this.addClient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addClient.ImageOptions.Image")));
+            this.addClient.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.addClient.Location = new System.Drawing.Point(513, 159);
             this.addClient.Name = "addClient";
             this.addClient.Size = new System.Drawing.Size(142, 55);
             this.addClient.TabIndex = 1;
             this.addClient.Text = "اضافة";
             this.addClient.Click += new System.EventHandler(this.addClient_Click);
             // 
+            // btnUsers
+            // 
+            this.btnUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUsers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnUsers.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnUsers.Location = new System.Drawing.Point(513, 369);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(142, 55);
+            this.btnUsers.TabIndex = 16;
+            this.btnUsers.Text = "المستخدمبن";
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 436);
+            this.ClientSize = new System.Drawing.Size(667, 436);
+            this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPercent);
             this.Controls.Add(this.isActive);
@@ -296,5 +310,6 @@
         private DevExpress.XtraEditors.ToggleSwitch isActive;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPercent;
+        private DevExpress.XtraEditors.SimpleButton btnUsers;
     }
 }
