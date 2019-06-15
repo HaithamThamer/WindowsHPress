@@ -29,5 +29,8 @@
     <Setting Name="imageLogoPrint" Type="System.String" Scope="User">
       <Value Profile="(Default)">logoPrint.png</Value>
     </Setting>
+    <Setting Name="userName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

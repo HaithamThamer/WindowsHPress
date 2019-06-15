@@ -1,4 +1,7 @@
-﻿namespace HPress
+﻿using DevExpress.XtraEditors;
+using System.Windows.Forms;
+
+namespace HPress
 {
     partial class Home
     {
@@ -189,14 +192,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlMain;
-        private DevExpress.XtraEditors.SimpleButton btnClients;
-        private DevExpress.XtraEditors.SimpleButton btnReports;
-        private DevExpress.XtraEditors.SimpleButton btnExport;
-        private DevExpress.XtraEditors.SimpleButton btnDollar;
-        private DevExpress.XtraEditors.SimpleButton btnDebits;
-        private DevExpress.XtraEditors.SimpleButton btnMain;
-        private DevExpress.XtraEditors.SimpleButton btnClientsImports;
-        private System.Windows.Forms.PictureBox picMain;
+        private Panel pnlMain;
+
+        private SimpleButton btnClients;
+
+        private SimpleButton btnReports;
+
+        private SimpleButton btnExport;
+
+        private SimpleButton btnDollar;
+
+        private SimpleButton btnDebits;
+
+        private SimpleButton btnMain;
+
+        private SimpleButton btnClientsImports;
+
+        private PictureBox picMain;
     }
 }

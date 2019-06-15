@@ -5,175 +5,375 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Collections.Generic;
 using HPress;
+using HDatabaseConnection;
+using DevExpress.XtraPrinting;
+using System.Data;
+
 namespace HCashier.Report
 {
     public partial class ReportSequance : DevExpress.XtraReports.UI.XtraReport
     {
-        HDatabaseConnection.HMySQLConnection databaseConnection;
-        List<Bill> bills = new List<HPress.Bill>();
-        public ReportSequance(HDatabaseConnection.HMySQLConnection databaseConnection,string reportName,DateTime from,DateTime to,double dollarValue,int isCash,int isDollar,int isImport,string clientName)
+        private HMySQLConnection databaseConnection;
+
+        private List<Bill> bills = new List<Bill>();
+        public ReportSequance(HMySQLConnection databaseConnection, string reportName, DateTime from, DateTime to, double dollarValue, int isCash, int isDollar, int isImport, string clientName, string userName)
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.databaseConnection = databaseConnection;
-
-            lblReportName.Text = reportName;
-            lblDatetimeFrom.Text = from.ToString("yyyy-MM-dd");
-            lblDatetimeTo.Text = to.ToString("yyyy-MM-dd");
-            lblDollar.Text = dollarValue.ToString();
-
-            System.Data.DataTable dt = databaseConnection.query(string.Format("select tbl_bills.id,is_account,is_sell,tbl_clients.name,if(is_dollar = 1,CONCAT('$ ',getDollar(tbl_bills.datetime)),'IQD') as `is_dollar`,is_cash,note,DATE_FORMAT(datetime,'%Y-%m-%d') as `datetime`,discount,tbl_bills.name,(select name from tbl_clients where id = tbl_bills.delegate_id) as `delegateName`,delegate_percent from tbl_bills,tbl_clients where tbl_bills.client_id = tbl_clients.id and  tbl_bills.id > 0 and tbl_bills.datetime between '{0}' and '{1}'  {2} {3} {4} {5} order by tbl_bills.datetime;", from.ToString("yyyy-MM-dd 00:00:00"), to.ToString("yyyy-MM-dd 23:59:59"), isCash == 2 ? "" : " and tbl_bills.is_cash = '" + isCash + "' ", isDollar == 2 ? "" : " and tbl_bills.is_dollar = '" + isDollar + "' ", isImport == 2 ? "" : " and tbl_bills.is_sell = '" + isImport + "' ", clientName == "الكل" ? "" : " and tbl_clients.name = '" + clientName + "' "));
-            int billId = 0;
-            Bill bill;
-            int x = 2;
-            int y = 30;
-            double billSum = 0;
-            for (int i = 0; i < dt.Rows.Count; i++)
+            this.lblReportName.Text = reportName;
+            this.lblDatetimeFrom.Text = from.ToString("yyyy-MM-dd");
+            this.lblDatetimeTo.Text = to.ToString("yyyy-MM-dd");
+            this.lblDollar.Text = dollarValue.ToString();
+            DataTable dataTable = databaseConnection.query(string.Format("select tbl_bills.id,is_account,is_sell,tbl_clients.name,if(is_dollar = 1,CONCAT('$ ',getDollar(tbl_bills.datetime)),'IQD') as `is_dollar`,is_cash,note,DATE_FORMAT(datetime,'%Y-%m-%d') as `datetime`,discount,tbl_bills.name,(select name from tbl_clients where id = tbl_bills.delegate_id) as `delegateName` from tbl_bills,tbl_clients where tbl_bills.client_id = tbl_clients.id and  tbl_bills.id > 0 and tbl_bills.datetime between '{0}' and '{1}'  {2} {3} {4} {5} {6} order by tbl_bills.datetime;", from.ToString("yyyy-MM-dd 00:00:00"), to.ToString("yyyy-MM-dd 23:59:59"), (isCash == 2) ? "" : (" and tbl_bills.is_cash = '" + isCash + "' "), (isDollar == 2) ? "" : (" and tbl_bills.is_dollar = '" + isDollar + "' "), (isImport == 2) ? "" : (" and tbl_bills.is_sell = '" + isImport + "' "), (clientName == "الكل") ? "" : (" and tbl_clients.name = '" + clientName + "' "), (userName == "الكل") ? "" : (" and  (select id from tbl_users where tbl_users.name = '" + userName + "') = tbl_bills.user_id ")));
+            int num = 0;
+            int num2 = 2;
+            int num3 = 30;
+            double num4 = 0.0;
+            for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                billId = int.Parse(dt.Rows[i]["id"].ToString());
-                bill = new Bill();
-                //
-                bill.id = billId;
-                bill.datetime = DateTime.Parse(dt.Rows[i]["datetime"].ToString());
-                bill.isAccount = bool.Parse(dt.Rows[i]["is_account"].ToString());
-                bill.isSell = bool.Parse(dt.Rows[i]["is_sell"].ToString());
-                bill.isDollar = dt.Rows[i]["is_dollar"].ToString();
-                bill.isCash = bool.Parse(dt.Rows[i]["is_cash"].ToString());
-                bill.note = dt.Rows[i]["note"].ToString();
-                bill.discount = double.Parse(dt.Rows[i]["discount"].ToString());
-                bill.clientName = dt.Rows[i]["name"].ToString();
-                bill.delegateName = dt.Rows[i]["delegateName"].ToString();
-                bill.delegatePercent = int.Parse(dt.Rows[i]["delegate_percent"].ToString());
-                bill.products = databaseConnection.query(string.Format("select tbl_products.description, tbl_products.count, tbl_products.price, tbl_products.price * tbl_products.count, tbl_products.note from tbl_products where  tbl_products.bill_id = {0} ",bill.id));
-                //
-                bills.Add(bill);
-
-                XRLabel lblBillId = new XRLabel();
-                XRLabel lblBillDate = new XRLabel();
-                XRLabel lblClientName = new XRLabel();
-                XRLabel lblIsDollar = new XRLabel();
-                XRLabel lblIsCash = new XRLabel();
-                XRLabel lblTotal = new XRLabel();
-                XRLabel lblDiscount = new XRLabel();
-                XRLabel lblTotalWitoutDiscount = new XRLabel();
-                XRTable tblProducts = new XRTable();
-
-                lblTotalWitoutDiscount.BackColor = lblDiscount.BackColor = lblTotal.BackColor = Color.LightGray;
-                lblTotal.Font = new Font("times", 16, FontStyle.Bold);
-                lblTotalWitoutDiscount.WidthF = lblDiscount.WidthF = lblTotal.WidthF = 160;
-
-                lblDiscount.Font = lblTotalWitoutDiscount.Font = lblBillId.Font = lblBillDate.Font =  lblIsDollar.Font =  lblIsCash.Font = lblTotal.Font = lblClientName.Font = new Font("times", 14);
-                lblDiscount.TextAlignment = lblTotalWitoutDiscount.TextAlignment = lblBillId.TextAlignment = lblBillDate.TextAlignment = lblIsDollar.TextAlignment =  lblIsCash.TextAlignment = lblTotal.TextAlignment = lblClientName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-                lblDiscount.CanGrow = lblTotalWitoutDiscount.CanGrow = lblBillId.CanGrow = lblIsDollar.CanGrow = lblIsCash.CanGrow = lblTotal.CanGrow = lblClientName.CanGrow  = true;
-                lblDiscount.CanShrink = lblTotalWitoutDiscount.CanShrink = lblBillId.CanShrink = lblIsDollar.CanShrink =  lblIsCash.CanShrink = lblTotal.CanShrink = lblClientName.CanShrink  = true;
-                lblDiscount.HeightF = lblTotalWitoutDiscount.HeightF = lblBillId.HeightF = lblBillDate.HeightF =  lblIsDollar.HeightF = lblIsCash.HeightF = lblTotal.HeightF = lblClientName.HeightF  = 30;
-
-                lblClientName.SizeF = new SizeF(lblClientName.SizeF.Width * 2, lblClientName.SizeF.Height);
-                lblBillId.LocationF = new PointF(x, y);
-                lblBillDate.LocationF = new PointF(x, y + lblBillId.HeightF);
-
-                lblClientName.LocationF = new PointF(this.PageWidth - lblClientName.WidthF - 50 , y);
-                lblIsCash.LocationF = new PointF(lblClientName.LocationF.X + lblIsCash.SizeF.Width, lblClientName.LocationF.Y + lblClientName.SizeF.Height);
-                lblIsDollar.LocationF = new PointF(lblClientName.LocationF.X , lblIsCash.LocationF.Y);
-
-                tblProducts.SizeF = new SizeF(this.PageWidth - 50, 30);
-                tblProducts.Borders = DevExpress.XtraPrinting.BorderSide.All;
-                tblProducts.BorderWidth = 1;
-                tblProducts.BorderColor = Color.DimGray;
-                tblProducts.BeginInit();
-                tblProducts.LocationF = new PointF(x,y + lblBillId.HeightF + lblBillDate.HeightF + 1);
-                tblProducts.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-                
+                num = int.Parse(dataTable.Rows[i]["id"].ToString());
+                Bill bill = new Bill();
+                bill.id = num;
+                bill.datetime = DateTime.Parse(dataTable.Rows[i]["datetime"].ToString());
+                bill.isAccount = bool.Parse(dataTable.Rows[i]["is_account"].ToString());
+                bill.isSell = bool.Parse(dataTable.Rows[i]["is_sell"].ToString());
+                bill.isDollar = dataTable.Rows[i]["is_dollar"].ToString();
+                bill.isCash = bool.Parse(dataTable.Rows[i]["is_cash"].ToString());
+                bill.note = dataTable.Rows[i]["note"].ToString();
+                bill.discount = double.Parse(dataTable.Rows[i]["discount"].ToString());
+                bill.clientName = dataTable.Rows[i]["name"].ToString();
+                bill.delegateName = dataTable.Rows[i]["delegateName"].ToString();
+                bill.products = databaseConnection.query(string.Format("select tbl_products.description, tbl_products.count, tbl_products.price, tbl_products.price * tbl_products.count, tbl_products.note,tbl_products.delegate_percentage from tbl_products where  tbl_products.bill_id = {0} ", bill.id));
+                this.bills.Add(bill);
+                XRLabel xRLabel = new XRLabel();
+                XRLabel xRLabel2 = new XRLabel();
+                XRLabel xRLabel3 = new XRLabel();
+                XRLabel xRLabel4 = new XRLabel();
+                XRLabel xRLabel5 = new XRLabel();
+                XRLabel xRLabel6 = new XRLabel();
+                XRLabel xRLabel7 = new XRLabel();
+                XRLabel xRLabel8 = new XRLabel();
+                XRLabel xRLabel9 = new XRLabel();
+                XRTable xRTable = new XRTable();
+                XRLabel xRLabel10 = xRLabel8;
+                XRLabel xRLabel11 = xRLabel9;
+                XRLabel xRLabel12 = xRLabel7;
+                XRLabel xRLabel13 = xRLabel6;
+                Color color = xRLabel13.BackColor = Color.LightGray;
+                Color color3 = xRLabel12.BackColor = color;
+                Color color6 = xRLabel10.BackColor = (xRLabel11.BackColor = color3);
+                xRLabel6.Font = new Font("times", 16f, FontStyle.Bold);
+                XRLabel xRLabel14 = xRLabel8;
+                XRLabel xRLabel15 = xRLabel9;
+                XRLabel xRLabel16 = xRLabel7;
+                XRLabel xRLabel17 = xRLabel6;
+                float num6 = xRLabel17.WidthF = 160f;
+                float num8 = xRLabel16.WidthF = num6;
+                float num11 = xRLabel14.WidthF = (xRLabel15.WidthF = num8);
+                XRLabel xRLabel18 = xRLabel8;
+                XRLabel xRLabel19 = xRLabel7;
+                XRLabel xRLabel20 = xRLabel9;
+                XRLabel xRLabel21 = xRLabel;
+                XRLabel xRLabel22 = xRLabel2;
+                XRLabel xRLabel23 = xRLabel4;
+                XRLabel xRLabel24 = xRLabel5;
+                XRLabel xRLabel25 = xRLabel6;
+                XRLabel xRLabel26 = xRLabel3;
+                Font font2 = xRLabel26.Font = new Font("times", 14f);
+                Font font4 = xRLabel25.Font = font2;
+                Font font6 = xRLabel24.Font = font4;
+                Font font8 = xRLabel23.Font = font6;
+                Font font10 = xRLabel22.Font = font8;
+                Font font12 = xRLabel21.Font = font10;
+                Font font14 = xRLabel20.Font = font12;
+                Font font17 = xRLabel18.Font = (xRLabel19.Font = font14);
+                XRLabel xRLabel27 = xRLabel8;
+                XRLabel xRLabel28 = xRLabel7;
+                XRLabel xRLabel29 = xRLabel9;
+                XRLabel xRLabel30 = xRLabel;
+                XRLabel xRLabel31 = xRLabel2;
+                XRLabel xRLabel32 = xRLabel4;
+                XRLabel xRLabel33 = xRLabel5;
+                XRLabel xRLabel34 = xRLabel6;
+                XRLabel xRLabel35 = xRLabel3;
+                TextAlignment textAlignment2 = xRLabel35.TextAlignment = TextAlignment.MiddleCenter;
+                TextAlignment textAlignment4 = xRLabel34.TextAlignment = textAlignment2;
+                TextAlignment textAlignment6 = xRLabel33.TextAlignment = textAlignment4;
+                TextAlignment textAlignment8 = xRLabel32.TextAlignment = textAlignment6;
+                TextAlignment textAlignment10 = xRLabel31.TextAlignment = textAlignment8;
+                TextAlignment textAlignment12 = xRLabel30.TextAlignment = textAlignment10;
+                TextAlignment textAlignment14 = xRLabel29.TextAlignment = textAlignment12;
+                TextAlignment textAlignment17 = xRLabel27.TextAlignment = (xRLabel28.TextAlignment = textAlignment14);
+                XRLabel xRLabel36 = xRLabel8;
+                XRLabel xRLabel37 = xRLabel7;
+                XRLabel xRLabel38 = xRLabel9;
+                XRLabel xRLabel39 = xRLabel;
+                XRLabel xRLabel40 = xRLabel4;
+                XRLabel xRLabel41 = xRLabel5;
+                XRLabel xRLabel42 = xRLabel6;
+                XRLabel xRLabel43 = xRLabel3;
+                bool flag2 = xRLabel43.CanGrow = true;
+                bool flag4 = xRLabel42.CanGrow = flag2;
+                bool flag6 = xRLabel41.CanGrow = flag4;
+                bool flag8 = xRLabel40.CanGrow = flag6;
+                bool flag10 = xRLabel39.CanGrow = flag8;
+                bool flag12 = xRLabel38.CanGrow = flag10;
+                bool canGrow = xRLabel37.CanGrow = flag12;
+                xRLabel36.CanGrow = canGrow;
+                XRLabel xRLabel44 = xRLabel8;
+                XRLabel xRLabel45 = xRLabel7;
+                XRLabel xRLabel46 = xRLabel9;
+                XRLabel xRLabel47 = xRLabel;
+                XRLabel xRLabel48 = xRLabel4;
+                XRLabel xRLabel49 = xRLabel5;
+                XRLabel xRLabel50 = xRLabel6;
+                XRLabel xRLabel51 = xRLabel3;
+                flag2 = (xRLabel51.CanShrink = true);
+                flag4 = (xRLabel50.CanShrink = flag2);
+                flag6 = (xRLabel49.CanShrink = flag4);
+                flag8 = (xRLabel48.CanShrink = flag6);
+                flag10 = (xRLabel47.CanShrink = flag8);
+                flag12 = (xRLabel46.CanShrink = flag10);
+                canGrow = (xRLabel45.CanShrink = flag12);
+                xRLabel44.CanShrink = canGrow;
+                XRLabel xRLabel52 = xRLabel8;
+                XRLabel xRLabel53 = xRLabel7;
+                XRLabel xRLabel54 = xRLabel9;
+                XRLabel xRLabel55 = xRLabel;
+                XRLabel xRLabel56 = xRLabel2;
+                XRLabel xRLabel57 = xRLabel4;
+                XRLabel xRLabel58 = xRLabel5;
+                XRLabel xRLabel59 = xRLabel6;
+                XRLabel xRLabel60 = xRLabel3;
+                float num13 = xRLabel60.HeightF = 30f;
+                float num15 = xRLabel59.HeightF = num13;
+                float num17 = xRLabel58.HeightF = num15;
+                float num19 = xRLabel57.HeightF = num17;
+                float num21 = xRLabel56.HeightF = num19;
+                num6 = (xRLabel55.HeightF = num21);
+                num8 = (xRLabel54.HeightF = num6);
+                num11 = (xRLabel52.HeightF = (xRLabel53.HeightF = num8));
+                XRLabel xRLabel61 = xRLabel3;
+                SizeF sizeF = xRLabel3.SizeF;
+                float width = sizeF.Width * 2f;
+                sizeF = xRLabel3.SizeF;
+                xRLabel61.SizeF = new SizeF(width, sizeF.Height);
+                xRLabel.LocationF = new PointF((float)num2, (float)num3);
+                xRLabel2.LocationF = new PointF((float)num2, (float)num3 + xRLabel.HeightF);
+                xRLabel3.LocationF = new PointF((float)base.PageWidth - xRLabel3.WidthF - 50f, (float)num3);
+                XRLabel xRLabel62 = xRLabel5;
+                PointF locationF = xRLabel3.LocationF;
+                float x = locationF.X;
+                sizeF = xRLabel5.SizeF;
+                float x2 = x + sizeF.Width;
+                locationF = xRLabel3.LocationF;
+                float y = locationF.Y;
+                sizeF = xRLabel3.SizeF;
+                xRLabel62.LocationF = new PointF(x2, y + sizeF.Height);
+                XRLabel xRLabel63 = xRLabel4;
+                locationF = xRLabel3.LocationF;
+                float x3 = locationF.X;
+                locationF = xRLabel5.LocationF;
+                xRLabel63.LocationF = new PointF(x3, locationF.Y);
+                xRTable.SizeF = new SizeF((float)(base.PageWidth - 50), 30f);
+                xRTable.Borders = BorderSide.All;
+                xRTable.BorderWidth = 1f;
+                xRTable.BorderColor = Color.DimGray;
+                xRTable.BeginInit();
+                xRTable.LocationF = new PointF((float)num2, (float)num3 + xRLabel.HeightF + xRLabel2.HeightF + 1f);
+                xRTable.TextAlignment = TextAlignment.MiddleRight;
+                double num26 = 0.0;
+                double num34;
                 for (int j = -1; j < bill.products.Rows.Count; j++)
                 {
-                    XRTableRow row = new XRTableRow();
-
-                    XRTableCell productId = new XRTableCell();
-                    XRTableCell description = new XRTableCell();
-                    XRTableCell count = new XRTableCell();
-                    XRTableCell price = new XRTableCell();
-                    XRTableCell total = new XRTableCell();
-                    XRTableCell note = new XRTableCell();
-                    productId.WidthF = 30;
-                    description.WidthF = 250;
-                    count.WidthF = 80;
-                    price.WidthF = 80;
-                    total.WidthF = 110;
-                    note.WidthF = 210;
-                    productId.TextAlignment = total.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-                    productId.HeightF = description.HeightF = count.HeightF = price.HeightF = total.HeightF = note.HeightF = 30;
-
+                    XRTableRow xRTableRow = new XRTableRow();
+                    XRTableCell xRTableCell = new XRTableCell();
+                    XRTableCell xRTableCell2 = new XRTableCell();
+                    XRTableCell xRTableCell3 = new XRTableCell();
+                    XRTableCell xRTableCell4 = new XRTableCell();
+                    XRTableCell xRTableCell5 = new XRTableCell();
+                    XRTableCell xRTableCell6 = new XRTableCell();
+                    XRTableCell xRTableCell7 = new XRTableCell();
+                    xRTableCell.WidthF = 30f;
+                    xRTableCell2.WidthF = 250f;
+                    xRTableCell3.WidthF = 80f;
+                    xRTableCell4.WidthF = 80f;
+                    xRTableCell5.WidthF = 110f;
+                    xRTableCell7.WidthF = 210f;
+                    XRTableCell xRTableCell8 = xRTableCell;
+                    XRTableCell xRTableCell9 = xRTableCell5;
+                    XRTableCell xRTableCell10 = xRTableCell6;
+                    textAlignment14 = (xRTableCell10.TextAlignment = TextAlignment.MiddleCenter);
+                    textAlignment17 = (xRTableCell8.TextAlignment = (xRTableCell9.TextAlignment = textAlignment14));
+                    XRTableCell xRTableCell11 = xRTableCell;
+                    XRTableCell xRTableCell12 = xRTableCell2;
+                    XRTableCell xRTableCell13 = xRTableCell3;
+                    XRTableCell xRTableCell14 = xRTableCell4;
+                    XRTableCell xRTableCell15 = xRTableCell5;
+                    XRTableCell xRTableCell16 = xRTableCell6;
+                    XRTableCell xRTableCell17 = xRTableCell7;
+                    num17 = (xRTableCell17.HeightF = 30f);
+                    num19 = (xRTableCell16.HeightF = num17);
+                    num21 = (xRTableCell15.HeightF = num19);
+                    num6 = (xRTableCell14.HeightF = num21);
+                    num8 = (xRTableCell13.HeightF = num6);
+                    num11 = (xRTableCell11.HeightF = (xRTableCell12.HeightF = num8));
                     if (j == -1)
                     {
-                        productId.Font = description.Font = count.Font = price.Font = total.Font = note.Font = new Font("times", 16,FontStyle.Bold);
-                        productId.BackColor = description.BackColor = count.BackColor = price.BackColor = total.BackColor = note.BackColor = Color.LightGray;
-                        description.TextAlignment = count.TextAlignment = price.TextAlignment = total.TextAlignment = note.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-
-                        productId.Text = "ت";
-                        description.Text = "الوصف";
-                        count.Text = "العدد";
-                        price.Text = "السعر";
-                        total.Text = "المجموع";
-                        note.Text = "ملاحظة";
+                        XRTableCell xRTableCell18 = xRTableCell;
+                        XRTableCell xRTableCell19 = xRTableCell2;
+                        XRTableCell xRTableCell20 = xRTableCell3;
+                        XRTableCell xRTableCell21 = xRTableCell4;
+                        XRTableCell xRTableCell22 = xRTableCell5;
+                        XRTableCell xRTableCell23 = xRTableCell6;
+                        XRTableCell xRTableCell24 = xRTableCell7;
+                        font6 = (xRTableCell24.Font = new Font("times", 16f, FontStyle.Bold));
+                        font8 = (xRTableCell23.Font = font6);
+                        font10 = (xRTableCell22.Font = font8);
+                        font12 = (xRTableCell21.Font = font10);
+                        font14 = (xRTableCell20.Font = font12);
+                        font17 = (xRTableCell18.Font = (xRTableCell19.Font = font14));
+                        XRTableCell xRTableCell25 = xRTableCell;
+                        XRTableCell xRTableCell26 = xRTableCell2;
+                        XRTableCell xRTableCell27 = xRTableCell3;
+                        XRTableCell xRTableCell28 = xRTableCell4;
+                        XRTableCell xRTableCell29 = xRTableCell5;
+                        XRTableCell xRTableCell30 = xRTableCell6;
+                        XRTableCell xRTableCell31 = xRTableCell7;
+                        Color color7 = xRTableCell31.BackColor = Color.LightGray;
+                        Color color9 = xRTableCell30.BackColor = color7;
+                        Color color11 = xRTableCell29.BackColor = color9;
+                        color = (xRTableCell28.BackColor = color11);
+                        color3 = (xRTableCell27.BackColor = color);
+                        color6 = (xRTableCell25.BackColor = (xRTableCell26.BackColor = color3));
+                        XRTableCell xRTableCell32 = xRTableCell2;
+                        XRTableCell xRTableCell33 = xRTableCell3;
+                        XRTableCell xRTableCell34 = xRTableCell4;
+                        XRTableCell xRTableCell35 = xRTableCell5;
+                        XRTableCell xRTableCell36 = xRTableCell6;
+                        XRTableCell xRTableCell37 = xRTableCell7;
+                        textAlignment8 = (xRTableCell37.TextAlignment = TextAlignment.MiddleCenter);
+                        textAlignment10 = (xRTableCell36.TextAlignment = textAlignment8);
+                        textAlignment12 = (xRTableCell35.TextAlignment = textAlignment10);
+                        textAlignment14 = (xRTableCell34.TextAlignment = textAlignment12);
+                        textAlignment17 = (xRTableCell32.TextAlignment = (xRTableCell33.TextAlignment = textAlignment14));
+                        xRTableCell.Text = "ت";
+                        xRTableCell2.Text = "الوصف";
+                        xRTableCell3.Text = "العدد";
+                        xRTableCell4.Text = "السعر";
+                        xRTableCell5.Text = "المجموع";
+                        xRTableCell6.Text = "نسبة المندوب";
+                        xRTableCell7.Text = "ملاحظة";
                     }
                     else
                     {
-                        productId.Font = description.Font = count.Font = price.Font = total.Font = note.Font = new Font("times", 12, FontStyle.Bold);
-                        productId.BackColor = description.BackColor = count.BackColor = price.BackColor = total.BackColor = note.BackColor = Color.White;
-                        description.TextAlignment = note.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight ;
-                        count.TextAlignment = price.TextAlignment = total.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-
-                        billSum += double.Parse(bill.products.Rows[j][3].ToString());
-                        productId.Text = (j+1).ToString();
-                        description.Text = bill.products.Rows[j][0].ToString();
-                        count.Text = bill.products.Rows[j][1].ToString();
-                        price.Text = double.Parse(bill.products.Rows[j][2].ToString()).ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###");
-                        total.Text = double.Parse(bill.products.Rows[j][3].ToString()).ToString();
-                        note.Text = bill.products.Rows[j][4].ToString();
+                        XRTableCell xRTableCell38 = xRTableCell;
+                        XRTableCell xRTableCell39 = xRTableCell2;
+                        XRTableCell xRTableCell40 = xRTableCell3;
+                        XRTableCell xRTableCell41 = xRTableCell4;
+                        XRTableCell xRTableCell42 = xRTableCell5;
+                        XRTableCell xRTableCell43 = xRTableCell6;
+                        XRTableCell xRTableCell44 = xRTableCell7;
+                        font6 = (xRTableCell44.Font = new Font("times", 12f, FontStyle.Bold));
+                        font8 = (xRTableCell43.Font = font6);
+                        font10 = (xRTableCell42.Font = font8);
+                        font12 = (xRTableCell41.Font = font10);
+                        font14 = (xRTableCell40.Font = font12);
+                        font17 = (xRTableCell38.Font = (xRTableCell39.Font = font14));
+                        XRTableCell xRTableCell45 = xRTableCell;
+                        XRTableCell xRTableCell46 = xRTableCell2;
+                        XRTableCell xRTableCell47 = xRTableCell3;
+                        XRTableCell xRTableCell48 = xRTableCell4;
+                        XRTableCell xRTableCell49 = xRTableCell5;
+                        XRTableCell xRTableCell50 = xRTableCell6;
+                        XRTableCell xRTableCell51 = xRTableCell7;
+                        Color color7 = xRTableCell51.BackColor = Color.White;
+                        Color color9 = xRTableCell50.BackColor = color7;
+                        Color color11 = xRTableCell49.BackColor = color9;
+                        color = (xRTableCell48.BackColor = color11);
+                        color3 = (xRTableCell47.BackColor = color);
+                        color6 = (xRTableCell45.BackColor = (xRTableCell46.BackColor = color3));
+                        XRTableCell xRTableCell52 = xRTableCell2;
+                        XRTableCell xRTableCell53 = xRTableCell7;
+                        textAlignment17 = (xRTableCell52.TextAlignment = (xRTableCell53.TextAlignment = TextAlignment.MiddleRight));
+                        XRTableCell xRTableCell54 = xRTableCell3;
+                        XRTableCell xRTableCell55 = xRTableCell4;
+                        XRTableCell xRTableCell56 = xRTableCell5;
+                        XRTableCell xRTableCell57 = xRTableCell6;
+                        textAlignment12 = (xRTableCell57.TextAlignment = TextAlignment.MiddleCenter);
+                        textAlignment14 = (xRTableCell56.TextAlignment = textAlignment12);
+                        textAlignment17 = (xRTableCell54.TextAlignment = (xRTableCell55.TextAlignment = textAlignment14));
+                        num4 += double.Parse(bill.products.Rows[j][3].ToString());
+                        xRTableCell.Text = (j + 1).ToString();
+                        xRTableCell2.Text = bill.products.Rows[j][0].ToString();
+                        xRTableCell3.Text = bill.products.Rows[j][1].ToString();
+                        XRTableCell xRTableCell58 = xRTableCell4;
+                        num34 = double.Parse(bill.products.Rows[j][2].ToString());
+                        xRTableCell58.Text = num34.ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###");
+                        XRTableCell xRTableCell59 = xRTableCell5;
+                        num34 = double.Parse(bill.products.Rows[j][3].ToString());
+                        xRTableCell59.Text = num34.ToString();
+                        XRTableCell xRTableCell60 = xRTableCell6;
+                        num34 = double.Parse(bill.products.Rows[j]["delegate_percentage"].ToString());
+                        xRTableCell60.Text = num34.ToString("#,###.##");
+                        num26 += double.Parse(bill.products.Rows[j]["delegate_percentage"].ToString());
+                        xRTableCell7.Text = bill.products.Rows[j][4].ToString();
                     }
-                    row.Cells.Add(note);
-                    row.Cells.Add(total);
-                    row.Cells.Add(price);
-                    row.Cells.Add(count);
-                    row.Cells.Add(description);
-                    row.Cells.Add(productId);
-                    tblProducts.Rows.Add(row);
+                    xRTableRow.Cells.Add(xRTableCell7);
+                    xRTableRow.Cells.Add(xRTableCell6);
+                    xRTableRow.Cells.Add(xRTableCell5);
+                    xRTableRow.Cells.Add(xRTableCell4);
+                    xRTableRow.Cells.Add(xRTableCell3);
+                    xRTableRow.Cells.Add(xRTableCell2);
+                    xRTableRow.Cells.Add(xRTableCell);
+                    xRTable.Rows.Add(xRTableRow);
                 }
-                
-                tblProducts.EndInit();
-                y = (int)tblProducts.LocationF.Y + 30;
-
-                lblTotal.LocationF = new PointF(x, y);
-                lblDiscount.LocationF = new PointF(lblTotal.LocationF.X + lblTotal.WidthF, y);
-                lblTotalWitoutDiscount.LocationF = new PointF(lblDiscount.LocationF.X + lblDiscount.WidthF, y);
-                y = y + (int)lblBillId.SizeF.Height + 5;
-
-                lblBillId.Text = bill.id.ToString();
-                lblBillDate.Text = bill.datetime.ToString("yyyy-MM-dd");
-                lblIsDollar.Text = bill.isDollar ;
-                lblIsCash.Text = bill.isCash ? "نقد" : "أجل";
-                lblTotal.Text = string.Format("{0} | {1}", (billSum - bill.discount).ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###"), "النهائي");
-                lblDiscount.Text = string.Format("{0} | {1}", bill.discount.ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###"), "خصم");
-                lblTotalWitoutDiscount.Text = string.Format("{0} | {1}", billSum.ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###"), "مجموع");
-                lblClientName.Text = bill.clientName.ToString();
-                
-                
-                this.Detail.Controls.Add(lblBillId);
-                this.Detail.Controls.Add(lblBillDate);
-                this.Detail.Controls.Add(lblClientName);
-                this.Detail.Controls.Add(lblIsDollar);
-                this.Detail.Controls.Add(lblIsCash);
-                this.Detail.Controls.Add(lblTotal);
-                this.Detail.Controls.Add(lblDiscount);
-                this.Detail.Controls.Add(lblTotalWitoutDiscount);
-                this.Detail.Controls.Add(tblProducts);
-                y += 10;
-                billSum = 0;
+                xRTable.EndInit();
+                locationF = xRTable.LocationF;
+                num3 = (int)locationF.Y + 30;
+                xRLabel6.LocationF = new PointF((float)num2, (float)num3);
+                XRLabel xRLabel64 = xRLabel7;
+                locationF = xRLabel6.LocationF;
+                xRLabel64.LocationF = new PointF(locationF.X + xRLabel6.WidthF, (float)num3);
+                XRLabel xRLabel65 = xRLabel8;
+                locationF = xRLabel7.LocationF;
+                xRLabel65.LocationF = new PointF(locationF.X + xRLabel7.WidthF, (float)num3);
+                XRLabel xRLabel66 = xRLabel9;
+                locationF = xRLabel8.LocationF;
+                xRLabel66.LocationF = new PointF(locationF.X + xRLabel8.WidthF, (float)num3);
+                int num35 = num3;
+                sizeF = xRLabel.SizeF;
+                num3 = num35 + (int)sizeF.Height + 5;
+                xRLabel.Text = bill.id.ToString();
+                xRLabel2.Text = bill.datetime.ToString("yyyy-MM-dd");
+                xRLabel4.Text = bill.isDollar;
+                xRLabel5.Text = (bill.isCash ? "نقد" : "أجل");
+                XRLabel xRLabel67 = xRLabel5;
+                xRLabel67.Text = xRLabel67.Text + " - " + (bill.isSell ? " وارد " : " صادر ");
+                XRLabel xRLabel68 = xRLabel6;
+                num34 = num4 - bill.discount;
+                xRLabel68.Text = string.Format("{0} | {1}", num34.ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###"), "النهائي");
+                xRLabel8.Text = num26.ToString("#,###.##") + " | المندوب";
+                xRLabel7.Text = string.Format("{0} | {1}", bill.discount.ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###"), "خصم");
+                xRLabel9.Text = string.Format("{0} | {1}", num4.ToString(bill.isDollar.Contains("$") ? "#.##" : "#,###"), "مجموع");
+                xRLabel3.Text = bill.clientName.ToString();
+                this.Detail.Controls.Add(xRLabel);
+                this.Detail.Controls.Add(xRLabel2);
+                this.Detail.Controls.Add(xRLabel3);
+                this.Detail.Controls.Add(xRLabel4);
+                this.Detail.Controls.Add(xRLabel5);
+                this.Detail.Controls.Add(xRLabel6);
+                this.Detail.Controls.Add(xRLabel7);
+                this.Detail.Controls.Add(xRLabel8);
+                this.Detail.Controls.Add(xRLabel9);
+                this.Detail.Controls.Add(xRTable);
+                num3 += 10;
+                num4 = 0.0;
             }
-
         }
-        void drawBill(int x,int y,Bill bill)
-        {
 
+        private void drawBill(int x, int y, Bill bill)
+        {
         }
     }
 }

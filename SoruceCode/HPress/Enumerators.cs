@@ -22,7 +22,8 @@ namespace HPress
             color,
             logoPrint
         }
-        public enum clientType
+
+        public enum ClientTypes
         {
             Client,
             Supplier,
@@ -30,12 +31,14 @@ namespace HPress
             Employer,
             ClientSupplier
         }
+
         public enum UserType
         {
             Admin,
             User,
             Guest
         }
+
         public enum ReportForm
         {
             none,
@@ -46,6 +49,7 @@ namespace HPress
             caseValue,
             EmpReport
         }
+
         public enum ReportsName
         {
             none,
@@ -64,7 +68,6 @@ namespace HPress
             Bills,
             Products,
             ClientPay
-
         }
     }
 }

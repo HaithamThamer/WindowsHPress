@@ -8,33 +8,37 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using HDatabaseConnection;
+using DevExpress.XtraBars.Docking2010;
 
 namespace HPress
 {
     public partial class Dollar : DevExpress.XtraEditors.XtraForm
     {
         HDatabaseConnection.HMySQLConnection databaseConnection;
-        public Dollar(HDatabaseConnection.HMySQLConnection databaseConnection,double value)
+        public Dollar(HMySQLConnection databaseConnection, double value)
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.databaseConnection = databaseConnection;
-            grpMain.CustomButtonClick += GrpMain_CustomButtonClick;
-            txtValue.Text = value.ToString();
-            txtValue.Focus();
+            grpMain.CustomButtonClick += this.GrpMain_CustomButtonClick;
+            this.txtValue.Text = value.ToString();
+            this.txtValue.Focus();
         }
 
-        private void GrpMain_CustomButtonClick(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
+        private void GrpMain_CustomButtonClick(object sender, BaseButtonEventArgs e)
         {
-            switch (e.Button.Properties.Caption)
+            string caption = e.Button.Properties.Caption;
+            if (!(caption == "تجديد"))
             {
-                case "تجديد":
-                    renew();
-                    this.Close();
-                    break;
-                case "أغلاق":
-                    this.Close();
-                    break;
-                default: break;
+                if (caption == "أغلاق")
+                {
+                    base.Close();
+                }
+            }
+            else
+            {
+                this.renew();
+                base.Close();
             }
         }
 
@@ -42,29 +46,28 @@ namespace HPress
         {
             switch (e.KeyChar)
             {
-                case (char)Keys.Enter:
-                    renew();
-                    this.Close();
+                case '\r':
+                    this.renew();
+                    base.Close();
                     break;
-                case (char)Keys.Escape:
-                    this.Close();
-                    break;
-                default:
+                case '\u001b':
+                    base.Close();
                     break;
             }
         }
+
         public void renew()
         {
-            databaseConnection.queryNonReader(string.Format("insert into tbl_dollar (value) values ('{0}');", txtValue.Text));
-            Properties.Settings.Default.dollarValue = double.Parse(txtValue.Text);
+            this.databaseConnection.queryNonReader(string.Format("insert into tbl_dollar (value) values ('{0}');", this.txtValue.Text));
+            HPress.Properties.Settings.Default.dollarValue = double.Parse(this.txtValue.Text);
         }
 
         private void txtValue_TextChanged(object sender, EventArgs e)
         {
-            if (txtValue.Text == string.Empty)
+            if (this.txtValue.Text == string.Empty)
             {
-                txtValue.Text = "0";
-                txtValue.Focus();
+                this.txtValue.Text = "0";
+                this.txtValue.Focus();
             }
         }
     }

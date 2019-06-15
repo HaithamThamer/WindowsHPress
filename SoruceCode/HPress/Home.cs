@@ -8,139 +8,131 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using HRegsiter;
+using HDatabaseConnection;
 
 namespace HPress
 {
     public partial class Home : DevExpress.XtraEditors.XtraForm
     {
-        HDatabaseConnection.HMySQLConnection databaseConnection;
-        HRegsiter.Product product;
-        Main main;
-        Debits debits;
-        Exports exports;
-        ClientsImport clientImport;
-        Reports reports;
+        private HMySQLConnection databaseConnection;
+
+        private Product product;
+
+        private Main main;
+
+        private Debits debits;
+
+        private Exports exports;
+
+        private ClientsImport clientImport;
+
+        private Reports reports;
         public Home()
         {
-            product = new HRegsiter.Product(Application.ExecutablePath.ToString());
-            databaseConnection = new HDatabaseConnection.HMySQLConnection(product.getValue((int)Enumerators.Settings.ServerIP), product.getValue((int)Enumerators.Settings.DatabaseUsername), product.getValue((int)Enumerators.Settings.DatabasePassword), product.getValue((int)Enumerators.Settings.DatabaseName));
-
-            Properties.Settings.Default.imageLogo1 = product.getValue((int)Enumerators.Settings.logo1);
-            Properties.Settings.Default.address = product.getValue((int)Enumerators.Settings.address);
-
-            Properties.Settings.Default.facebook = product.getValue((int)Enumerators.Settings.facebook);
-            Properties.Settings.Default.phone = product.getValue((int)Enumerators.Settings.phone);
-            Properties.Settings.Default.email = product.getValue((int)Enumerators.Settings.email);
-            Properties.Settings.Default.color = product.getValue((int)Enumerators.Settings.color);
-            Properties.Settings.Default.imageLogoPrint = product.getValue((int)Enumerators.Settings.logoPrint);
-            if (new Login(databaseConnection).ShowDialog() == DialogResult.No)
+            this.product = new Product(Application.ExecutablePath.ToString());
+            this.databaseConnection = new HMySQLConnection(this.product.getValue(0), this.product.getValue(1), this.product.getValue(2), this.product.getValue(3));
+            HPress.Properties.Settings.Default.imageLogo1 = this.product.getValue(4);
+            HPress.Properties.Settings.Default.address = this.product.getValue(5);
+            HPress.Properties.Settings.Default.facebook = this.product.getValue(6);
+            HPress.Properties.Settings.Default.phone = this.product.getValue(7);
+            HPress.Properties.Settings.Default.email = this.product.getValue(8);
+            HPress.Properties.Settings.Default.color = this.product.getValue(9);
+            HPress.Properties.Settings.Default.imageLogoPrint = this.product.getValue(10);
+            if (new Login(this.databaseConnection).ShowDialog() == DialogResult.No)
             {
                 Environment.Exit(0);
             }
-
-
-
-            InitializeComponent();
-
-            main = new Main(databaseConnection);
-            main.MdiParent = this;
-            main.Dock = DockStyle.Fill;
-            main.Show();
-
-
-            //User
-            if (Properties.Settings.Default.userType == (int)Enumerators.UserType.User)
+            this.InitializeComponent();
+            this.main = new Main(this.databaseConnection);
+            this.main.MdiParent = this;
+            this.main.Dock = DockStyle.Fill;
+            this.main.Show();
+            if (HPress.Properties.Settings.Default.userType == 1)
             {
-
-                btnClientsImports.Enabled = false;
-                btnDebits.Enabled = false;
-                btnExport.Enabled = false;
-                btnClients.Enabled = false;
-
-                //btnBalance.Enabled = false;
+                this.btnClientsImports.Enabled = false;
+                this.btnDebits.Enabled = false;
+                this.btnExport.Enabled = false;
+                this.btnClients.Enabled = false;
             }
-            btnDollar.Text = Properties.Settings.Default.dollarValue.ToString();
-
-            this.Text = Application.ProductName;
-            picMain.Image = Image.FromFile(Properties.Settings.Default.imageLogo1);
-            pnlMain.BackColor = System.Drawing.ColorTranslator.FromHtml(Properties.Settings.Default.color);
-
+            this.btnDollar.Text = HPress.Properties.Settings.Default.dollarValue.ToString();
+            this.Text = "HPRESS";
+            this.picMain.Image = Image.FromFile(HPress.Properties.Settings.Default.imageLogo1);
+            this.pnlMain.BackColor = ColorTranslator.FromHtml(HPress.Properties.Settings.Default.color);
         }
-
 
         private void btnClientAdd_Click(object sender, EventArgs e)
         {
-            new Clients(databaseConnection).ShowDialog();
+            new Clients(this.databaseConnection).ShowDialog();
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            if (reports == null)
+            if (this.reports == null)
             {
-                reports = new Reports(databaseConnection);
-                reports.MdiParent = this;
-                reports.Show();
-            }else
-            {
-                reports.Activate();
+                this.reports = new Reports(this.databaseConnection, Enumerators.ReportsName.none);
+                this.reports.MdiParent = this;
+                this.reports.Show();
             }
-            
+            else
+            {
+                this.reports.Activate();
+            }
         }
 
         private void btnBalance_Click(object sender, EventArgs e)
         {
-            if (exports == null)
+            if (this.exports == null)
             {
-                exports = new Exports(databaseConnection);
-                exports.MdiParent = this;
-                exports.Show();
-            }else
+                this.exports = new Exports(this.databaseConnection);
+                this.exports.MdiParent = this;
+                this.exports.Show();
+            }
+            else
             {
-                exports.Activate();
+                this.exports.Activate();
             }
         }
 
         private void btnDollar_Click(object sender, EventArgs e)
         {
-            new Dollar(databaseConnection, double.Parse(btnDollar.Text)).ShowDialog();
-            btnDollar.Text = Properties.Settings.Default.dollarValue.ToString();
+            new Dollar(this.databaseConnection, double.Parse(this.btnDollar.Text)).ShowDialog();
+            this.btnDollar.Text = HPress.Properties.Settings.Default.dollarValue.ToString();
         }
 
         private void btnDebits_Click(object sender, EventArgs e)
         {
-            if (debits == null)
+            if (this.debits == null)
             {
-                debits = new Debits(databaseConnection);
-                debits.MdiParent = this;
-                debits.Show();
+                this.debits = new Debits(this.databaseConnection);
+                this.debits.MdiParent = this;
+                this.debits.Show();
             }
             else
             {
-                debits.Activate();
+                this.debits.Activate();
             }
-            
         }
 
         private void btnMain_Click(object sender, EventArgs e)
         {
-            if (main != null)
+            if (this.main != null)
             {
-
-                main.Activate();
+                this.main.Activate();
             }
         }
 
         private void btnClientsImports_Click(object sender, EventArgs e)
         {
-            if (clientImport == null)
+            if (this.clientImport == null)
             {
-                clientImport = new ClientsImport(databaseConnection);
-                clientImport.MdiParent = this;
-                clientImport.Show();
+                this.clientImport = new ClientsImport(this.databaseConnection);
+                this.clientImport.MdiParent = this;
+                this.clientImport.Show();
             }
             else
             {
-                clientImport.Activate();
+                this.clientImport.Activate();
             }
         }
     }

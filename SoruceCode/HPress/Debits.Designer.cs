@@ -1,4 +1,9 @@
-﻿namespace HPress
+﻿using DevExpress.XtraEditors;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace HPress
 {
     partial class Debits
     {
@@ -30,9 +35,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Debits));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbClients = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -97,12 +99,10 @@
             this.cmbClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbClients.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClients.FormattingEnabled = true;
-            this.cmbClients.Location = new System.Drawing.Point(3, 16);
+            this.cmbClients.Location = new System.Drawing.Point(3, 17);
             this.cmbClients.Name = "cmbClients";
             this.cmbClients.Size = new System.Drawing.Size(175, 27);
             this.cmbClients.TabIndex = 0;
-            this.cmbClients.DropDown += new System.EventHandler(this.cmbClient_DropDown);
-            this.cmbClients.SelectedIndexChanged += new System.EventHandler(this.cmbClients_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -121,7 +121,7 @@
             this.dateFrom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateFrom.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFrom.Location = new System.Drawing.Point(3, 16);
+            this.dateFrom.Location = new System.Drawing.Point(3, 17);
             this.dateFrom.Name = "dateFrom";
             this.dateFrom.Size = new System.Drawing.Size(121, 27);
             this.dateFrom.TabIndex = 16;
@@ -136,40 +136,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResults.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResults.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResults.Location = new System.Drawing.Point(8, 94);
             this.dgvResults.Name = "dgvResults";
             this.dgvResults.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResults.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvResults.RowHeadersVisible = false;
             this.dgvResults.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResults.Size = new System.Drawing.Size(477, 385);
             this.dgvResults.TabIndex = 3;
-            this.dgvResults.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResults_CellClick);
             // 
             // groupBox4
             // 
@@ -188,14 +171,12 @@
             this.txtValue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValue.ForeColor = System.Drawing.Color.Maroon;
-            this.txtValue.Location = new System.Drawing.Point(3, 16);
+            this.txtValue.Location = new System.Drawing.Point(3, 17);
             this.txtValue.Name = "txtValue";
             this.txtValue.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtValue.Size = new System.Drawing.Size(175, 27);
             this.txtValue.TabIndex = 0;
             this.txtValue.Text = "0";
-            this.txtValue.TextChanged += new System.EventHandler(this.txtValue_TextChanged);
-            this.txtValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValue_KeyPress);
             // 
             // isPay
             // 
@@ -206,9 +187,8 @@
             this.isPay.Properties.Appearance.Options.UseFont = true;
             this.isPay.Properties.OffText = "";
             this.isPay.Properties.OnText = "";
-            this.isPay.Size = new System.Drawing.Size(92, 30);
+            this.isPay.Size = new System.Drawing.Size(92, 31);
             this.isPay.TabIndex = 6;
-            this.isPay.Toggled += new System.EventHandler(this.isPay_Toggled);
             // 
             // groupBox5
             // 
@@ -226,17 +206,17 @@
             // 
             this.txtNote.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNote.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(3, 16);
+            this.txtNote.Location = new System.Drawing.Point(3, 17);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(279, 87);
+            this.txtNote.Size = new System.Drawing.Size(279, 86);
             this.txtNote.TabIndex = 0;
             // 
             // txtDebits
             // 
             this.txtDebits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDebits.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDebits.Location = new System.Drawing.Point(3, 16);
+            this.txtDebits.Location = new System.Drawing.Point(3, 17);
             this.txtDebits.Name = "txtDebits";
             this.txtDebits.Size = new System.Drawing.Size(152, 30);
             this.txtDebits.TabIndex = 11;
@@ -272,7 +252,7 @@
             // 
             this.txtPaid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPaid.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaid.Location = new System.Drawing.Point(3, 16);
+            this.txtPaid.Location = new System.Drawing.Point(3, 17);
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.Size = new System.Drawing.Size(158, 30);
             this.txtPaid.TabIndex = 11;
@@ -296,7 +276,7 @@
             // 
             this.txtTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotal.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(3, 16);
+            this.txtTotal.Location = new System.Drawing.Point(3, 17);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(466, 30);
             this.txtTotal.TabIndex = 11;
@@ -305,51 +285,43 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnPrint.Location = new System.Drawing.Point(8, 36);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(50, 46);
             this.btnPrint.TabIndex = 15;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click_1);
             // 
             // btnSearch
             // 
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnSearch.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnSearch.Location = new System.Drawing.Point(64, 36);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(50, 46);
             this.btnSearch.TabIndex = 9;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Appearance.Options.UseFont = true;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnAdd.Location = new System.Drawing.Point(494, 322);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(285, 38);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "أضافة";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Appearance.Options.UseFont = true;
-            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnUpdate.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnUpdate.Location = new System.Drawing.Point(698, 366);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(81, 38);
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "تعديل";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // groupBox9
             // 
@@ -368,7 +340,7 @@
             this.dateTo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTo.Location = new System.Drawing.Point(3, 16);
+            this.dateTo.Location = new System.Drawing.Point(3, 17);
             this.dateTo.Name = "dateTo";
             this.dateTo.Size = new System.Drawing.Size(121, 27);
             this.dateTo.TabIndex = 16;
@@ -408,9 +380,8 @@
             this.isDollar.Properties.Appearance.Options.UseFont = true;
             this.isDollar.Properties.OffText = "";
             this.isDollar.Properties.OnText = "";
-            this.isDollar.Size = new System.Drawing.Size(92, 30);
+            this.isDollar.Size = new System.Drawing.Size(92, 34);
             this.isDollar.TabIndex = 6;
-            this.isDollar.Toggled += new System.EventHandler(this.isDollar_Toggled);
             // 
             // groupBox11
             // 
@@ -430,14 +401,13 @@
             this.date.Dock = System.Windows.Forms.DockStyle.Fill;
             this.date.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date.Location = new System.Drawing.Point(3, 16);
+            this.date.Location = new System.Drawing.Point(3, 17);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(279, 27);
             this.date.TabIndex = 16;
             // 
             // grpMain
             // 
-            this.grpMain.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grpMain.CaptionImage")));
             this.grpMain.Controls.Add(this.btnRemove);
             this.grpMain.Controls.Add(this.btnSearch);
             this.grpMain.Controls.Add(this.grpPay);
@@ -468,14 +438,12 @@
             this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemove.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.Appearance.Options.UseFont = true;
-            this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
-            this.btnRemove.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnRemove.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnRemove.Location = new System.Drawing.Point(494, 366);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(81, 38);
             this.btnRemove.TabIndex = 22;
             this.btnRemove.Text = "حذف";
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // Debits
             // 
@@ -523,34 +491,63 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+
+        private GroupBox groupBox1;
+
         private System.Windows.Forms.ComboBox cmbClients;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvResults;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtValue;
-        private DevExpress.XtraEditors.ToggleSwitch isPay;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox txtNote;
-        private DevExpress.XtraEditors.SimpleButton btnSearch;
-        private System.Windows.Forms.TextBox txtDebits;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox txtPaid;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox txtTotal;
-        private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private System.Windows.Forms.DateTimePicker dateFrom;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.DateTimePicker dateTo;
-        private System.Windows.Forms.GroupBox grpPay;
-        private System.Windows.Forms.GroupBox grpIsDollar;
-        private DevExpress.XtraEditors.ToggleSwitch isDollar;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.DateTimePicker date;
-        private DevExpress.XtraEditors.GroupControl grpMain;
-        private DevExpress.XtraEditors.SimpleButton btnRemove;
+
+        private GroupBox groupBox2;
+
+        private DataGridView dgvResults;
+
+        private SimpleButton btnAdd;
+
+        private GroupBox groupBox4;
+
+        private TextBox txtValue;
+
+        private ToggleSwitch isPay;
+
+        private GroupBox groupBox5;
+
+        private TextBox txtNote;
+
+        private SimpleButton btnSearch;
+
+        private TextBox txtDebits;
+
+        private GroupBox groupBox6;
+
+        private GroupBox groupBox7;
+
+        private TextBox txtPaid;
+
+        private GroupBox groupBox8;
+
+        private TextBox txtTotal;
+
+        private SimpleButton btnPrint;
+
+        private DateTimePicker dateFrom;
+
+        private SimpleButton btnUpdate;
+
+        private GroupBox groupBox9;
+
+        private DateTimePicker dateTo;
+
+        private GroupBox grpPay;
+
+        private GroupBox grpIsDollar;
+
+        private ToggleSwitch isDollar;
+
+        private GroupBox groupBox11;
+
+        private DateTimePicker date;
+
+        private GroupControl grpMain;
+
+        private SimpleButton btnRemove;
     }
 }
