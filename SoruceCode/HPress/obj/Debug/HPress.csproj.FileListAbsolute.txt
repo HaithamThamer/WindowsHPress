@@ -408,7 +408,6 @@ D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.cspr
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HCashier.Report.ArrivedCatch.resources
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.ClientsImport.resources
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.Exports.resources
-D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.Clients.resources
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.Debits.resources
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HCashier.Report.caseValue.resources
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HCashier.Report.billsWithProducts.resources
@@ -430,3 +429,4 @@ D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.cspr
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.csproj.CopyComplete
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.exe
 D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress.pdb
+D:\_PersonalData\_Projects\WindowsHPress\SoruceCode\HPress\obj\Debug\HPress._Clients.resources
